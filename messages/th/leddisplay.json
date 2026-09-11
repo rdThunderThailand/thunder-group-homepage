@@ -1,0 +1,218 @@
+{
+  "metaTitle": "LED Display — Thunder",
+  "metaDescription": "สร้างประสบการณ์ภาพขนาดใหญ่ที่ออกแบบเฉพาะพื้นที่ ผู้ชม และเป้าหมายของคุณ ตั้งแต่พื้นที่ภายในอาคารไปจนถึงแลนด์มาร์กภายนอกอาคารและรูปแบบการติดตั้งเฉพาะตัว",
+  "content": {
+    "breadcrumb": {
+      "home": "หน้าหลัก",
+      "display": "Display Solutions",
+      "current": "LED Display"
+    },
+    "hero": {
+      "label": "LED DISPLAY",
+      "title": "ทำให้ทุกพื้นที่มองเห็นได้มากกว่า",
+      "description": "สร้างประสบการณ์ภาพขนาดใหญ่ที่ออกแบบเฉพาะพื้นที่ ผู้ชม และเป้าหมายของคุณ ตั้งแต่พื้นที่ภายในอาคารไปจนถึงแลนด์มาร์กภายนอกอาคารและรูปแบบการติดตั้งเฉพาะตัว",
+      "primaryCta": "พูดคุยกับ Thunder",
+      "secondaryCta": "สำรวจ LED Solutions",
+      "cornerLines": ["SPACES", "PEOPLE", "POSSIBILITIES"],
+      "imageOverlayLines": ["REAL SPACES", "REAL PEOPLE", "REAL POSSIBILITIES"],
+      "imageAlt": "อาคารพร้อมจอ LED โค้งขนาดใหญ่แสดงภาพศิลปะ (ตัวอย่าง)"
+    },
+    "whyLed": {
+      "label": "WHY LED",
+      "title": "เมื่อประสบการณ์ต้องการพื้นที่ที่ใหญ่กว่า",
+      "description": "LED Display เปิดอิสระในการสร้างประสบการณ์ภาพที่เหนือกว่าจอขนาดทั่วไป ทั้งด้านขนาด รูปทรง ระยะการมองเห็น สภาพแวดล้อม และการออกแบบให้เป็นส่วนหนึ่งของงานสถาปัตยกรรม",
+      "features": [
+        {
+          "title": "สร้างภาพใหญ่กว่าเดิม",
+          "description": "สร้างพื้นที่แสดงผลขนาดใหญ่เกินกว่าจอทั่วไป"
+        },
+        {
+          "title": "ออกแบบได้หลากหลายรูปแบบ",
+          "description": "ปรับขนาด สัดส่วน และรูปทรงได้ตามงานออกแบบ"
+        },
+        {
+          "title": "ออกแบบเพื่อสภาพแวดล้อมภายนอก",
+          "description": "รองรับสภาพแสงและสภาพอากาศที่หลากหลายของสถานที่จริง"
+        },
+        {
+          "title": "พร้อมสำหรับการใช้งานต่อเนื่อง",
+          "description": "ออกแบบมาเพื่อรองรับการใช้งาน การดูแลรักษา และการซ่อมบำรุงในระยะยาว"
+        }
+      ],
+      "imageOverlay": "BIGGER BRIGHTER TOGETHER",
+      "imageAlt": "อาคารภายนอกพร้อมจอ LED ยามเย็น (ตัวอย่าง)"
+    },
+    "designedAroundSpace": {
+      "label": "DESIGNED AROUND YOUR SPACE",
+      "title": "LED ที่เหมาะสม เริ่มจากพื้นที่ที่จะนำไปใช้",
+      "description": "ไม่มีสเปก LED ชุดเดียวที่เหมาะกับทุกโครงการ โซลูชันที่เหมาะสมขึ้นอยู่กับพื้นที่ ระยะการมองเห็น สิ่งที่ต้องการสื่อสาร และรูปแบบการใช้งานในระยะยาว",
+      "factors": [
+        "พื้นที่",
+        "ระยะการมองเห็น",
+        "ผู้ชม",
+        "เนื้อหา",
+        "สภาพแวดล้อม",
+        "การใช้งาน"
+      ],
+      "linkText": "→ เราเริ่มจากการทำความเข้าใจบริบท ก่อนเลือกเทคโนโลยี",
+      "imageAlt": "ห้างสรรพสินค้าพร้อมจอ LED เพดานและผนังขนาดใหญ่ (ตัวอย่าง)"
+    },
+    "ledSolutions": {
+      "label": "LED SOLUTIONS",
+      "title": "LED สำหรับพื้นที่และประสบการณ์ที่แตกต่างกัน",
+      "viewAll": "ดู LED Solutions ทั้งหมด",
+      "cards": [
+        {
+          "title": "Indoor LED",
+          "description": "สร้างประสบการณ์ภาพทรงพลังภายในอาคารและงานออกแบบภายใน",
+          "linkLabel": "สำรวจ Indoor LED"
+        },
+        {
+          "title": "Outdoor LED",
+          "description": "ระบบ LED ที่ออกแบบสำหรับความทนทานภายนอกอาคารและทุกสภาพอากาศ",
+          "linkLabel": "สำรวจ Outdoor LED"
+        },
+        {
+          "title": "Fine-Pitch LED",
+          "description": "จอ LED ความละเอียดสูงสำหรับ Corporate Space, Control Room และพื้นที่มองใกล้",
+          "linkLabel": "สำรวจ Fine-Pitch LED"
+        },
+        {
+          "title": "Creative & Architectural LED",
+          "description": "ออกแบบระบบ LED ให้เข้ากับรูปทรงอาคารและงานสถาปัตยกรรม",
+          "linkLabel": "สำรวจ Creative LED"
+        },
+        {
+          "title": "Transparent LED",
+          "description": "ผสานกับกระจกและพื้นที่งานสถาปัตยกรรมได้อย่างลงตัว",
+          "linkLabel": "สำรวจ Transparent LED"
+        },
+        {
+          "title": "Large-Format LED",
+          "description": "พื้นที่ขนาดใหญ่ที่ต้องการความโดดเด่นและ Impact สูงสุด",
+          "linkLabel": "สำรวจ Large-Format LED"
+        }
+      ]
+    },
+    "realWorld": {
+      "label": "LED IN THE REAL WORLD",
+      "title": "ออกแบบจากสิ่งที่พื้นที่ต้องการทำ",
+      "viewAll": "ดู Use Cases ทั้งหมด",
+      "items": [
+        { "label": "ค้าปลีกและประสบการณ์แบรนด์" },
+        { "label": "องค์กรและพื้นที่ทำงาน" },
+        { "label": "ห้องควบคุมและศูนย์บัญชาการ" },
+        { "label": "งานอีเวนต์และสถานที่จัดงาน" },
+        { "label": "พื้นที่สาธารณะและการคมนาคม" },
+        { "label": "สถาปัตยกรรมและแลนด์มาร์ก" }
+      ]
+    },
+    "completeSystem": {
+      "label": "THE COMPLETE SYSTEM",
+      "title": "มากกว่าจอ LED",
+      "description": "ระบบ LED ที่ทำงานได้ไม่ได้อยู่ที่ตัวจอแสดงผลอย่างเดียว Thunder เชื่อมการแสดงผล โครงสร้าง การควบคุม การเชื่อมต่อ ระบบไฟฟ้า และการดูแลใช้งาน ให้ทำงานร่วมกันเป็นระบบเดียว",
+      "primaryCta": "พูดคุยกับ Thunder",
+      "secondaryCta": "เรียนรู้แนวทางของเรา",
+      "layers": [
+        { "name": "เนื้อหา" },
+        { "name": "การประมวลผลและควบคุมภาพ" },
+        { "name": "LED Display" },
+        { "name": "โครงสร้างและการติดตั้ง" },
+        { "name": "ระบบไฟฟ้าและการเชื่อมต่อ" },
+        { "name": "การตรวจสอบและดูแลการใช้งาน" }
+      ],
+      "imageAlt": "ภาพกราฟิกเลเยอร์ระบบ LED แบบ isometric (ตัวอย่าง)"
+    },
+    "designingRightLed": {
+      "label": "DESIGNING THE RIGHT LED",
+      "title": "เทคโนโลยีที่เหมาะสม เริ่มจากประสบการณ์การมองเห็น",
+      "description": "เราเลือกสเปก LED ตามพฤติกรรมการมองเห็นและสภาพแวดล้อมการใช้งานจริงของแต่ละพื้นที่",
+      "items": [
+        { "title": "ระยะการมองเห็น" },
+        { "title": "Resolution & Pixel Pitch" },
+        { "title": "ความสว่าง" },
+        { "title": "ขนาดและสัดส่วนของจอ" },
+        { "title": "การติดตั้งและโครงสร้าง" },
+        { "title": "สภาพแวดล้อมการใช้งาน" }
+      ],
+      "imageAlt": "ภาพระยะใกล้ของโมดูล LED (ตัวอย่าง)"
+    },
+    "connectedOperation": {
+      "label": "CONNECTED OPERATION",
+      "title": "จากงานติดตั้ง สู่ระบบที่บริหารจัดการได้",
+      "description": "สำหรับโครงการที่ต้องการบริหารจัดการคอนเทนต์ อุปกรณ์ และการทำงานอย่างต่อเนื่อง Thunder สามารถเชื่อม LED Environment เข้ากับระบบที่ช่วยให้ดูแลและใช้งานได้ในระยะยาว",
+      "primaryCta": "สำรวจ Digital Signage",
+      "secondaryCta": "Connected by ThunderOne",
+      "imageOverlay": "เปลี่ยนพื้นที่ ให้เป็นโอกาสที่ต่อเนื่อง",
+      "imageAlt": "เจ้าหน้าที่ทำงานหน้าจอในห้องควบคุม (ตัวอย่าง)"
+    },
+    "howWeWork": {
+      "label": "HOW WE WORK",
+      "title": "จากพื้นที่ สู่การใช้งานจริง",
+      "note": "ขั้นตอนที่ชัดเจน ผลลัพธ์ที่ดีกว่า",
+      "steps": [
+        {
+          "number": "01",
+          "title": "ทำความเข้าใจ",
+          "items": ["พื้นที่", "เป้าหมาย", "ผู้ชม", "สภาพแวดล้อม"]
+        },
+        {
+          "number": "02",
+          "title": "ออกแบบ",
+          "items": ["การมองเห็น", "LED Configuration", "โครงสร้าง", "ระบบ"]
+        },
+        {
+          "number": "03",
+          "title": "ส่งมอบ",
+          "items": ["จัดหา", "ติดตั้ง", "Integration", "Commissioning"]
+        },
+        {
+          "number": "04",
+          "title": "ดูแลการใช้งาน",
+          "items": ["Monitoring", "Maintenance", "Support", "Improvement"]
+        }
+      ]
+    },
+    "inAction": {
+      "label": "LED DISPLAY IN ACTION",
+      "title": "ดู LED ในพื้นที่ใช้งานจริง",
+      "viewAll": "ดูผลงานทั้งหมด",
+      "projects": [
+        { "name": "Project Name 01", "tag": "Retail · Indoor LED" },
+        { "name": "Project Name 02", "tag": "Corporate · Fine-Pitch LED" },
+        { "name": "Project Name 03", "tag": "Public Space · Outdoor LED" },
+        { "name": "Project Name 04", "tag": "Event · Creative LED" }
+      ]
+    },
+    "howToStart": {
+      "label": "HOW DO YOU WANT TO START?",
+      "title": "เลือกวิธีเริ่มต้นที่เหมาะกับโครงการของคุณ",
+      "viewAll": "ดูตัวเลือกทั้งหมด",
+      "options": [
+        {
+          "title": "ติดตั้งใช้งานถาวร",
+          "description": "สำหรับโครงการ LED แบบถาวรที่ออกแบบเฉพาะพื้นที่ของคุณ",
+          "linkLabel": "พูดคุยกับ Thunder"
+        },
+        {
+          "title": "เช่าใช้งาน",
+          "description": "สำหรับ Event, Campaign หรือการใช้งานระยะสั้น",
+          "linkLabel": "สำรวจการเช่า"
+        },
+        {
+          "title": "ยังไม่แน่ใจ",
+          "description": "เริ่มจากพื้นที่และสิ่งที่คุณต้องการให้เกิดขึ้น เราจะช่วยพาคุณพิจารณาตัวเลือกที่เหมาะสม",
+          "linkLabel": "พูดคุยกับ Thunder"
+        }
+      ]
+    },
+    "bottomCta": {
+      "label": "START YOUR LED PROJECT",
+      "title": "คุณอยากให้พื้นที่นี้กลายเป็นอะไร?",
+      "description": "เล่าให้เราฟังถึงพื้นที่ของคุณ ผู้คนจะสัมผัสพื้นที่นี้อย่างไร และสิ่งที่คุณอยากให้ LED ช่วยให้เกิดขึ้น แล้วเราจะช่วยคุณหาแนวทาง LED ที่เหมาะสมที่สุด",
+      "primaryCta": "พูดคุยกับ Thunder",
+      "secondaryCta": "ขอใบเสนอราคา",
+      "sideText": "A MORE CONNECTED WORLD"
+    }
+  }
+}

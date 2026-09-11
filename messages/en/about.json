@@ -1,0 +1,24 @@
+{
+  "metaTitle": "About — Thunder",
+  "metaDescription": "Thunder brings people, organizations, technology and capabilities together to make extraordinary co-creation possible.",
+  "hero": {
+    "eyebrow": "About Thunder",
+    "title": "We exist to make extraordinary co-creation possible.",
+    "description": "We bring together people, organizations, technology and capabilities to create smarter workplaces, better places and stronger communities."
+  },
+  "primary": {
+    "eyebrow": "What we're about",
+    "title": "The idea behind Thunder",
+    "description": "A short introduction — the full story is on the way."
+  },
+  "secondary": {
+    "eyebrow": "The team",
+    "title": "The people behind the work",
+    "description": "Leadership profiles and careers are on the way."
+  },
+  "items": [
+    { "title": "Purpose", "description": "Why we do this, and who it's for." },
+    { "title": "How we work", "description": "Co-creation, from first conversation to long-term support." },
+    { "title": "Careers", "description": "Build the extraordinary with us." }
+  ]
+}

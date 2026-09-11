@@ -1,0 +1,24 @@
+{
+  "metaTitle": "Partners — Thunder",
+  "metaDescription": "Partner with Thunder — technology partners, channel partners and public-sector collaboration.",
+  "hero": {
+    "eyebrow": "Partners",
+    "title": "Better outcomes, built together.",
+    "description": "We work with technology partners, channel partners, and public and community organizations to create more value than any of us could alone."
+  },
+  "primary": {
+    "eyebrow": "Ways to partner",
+    "title": "How we work with partners",
+    "description": "Tell us where you fit — full partner information is on the way."
+  },
+  "secondary": {
+    "eyebrow": "Our partners",
+    "title": "A growing network",
+    "description": "Partner logos and stories will appear here."
+  },
+  "items": [
+    { "title": "Technology Partners", "description": "Bring your products into Thunder solutions." },
+    { "title": "Channel Partners", "description": "Deliver Thunder to more customers, in more places." },
+    { "title": "Public & Community", "description": "Collaborate on places and programs that serve people." }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "tagline": "A Space for Extraordinary Co-Creation",
+  "columns": {
+    "solutions": {
+      "title": "Solutions",
+      "digitalSignageMedia": "Digital Signage & Media",
+      "communication": "Communication",
+      "thunderCare": "Thunder Care",
+      "assetIntelligence": "Asset Intelligence"
+    },
+    "businesses": {
+      "title": "Businesses",
+      "thunderDisplay": "Thunder Display",
+      "thunderOne": "ThunderOne",
+      "cityZen": "CityZen",
+      "wonder": "Wonder"
+    },
+    "explore": {
+      "title": "Explore",
+      "projects": "Projects",
+      "insights": "Insights",
+      "partners": "Partners"
+    },
+    "thunder": {
+      "title": "Thunder",
+      "about": "About Thunder",
+      "purpose": "Purpose",
+      "careers": "Careers",
+      "contact": "Contact Us"
+    }
+  },
+  "social": {
+    "heading": "Follow Thunder",
+    "linkedin": "Thunder on LinkedIn",
+    "youtube": "Thunder on YouTube",
+    "line": "Thunder on LINE"
+  },
+  "changeLanguage": "Change language",
+  "copyright": "© {year} Thunder Co., Ltd. All rights reserved.",
+  "legal": {
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "cookies": "Cookies",
+    "sitemap": "Sitemap"
+  }
+}

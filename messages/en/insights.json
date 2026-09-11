@@ -1,0 +1,25 @@
+{
+  "metaTitle": "Insights — Thunder",
+  "metaDescription": "Ideas, perspectives and updates on technology, workplaces, places and communities.",
+  "hero": {
+    "eyebrow": "Insights",
+    "title": "Ideas worth sharing.",
+    "description": "Perspectives on technology, workplaces, places and communities — from the people building them."
+  },
+  "primary": {
+    "eyebrow": "Latest",
+    "title": "Recent articles",
+    "description": "The full library is on the way."
+  },
+  "secondary": {
+    "eyebrow": "Topics",
+    "title": "What we write about",
+    "description": "Workplace, digital experience, smart places, and operations. Detailed content is on the way."
+  },
+  "items": [
+    { "title": "Designing a workplace people choose", "description": "What makes a space worth the commute." },
+    { "title": "Signage that earns attention", "description": "Content, placement and timing." },
+    { "title": "From devices to outcomes", "description": "Why proactive care changes the math." },
+    { "title": "Places that bring people together", "description": "Technology's quiet role in community." }
+  ]
+}

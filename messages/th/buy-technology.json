@@ -1,0 +1,68 @@
+{
+  "metaTitle": "เทคโนโลยี — Thunder",
+  "metaDescription": "ค้นหาเทคโนโลยีและโซลูชันที่เหมาะกับองค์กรของคุณ เริ่มจากสิ่งที่คุณต้องการ แล้วเราจะพาคุณไปต่อ",
+  "breadcrumb": {
+    "home": "หน้าแรก",
+    "current": "เทคโนโลยี"
+  },
+  "hero": {
+    "eyebrow": "TECHNOLOGY",
+    "title": "เทคโนโลยีที่ใช่ เพื่อสิ่งที่คุณต้องการ",
+    "description": "ค้นหาเทคโนโลยีและโซลูชันที่เหมาะกับองค์กรของคุณ เริ่มจากสิ่งที่คุณต้องการ แล้วเราจะพาคุณไปต่อ",
+    "features": [
+      { "title": "เทคโนโลยีที่คัดสรร", "description": "จากแบรนด์มาตรฐานระดับโลก" },
+      { "title": "เชื่อถือได้", "description": "พร้อมบริการและการดูแล" },
+      { "title": "มากกว่าการขาย", "description": "เราช่วยให้คุณใช้งานได้จริง" }
+    ],
+    "imageOverlayTitle": "TECHNOLOGY FOR A BRIGHTER TOMORROW",
+    "imageSideNote": "PEOPLE / TECHNOLOGY / BETTER OUTCOMES",
+    "imageCaption": "ภาพบรรยากาศโชว์รูมและจอ LED (ตัวอย่าง)"
+  },
+  "categorySection": {
+    "eyebrow": "CHOOSE A CATEGORY",
+    "aside": "DIFFERENT NEEDS. ONE THUNDER.",
+    "title": "คุณกำลังมองหาเทคโนโลยีด้านใด?",
+    "description": "เลือกหมวดหมู่ที่ใกล้เคียงกับความต้องการของคุณ เพื่อไปยังข้อมูลและโซลูชันที่เหมาะสม",
+    "categories": [
+      {
+        "name": "Display & Signage",
+        "description": "จากจอโฆษณาและระบบสื่อสารภาพ สำหรับพื้นที่จริง",
+        "tags": ["LED Display", "Digital Signage", "Video Wall", "Control"]
+      },
+      {
+        "name": "Interactive & Kiosk",
+        "description": "คีออสก์และโซลูชันแบบอินเทอร์แอคทีฟ สำหรับงานบริการและประสบการณ์ผู้ใช้งาน",
+        "tags": ["Interactive Kiosk", "Self Service", "Touch Display", "Queue System"]
+      },
+      {
+        "name": "Workplace Technology",
+        "description": "เทคโนโลยีสำหรับการทำงานยุคใหม่ เชื่อมผู้คน พื้นที่ และการสื่อสาร",
+        "tags": ["Meeting & Collaboration", "Workspace", "Smart Entrance"]
+      },
+      {
+        "name": "Computers & Devices",
+        "description": "คอมพิวเตอร์ อุปกรณ์ไอที และอุปกรณ์สำนักงาน สำหรับองค์กร",
+        "tags": ["Laptop", "Desktop", "Monitor", "Printer", "Accessories"]
+      },
+      {
+        "name": "Network & Infrastructure",
+        "description": "ระบบเครือข่ายและโครงสร้างพื้นฐาน เพื่อการทำงานที่มั่นคงและปลอดภัย",
+        "tags": ["Network", "Wi-Fi", "Security", "Infrastructure"]
+      }
+    ]
+  },
+  "ctaStrip": {
+    "title": "ยังไม่แน่ใจว่าต้องการอะไร?",
+    "description": "เล่าให้เราฟังถึงสิ่งที่คุณกำลังมองหา เราจะช่วยแนะนำทางเลือกที่เหมาะสม",
+    "primaryCta": "พูดคุยกับ Thunder",
+    "secondaryCta": "ส่งคำขอเบื้องต้น"
+  },
+  "bottomBanner": {
+    "title": "Technology today. A more connected tomorrow.",
+    "items": [
+      { "title": "คำปรึกษาจากผู้เชี่ยวชาญ", "description": "พูดคุยกับทีม Thunder" },
+      { "title": "โซลูชันที่เหมาะสม", "description": "ตามโจทย์และงบประมาณ" },
+      { "title": "พร้อมดูแลต่อเนื่อง", "description": "ตั้งแต่เริ่มต้นจนใช้งานจริง" }
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "metaTitle": "Thunder Group — Extraordinary Co-Creation. Made Possible.",
+  "metaDescription": "We bring people, organizations, technology and capabilities together to create smarter workplaces, better places and stronger communities.",
+  "hero": {
+    "title": "Extraordinary Co-Creation. Made Possible.",
+    "description": "We bring people, organizations, technology and capabilities together to create smarter workplaces, better places and stronger communities.",
+    "ctaPrimary": "Find What You Need",
+    "ctaSecondary": "Discover Thunder",
+    "scrollHint": "Scroll to explore",
+    "sideNote": "Different possibilities. A brighter tomorrow.",
+    "pillars": [
+      { "name": "People", "description": "The people who make change happen." },
+      { "name": "Organizations", "description": "Teams and businesses moving forward." },
+      { "name": "Technology", "description": "The tools that connect everything." },
+      { "name": "Places", "description": "Spaces where life and work happen." },
+      { "name": "Communities", "description": "Networks that bring people closer." }
+    ]
+  },
+  "startHere": {
+    "number": "01",
+    "eyebrow": "Start Here",
+    "title": "What can we help you with?",
+    "description": "Start with what you need. We'll help you find the right solutions, technology and people to make it happen.",
+    "cards": [
+      { "title": "Buy Technology", "description": "Find the right technology for your business." },
+      { "title": "Rent Technology", "description": "Access the technology you need, when you need it." },
+      { "title": "Build a Smarter Workplace", "description": "Create a more connected, productive workplace." },
+      { "title": "Solve IT & Operations Problems", "description": "Keep your technology and operations running reliably." },
+      { "title": "Build Better Places & Communities", "description": "Use technology to create more vibrant and livable places." },
+      { "title": "Work With Thunder", "description": "Partner, collaborate or explore new opportunities together." }
+    ]
+  },
+  "whatWeBuild": {
+    "number": "02",
+    "eyebrow": "What We Build",
+    "title": "Different capabilities. A wider possibility.",
+    "description": "From visual experiences and workplace solutions to smart places and connected experiences, our businesses work together to create greater value for our customers.",
+    "cta": "Explore Our Businesses",
+    "businesses": [
+      { "name": "Thunder Display", "description": "Visual experiences for real spaces.", "cta": "Explore" },
+      { "name": "ThunderOne", "description": "Workplace technology and communication.", "cta": "Explore" },
+      { "name": "CityZen", "description": "Smarter places for better communities.", "cta": "Explore" },
+      { "name": "Wonder", "description": "Experiences that bring people closer.", "cta": "Explore" }
+    ]
+  },
+  "ourWork": {
+    "number": "03",
+    "eyebrow": "Our Work",
+    "title": "Turning ideas into real outcomes.",
+    "description": "From workplaces to public spaces, we help our customers create meaningful experiences and lasting value.",
+    "cta": "Explore All Projects",
+    "featured": {
+      "label": "Featured Project",
+      "title": "A Smarter Public Space for a More Connected City",
+      "cta": "See the Story"
+    },
+    "projects": [
+      { "title": "Modern Workplace for a Growing Team", "cta": "See the Story" },
+      { "title": "Digital Experience at a Landmark Destination", "cta": "See the Story" }
+    ]
+  },
+  "whyThunder": {
+    "number": "04",
+    "eyebrow": "Why Thunder",
+    "title": "A more connected tomorrow, together.",
+    "description": "We make extraordinary co-creation possible for everyone. We bring together people, organizations, technology and capabilities to create smarter workplaces, better places and stronger communities.",
+    "cta": "Our Purpose",
+    "words": ["People", "Organizations", "Technology", "Places", "Communities", "Together"]
+  }
+}

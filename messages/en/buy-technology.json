@@ -1,0 +1,68 @@
+{
+  "metaTitle": "Technology — Thunder",
+  "metaDescription": "Discover technology and solutions that fit your organization. Start with what you need, and we'll take you to the right path.",
+  "breadcrumb": {
+    "home": "Home",
+    "current": "Technology"
+  },
+  "hero": {
+    "eyebrow": "TECHNOLOGY",
+    "title": "Technology for a Brighter Tomorrow",
+    "description": "Discover technology and solutions that fit your organization. Start with what you need, and we'll take you to the right path.",
+    "features": [
+      { "title": "Trusted Products", "description": "From leading global brands" },
+      { "title": "Reliable Solutions", "description": "With deployment and care" },
+      { "title": "Expert Guidance", "description": "We help you choose what's right" }
+    ],
+    "imageOverlayTitle": "TECHNOLOGY FOR A BRIGHTER TOMORROW",
+    "imageSideNote": "PEOPLE / TECHNOLOGY / BETTER OUTCOMES",
+    "imageCaption": "Showroom and LED wall visual (placeholder)"
+  },
+  "categorySection": {
+    "eyebrow": "CHOOSE A CATEGORY",
+    "aside": "DIFFERENT NEEDS. ONE THUNDER.",
+    "title": "What are you looking for?",
+    "description": "Select a category that matches your need. We'll guide you to the right technology and solutions.",
+    "categories": [
+      {
+        "name": "Display & Signage",
+        "description": "Visual communication and display solutions for real-world spaces.",
+        "tags": ["LED Display", "Digital Signage", "Video Wall", "Control"]
+      },
+      {
+        "name": "Interactive & Kiosk",
+        "description": "Engaging interactive solutions for better experiences.",
+        "tags": ["Interactive Kiosk", "Self Service", "Touch Display", "Queue System"]
+      },
+      {
+        "name": "Workplace Technology",
+        "description": "Create a smarter, more connected workplace.",
+        "tags": ["Meeting & Collaboration", "Workspace", "Smart Entrance"]
+      },
+      {
+        "name": "Computers & Devices",
+        "description": "Essential devices and equipment for your business.",
+        "tags": ["Laptop", "Desktop", "Monitor", "Printer", "Accessories"]
+      },
+      {
+        "name": "Network & Infrastructure",
+        "description": "Secure and reliable infrastructure for a stronger foundation.",
+        "tags": ["Network", "Wi-Fi", "Security", "Infrastructure"]
+      }
+    ]
+  },
+  "ctaStrip": {
+    "title": "Not sure what you need?",
+    "description": "Talk to our team. We'll help you find the right technology and solution.",
+    "primaryCta": "Talk to Thunder",
+    "secondaryCta": "Send us your request"
+  },
+  "bottomBanner": {
+    "title": "Technology today. A more connected tomorrow.",
+    "items": [
+      { "title": "Real Solutions", "description": "for real needs" },
+      { "title": "Expert Support", "description": "from consultation to deployment" },
+      { "title": "Sustainable Impact", "description": "for people and communities" }
+    ]
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "metaTitle": "Display Solutions — Thunder",
+  "metaDescription": "We design and deliver connected display experiences that inspire, engage and empower your business.",
+  "content": {
+    "breadcrumb": {
+      "home": "Home",
+      "current": "Display Solutions"
+    },
+    "hero": {
+      "label": "DISPLAY SOLUTIONS",
+      "titleLead": "ENDLESS INNOVATION ON",
+      "titleAccent": "DISPLAY",
+      "description": "We design and deliver connected display experiences that inspire, engage and empower your business.",
+      "primaryCta": "Explore Solutions",
+      "secondaryCta": "Watch Video",
+      "highlights": [
+        { "label": "Stunning Visuals" },
+        { "label": "Reliable 24/7" },
+        { "label": "Smart Control" },
+        { "label": "End-to-End Service" }
+      ],
+      "highlightsNote": "MORE POSSIBILITIES IN EVERY SPACE",
+      "imageOverlay": "BRIGHTER SPACES. BOLDER TOMORROWS.",
+      "imageAlt": "Night city skyline with a large rooftop LED display (placeholder)"
+    },
+    "featureStrip": {
+      "items": [
+        {
+          "title": "End-to-End Solution",
+          "detail": "Design · Supply · Install · Support"
+        },
+        {
+          "title": "Innovative Technology",
+          "detail": "LED · Display · Interactive · Control"
+        },
+        {
+          "title": "Connected by ThunderOne",
+          "detail": "Smart · Manage · Monitor · Analyze"
+        },
+        {
+          "title": "Reliable & Trusted",
+          "detail": "Quality · Safety · 24/7 Care"
+        }
+      ]
+    },
+    "solutions": {
+      "label": "SOLUTIONS",
+      "title": "Display Solutions for Every Experience",
+      "description": "From the right screen to the right content, we help you create visual experiences that work for your space, your brand and your business goals.",
+      "viewAll": "View All Solutions",
+      "cards": [
+        {
+          "title": "LED Display",
+          "description": "High-impact LED solutions for indoor, outdoor and creative installations."
+        },
+        {
+          "title": "Digital Signage",
+          "description": "Smart signage for communication, advertising and information."
+        },
+        {
+          "title": "Interactive & Kiosk",
+          "description": "Interactive display and kiosk solutions that engage and deliver experiences."
+        },
+        {
+          "title": "Control Room & Command Center",
+          "description": "Visual solutions for critical operations and decision making."
+        },
+        {
+          "title": "Retail & Experience",
+          "description": "Create engaging in-store experiences that drive brand and sales."
+        },
+        {
+          "title": "Smart Space & City Solutions",
+          "description": "Display solutions for public spaces, transportation and smart cities."
+        }
+      ]
+    },
+    "featuredProjects": {
+      "label": "FEATURED PROJECTS",
+      "title": "Real Projects. Real Impact.",
+      "description": "See how our display technology performs across different spaces and projects.",
+      "viewAll": "View All Projects",
+      "projects": [
+        {
+          "name": "Suvarnabhumi Airport",
+          "tags": ["Digital Signage", "Transportation"]
+        },
+        {
+          "name": "PTT Command Center",
+          "tags": ["Video Wall", "Energy"]
+        },
+        {
+          "name": "Central WestGate",
+          "tags": ["Outdoor LED Display", "Retail"]
+        },
+        {
+          "name": "Nong Nooch Garden",
+          "tags": ["Interactive Display", "Tourism"]
+        }
+      ]
+    },
+    "why": {
+      "label": "WHY THUNDER DISPLAY",
+      "title": "From Idea to Operation",
+      "description": "We combine creativity, technology and expertise to deliver display solutions that make a difference.",
+      "cta": "Our Services",
+      "steps": [
+        {
+          "name": "Consult",
+          "description": "Understand your goals and space"
+        },
+        {
+          "name": "Design",
+          "description": "Create the right solution"
+        },
+        {
+          "name": "Deliver",
+          "description": "Install and commission"
+        },
+        {
+          "name": "Operate",
+          "description": "Monitor, maintain and support"
+        }
+      ]
+    },
+    "bottomCta": {
+      "title": "Let's Create Your Next Display Experience",
+      "description": "Talk to our team and discover the right solution for your space.",
+      "primaryCta": "Get a Quote",
+      "secondaryCta": "Talk to Thunder"
+    }
+  }
+}

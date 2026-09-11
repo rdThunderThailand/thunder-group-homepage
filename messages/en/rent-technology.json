@@ -1,0 +1,188 @@
+{
+  "metaTitle": "Display Rental — Thunder",
+  "metaDescription": "Rent professional display technology for events, exhibitions, workplaces, campaigns and temporary projects — with delivery, installation and support available when you need it.",
+  "breadcrumb": {
+    "home": "Home",
+    "display": "Display",
+    "rental": "Rental"
+  },
+  "hero": {
+    "eyebrow": "DISPLAY RENTAL",
+    "title": "Display Technology. Ready When You Need It.",
+    "description": "Rent professional display technology for events, exhibitions, workplaces, campaigns and temporary projects — with delivery, installation and support available when you need it.",
+    "form": {
+      "lookingForLabel": "What are you looking for?",
+      "lookingForOptions": [
+        "Digital Poster",
+        "Professional Display",
+        "Interactive Display",
+        "Kiosk",
+        "LED Display",
+        "Players & Accessories"
+      ],
+      "whenLabel": "When do you need it?",
+      "whenPlaceholder": "Select Date",
+      "submit": "Find Rental Options"
+    },
+    "quoteLink": "Already know what you need? Get a Quote →",
+    "imageOverlayTitle": "Make Every Event Bigger",
+    "imageSideNote": "EVENTS / CAMPAIGNS / MEETINGS / EXHIBITIONS / AND MORE"
+  },
+  "startHere": {
+    "eyebrow": "START HERE",
+    "title": "What Do You Need the Display For?",
+    "description": "Choose your use case and we'll show you the most relevant rental options.",
+    "helpLink": "Not sure? Help me choose →",
+    "cards": [
+      {
+        "title": "Event & Exhibition",
+        "description": "Displays, kiosks and interactive technology for events and exhibitions.",
+        "link": "Explore for Events →"
+      },
+      {
+        "title": "Promotion & Campaign",
+        "description": "Digital displays for campaigns, product launches and promotions.",
+        "link": "Explore for Campaigns →"
+      },
+      {
+        "title": "Meeting & Presentation",
+        "description": "Displays for meetings, workshops and temporary workplaces.",
+        "link": "Explore for Meetings →"
+      },
+      {
+        "title": "Information & Wayfinding",
+        "description": "Temporary digital information, directories and wayfinding for venues.",
+        "link": "Explore Information →"
+      },
+      {
+        "title": "Interactive Experience",
+        "description": "Interactive displays and kiosks for registration, discovery and self-service.",
+        "link": "Explore Interactive →"
+      },
+      {
+        "title": "Not Sure Yet",
+        "description": "Tell us what you're trying to do and we'll help find the right setup.",
+        "link": "Help Me Choose →"
+      }
+    ]
+  },
+  "equipment": {
+    "eyebrow": "RENTAL EQUIPMENT",
+    "title": "Choose the Technology That Fits Your Project.",
+    "description": "Explore professional display equipment available for temporary projects, events and business use.",
+    "viewAllLink": "View all rental equipment →",
+    "exploreLink": "Explore →",
+    "items": [
+      {
+        "name": "Digital Poster",
+        "description": "Portrait displays for promotions, information and events."
+      },
+      {
+        "name": "Professional Display",
+        "description": "Commercial displays for presentation and communication."
+      },
+      {
+        "name": "Interactive Display",
+        "description": "Touch-enabled displays for collaboration and interactive experiences."
+      },
+      {
+        "name": "Kiosk",
+        "description": "Interactive and information touchpoints for registration and self-service."
+      },
+      {
+        "name": "LED Display",
+        "description": "Large-format LED solutions for events and high-impact visual experiences."
+      },
+      {
+        "name": "Players & Accessories",
+        "description": "Media players, stands, mounts and supporting equipment."
+      }
+    ]
+  },
+  "popular": {
+    "eyebrow": "POPULAR RENTALS",
+    "title": "Ready for Your Next Project.",
+    "description": "Our most popular rental equipment for events, exhibitions, campaigns and more.",
+    "viewAllLink": "View all rental products →",
+    "popularBadge": "Popular",
+    "detailsCta": "View Details",
+    "quoteCta": "Get a Quote",
+    "products": [
+      {
+        "name": "43\" Portrait Digital Poster",
+        "popular": true,
+        "tags": ["Promotion", "Event", "Information"],
+        "specs": ["Portrait", "Freestanding", "Indoor"],
+        "price": "From THB 2,500 / day"
+      },
+      {
+        "name": "55\" Professional Display",
+        "popular": false,
+        "tags": ["Meeting", "Presentation", "Event"],
+        "specs": ["4K", "Landscape", "Indoor"],
+        "price": "From THB 3,500 / day"
+      },
+      {
+        "name": "Interactive Kiosk 32\"",
+        "popular": true,
+        "tags": ["Registration", "Self-Service"],
+        "specs": ["Touch", "Freestanding", "Indoor"],
+        "price": "From THB 4,500 / day"
+      },
+      {
+        "name": "LED Display (Indoor)",
+        "popular": false,
+        "tags": ["Stage", "Event", "Exhibition"],
+        "specs": ["Modular", "High Brightness", "Indoor"],
+        "price": "Request Rental Price"
+      },
+      {
+        "name": "Video Wall 2×2 (55\")",
+        "popular": false,
+        "tags": ["Presentation", "Corporate"],
+        "specs": ["Ultra-narrow Bezel", "Indoor"],
+        "price": "From THB 12,000 / day"
+      }
+    ]
+  },
+  "howItWorks": {
+    "eyebrow": "HOW IT WORKS",
+    "title": "From Requirement to Ready-to-Use.",
+    "description": "A simple process to get your display technology on site.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Choose",
+        "description": "Tell us what you need. Select equipment or start from your use case."
+      },
+      {
+        "number": "02",
+        "title": "Configure",
+        "description": "Set the project details. Date · Duration · Quantity · Location · Support"
+      },
+      {
+        "number": "03",
+        "title": "Confirm",
+        "description": "We confirm the setup and commercial details. Equipment · Availability · Quote"
+      },
+      {
+        "number": "04",
+        "title": "Use",
+        "description": "We deliver and get you ready. Delivery · Setup · Support · Collection"
+      }
+    ],
+    "aside": {
+      "title": "More than equipment.",
+      "description": "Delivery, installation, content setup and on-site support available depending on your project needs.",
+      "link": "Our Rental Services →"
+    }
+  },
+  "bottomCta": {
+    "eyebrow": "READY FOR YOUR PROJECT",
+    "title": "Tell Us What You Need. We'll Help Get It Ready.",
+    "description": "Choose the equipment, tell us when and where you need it, and we'll help confirm the right rental setup for your project.",
+    "primaryCta": "Find Rental Equipment →",
+    "secondaryCta": "Talk to Thunder",
+    "sideNote": "Temporary Today. Big Possibilities Tomorrow."
+  }
+}

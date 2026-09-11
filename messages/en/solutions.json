@@ -1,0 +1,25 @@
+{
+  "metaTitle": "Solutions — Thunder",
+  "metaDescription": "Thunder solutions across digital signage, communication, device care and asset intelligence.",
+  "hero": {
+    "eyebrow": "Solutions",
+    "title": "Solutions that work together.",
+    "description": "From visual experiences to connected operations, our solutions combine technology, service and support around a single outcome."
+  },
+  "primary": {
+    "eyebrow": "Our solutions",
+    "title": "Four areas we focus on",
+    "description": "Each solution can stand alone or work as part of a wider platform."
+  },
+  "secondary": {
+    "eyebrow": "How it works",
+    "title": "One team, one accountable outcome",
+    "description": "We scope, deploy and support each solution as a single engagement. Detailed content is on the way."
+  },
+  "items": [
+    { "title": "Digital Signage & Media", "description": "Visual experiences and content for real-world spaces." },
+    { "title": "Communication", "description": "Keep people informed and connected across the organization." },
+    { "title": "Thunder Care", "description": "Proactive care that keeps devices and systems running." },
+    { "title": "Asset Intelligence", "description": "See, track and get more from every asset." }
+  ]
+}

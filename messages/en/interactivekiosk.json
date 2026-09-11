@@ -1,0 +1,249 @@
+{
+  "metaTitle": "Interactive & Kiosk — Thunder",
+  "metaDescription": "Create interactive experiences that help people explore, find information, access services and complete tasks — through digital touchpoints designed around your space and purpose.",
+  "content": {
+    "breadcrumb": {
+      "home": "Home",
+      "display": "Display Solutions",
+      "current": "Interactive & Kiosk"
+    },
+    "hero": {
+      "label": "INTERACTIVE & KIOSK",
+      "title": "Turn Every Touchpoint Into an Experience.",
+      "description": "Create interactive experiences that help people explore, find information, access services and complete tasks — through digital touchpoints designed around your space and purpose.",
+      "primaryCta": "Talk to Thunder",
+      "secondaryCta": "Explore Solutions",
+      "cornerText": "PEOPLE   SPACES   TECHNOLOGY   A MORE CONNECTED WORLD",
+      "imageCaptionLines": ["REAL INTERACTIONS", "REAL IMPACT"],
+      "screen": {
+        "welcome": "Welcome",
+        "prompt": "How can we help you today?",
+        "items": [
+          "Find a Place",
+          "Explore Services",
+          "Events & Activities",
+          "Transport Info"
+        ]
+      },
+      "imageAlt": "Woman touching an interactive kiosk screen in a public concourse (placeholder)"
+    },
+    "whyInteractive": {
+      "label": "WHY INTERACTIVE",
+      "title": "When People Need More Than Information.",
+      "description": "Some moments require more than displaying content. Interactive touchpoints allow people to explore, make choices, find what they need and take action — directly within the physical environment.",
+      "flow": ["See", "Touch", "Understand", "Act"],
+      "gallery": [
+        {
+          "imageAlt": "Person touching an interactive screen (placeholder)"
+        },
+        {
+          "caption": "Select a Destination",
+          "items": ["Shops", "Restaurants", "Meeting Rooms"],
+          "imageAlt": "Wayfinding UI for choosing a destination (placeholder)"
+        },
+        {
+          "caption": "You're all set!",
+          "note": "A confirmation has been sent to your mobile.",
+          "imageAlt": "Confirmation screen after completing a task (placeholder)"
+        }
+      ],
+      "features": [
+        {
+          "title": "Explore",
+          "description": "Let people discover information, products, places or services at their own pace."
+        },
+        {
+          "title": "Find",
+          "description": "Help people navigate spaces and find what they're looking for."
+        },
+        {
+          "title": "Choose",
+          "description": "Guide people through options, recommendations and decisions."
+        },
+        {
+          "title": "Act",
+          "description": "Enable people to submit requests, register, check in or complete other tasks."
+        },
+        {
+          "title": "Connect",
+          "description": "Connect the physical interaction with digital systems, services and workflows."
+        }
+      ]
+    },
+    "designedAround": {
+      "label": "DESIGNED AROUND THE INTERACTION",
+      "title": "The Right Touchpoint Starts With What People Need to Do.",
+      "description": "A successful interactive experience is not defined by the kiosk alone. It starts with the user, the task, the environment and what should happen after the interaction.",
+      "steps": [
+        { "title": "Person", "question": "Who will use it?" },
+        { "title": "Need", "question": "What are they trying to accomplish?" },
+        { "title": "Task", "question": "What should they be able to do?" },
+        { "title": "Environment", "question": "Where will it be used?" },
+        { "title": "Interface", "question": "What is the simplest experience?" },
+        { "title": "Outcome", "question": "What should happen next?" }
+      ],
+      "linkText": "We design the experience before selecting the device.",
+      "aspects": [
+        { "title": "People", "description": "Real needs" },
+        { "title": "Experience", "description": "Intuitive and useful" },
+        { "title": "Touchpoint", "description": "Hardware and interface" },
+        { "title": "Connected", "description": "To your systems" }
+      ],
+      "imageAlt": "Two interactive kiosk devices side by side (placeholder)"
+    },
+    "solutions": {
+      "label": "SOLUTIONS",
+      "title": "Different Touchpoints for Different Experiences.",
+      "viewAll": "View All Solutions",
+      "cards": [
+        {
+          "title": "Interactive Display",
+          "description": "Collaboration, presentation and shared experiences.",
+          "linkLabel": "Explore"
+        },
+        {
+          "title": "Information Kiosk",
+          "description": "Self-service access to information and services.",
+          "linkLabel": "Explore"
+        },
+        {
+          "title": "Wayfinding & Directory",
+          "description": "Navigation for complex spaces.",
+          "linkLabel": "Explore"
+        },
+        {
+          "title": "Self-Service Kiosk",
+          "description": "Complete specific tasks independently.",
+          "linkLabel": "Explore"
+        },
+        {
+          "title": "Check-in & Registration",
+          "description": "Visitor registration and event check-in.",
+          "linkLabel": "Explore"
+        },
+        {
+          "title": "Product & Experience Kiosk",
+          "description": "Interactive discovery for products and brands.",
+          "linkLabel": "Explore"
+        }
+      ]
+    },
+    "realWorld": {
+      "label": "INTERACTIVE IN THE REAL WORLD",
+      "title": "Built Around What People Need to Do.",
+      "viewAll": "View All Use Cases",
+      "items": [
+        { "label": "Retail & Customer Experience" },
+        { "label": "Office & Workplace" },
+        { "label": "Venue & Exhibition" },
+        { "label": "Public Service" },
+        { "label": "Transportation & Large Places" },
+        { "label": "Tourism & Visitor Experience" }
+      ]
+    },
+    "completeExperience": {
+      "label": "THE COMPLETE EXPERIENCE",
+      "title": "More Than a Touchscreen.",
+      "description": "A useful interactive solution depends on more than the display itself. Thunder brings together the experience, device, software, connectivity and operational workflow as one complete touchpoint.",
+      "primaryCta": "Talk to Thunder",
+      "secondaryCta": "See How It Works",
+      "layers": [
+        {
+          "name": "Experience & UX",
+          "description": "User journey and interface design"
+        },
+        {
+          "name": "Application",
+          "description": "Content, services and features"
+        },
+        {
+          "name": "Interactive Device",
+          "description": "Display, kiosk and peripherals"
+        },
+        {
+          "name": "Connectivity & Integration",
+          "description": "Connect with your systems"
+        },
+        {
+          "name": "Workflow & Services",
+          "description": "Turn interaction into action"
+        },
+        {
+          "name": "Operation",
+          "description": "Monitor, support and improve"
+        }
+      ],
+      "imageAlt": "Isometric graphic of the layered interactive system (placeholder)"
+    },
+    "capabilities": {
+      "label": "INTERACTION CAPABILITIES",
+      "title": "From Simple Interaction to Connected Service.",
+      "viewAll": "Explore Capabilities",
+      "items": [
+        { "label": "Browse & Explore" },
+        { "label": "Search & Find" },
+        { "label": "Navigate" },
+        { "label": "Register & Check In" },
+        { "label": "Request" },
+        { "label": "Scan & Identify" },
+        { "label": "Connect" },
+        { "label": "Complete Transaction" }
+      ],
+      "connectedJourney": {
+        "label": "CONNECTED JOURNEY",
+        "title": "The Experience Does Not Have to End at the Kiosk.",
+        "description": "A physical touchpoint can be part of a wider journey — connecting to web, mobile, LINE and your operational systems when the experience requires it.",
+        "phoneText": "Continue on your phone",
+        "cta": "Explore Connected Experiences",
+        "imageAlt": "QR code and phone showing a handoff from kiosk to mobile (placeholder)"
+      }
+    },
+    "howWeWork": {
+      "label": "HOW WE WORK",
+      "title": "From Interaction to Operation.",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Understand",
+          "items": ["People", "Task", "Space", "Outcome"]
+        },
+        {
+          "number": "02",
+          "title": "Design",
+          "items": ["Journey", "UX", "Interface", "System"]
+        },
+        {
+          "number": "03",
+          "title": "Deliver",
+          "items": ["Device", "Integration", "Installation"]
+        },
+        {
+          "number": "04",
+          "title": "Operate",
+          "items": ["Manage", "Monitor", "Support", "Improve"]
+        }
+      ]
+    },
+    "inAction": {
+      "label": "INTERACTIVE IN ACTION",
+      "title": "See It in the Real World.",
+      "viewAll": "View All Projects",
+      "projects": [
+        { "name": "Interactive Wayfinding", "tag": "Transportation Hub" },
+        { "name": "Visitor Registration", "tag": "Convention & Exhibition" },
+        { "name": "Retail Experience", "tag": "Shopping Mall" },
+        { "name": "Public Information", "tag": "Government Service" },
+        { "name": "Campus Directory", "tag": "Education" },
+        { "name": "Tourism Information", "tag": "Visitor Attraction" }
+      ]
+    },
+    "bottomCta": {
+      "label": "START YOUR INTERACTIVE PROJECT",
+      "title": "What Should People Be Able to Do Here?",
+      "description": "Tell us about the people, the space and what you want them to accomplish. We'll help you design the right interactive approach.",
+      "primaryCta": "Talk to Thunder",
+      "secondaryCta": "Get a Quote",
+      "sideText": "INTERACTIONS   PEOPLE   PLACES   POSSIBILITIES"
+    }
+  }
+}

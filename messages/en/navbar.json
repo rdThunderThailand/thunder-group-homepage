@@ -1,0 +1,19 @@
+{
+  "primaryLabel": "Primary",
+  "brandHome": "Thunder — home",
+  "nav": {
+    "whatWeDo": "What We Do",
+    "solutions": "Solutions",
+    "businesses": "Businesses",
+    "projects": "Projects",
+    "partners": "Partners",
+    "insights": "Insights",
+    "about": "About"
+  },
+  "search": "Search",
+  "openMenu": "Open menu",
+  "closeMenu": "Close menu",
+  "changeLanguage": "Change language",
+  "cta": "Talk to Thunder",
+  "menuPreview": "{section} menu — coming soon"
+}

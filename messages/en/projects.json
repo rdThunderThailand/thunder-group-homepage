@@ -1,0 +1,27 @@
+{
+  "metaTitle": "Projects — Thunder",
+  "metaDescription": "Selected work — turning ideas into real outcomes across workplaces and public spaces.",
+  "hero": {
+    "eyebrow": "Projects",
+    "title": "Turning ideas into real outcomes.",
+    "description": "A look at the workplaces, public spaces and digital experiences we've helped create."
+  },
+  "primary": {
+    "eyebrow": "Selected work",
+    "title": "Recent projects",
+    "description": "Case studies with full detail are on the way."
+  },
+  "secondary": {
+    "eyebrow": "By outcome",
+    "title": "What we help create",
+    "description": "Smarter workplaces, more connected places, and experiences people remember. Detailed content is on the way."
+  },
+  "items": [
+    { "title": "Modern Workplace for a Growing Team", "description": "A more connected place to work." },
+    { "title": "Digital Experience at a Landmark Destination", "description": "An experience visitors remember." },
+    { "title": "A Smarter Public Space", "description": "Technology for a more connected city." },
+    { "title": "Campus-Wide Communication Rollout", "description": "One message, everywhere it's needed." },
+    { "title": "Retail Network Refresh", "description": "Consistent experiences across every branch." },
+    { "title": "Connected Operations Center", "description": "One view of everything that matters." }
+  ]
+}

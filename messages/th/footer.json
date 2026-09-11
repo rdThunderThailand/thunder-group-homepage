@@ -1,0 +1,46 @@
+{
+  "tagline": "พื้นที่แห่งการร่วมสร้างสิ่งที่ไม่ธรรมดา",
+  "columns": {
+    "solutions": {
+      "title": "โซลูชัน",
+      "digitalSignageMedia": "Digital Signage & Media",
+      "communication": "Communication",
+      "thunderCare": "Thunder Care",
+      "assetIntelligence": "Asset Intelligence"
+    },
+    "businesses": {
+      "title": "กลุ่มธุรกิจ",
+      "thunderDisplay": "Thunder Display",
+      "thunderOne": "ThunderOne",
+      "cityZen": "CityZen",
+      "wonder": "Wonder"
+    },
+    "explore": {
+      "title": "สำรวจ",
+      "projects": "โครงการ",
+      "insights": "อินไซต์",
+      "partners": "พันธมิตร"
+    },
+    "thunder": {
+      "title": "Thunder",
+      "about": "เกี่ยวกับ Thunder",
+      "purpose": "จุดมุ่งหมาย",
+      "careers": "ร่วมงานกับเรา",
+      "contact": "ติดต่อเรา"
+    }
+  },
+  "social": {
+    "heading": "ติดตาม Thunder",
+    "linkedin": "Thunder บน LinkedIn",
+    "youtube": "Thunder บน YouTube",
+    "line": "Thunder บน LINE"
+  },
+  "changeLanguage": "เปลี่ยนภาษา",
+  "copyright": "© {year} Thunder Co., Ltd. สงวนลิขสิทธิ์",
+  "legal": {
+    "privacy": "ความเป็นส่วนตัว",
+    "terms": "ข้อกำหนดการใช้งาน",
+    "cookies": "คุกกี้",
+    "sitemap": "แผนผังเว็บไซต์"
+  }
+}

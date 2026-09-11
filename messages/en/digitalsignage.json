@@ -1,0 +1,162 @@
+{
+  "metaTitle": "Digital Signage — Thunder",
+  "metaDescription": "Create, manage and deliver the right content to the right screens with a digital signage solution designed around how your organization communicates.",
+  "content": {
+    "hero": {
+      "topLeft": "DISPLAY SOLUTIONS",
+      "label": "DIGITAL SIGNAGE",
+      "title": "Turn Every Screen Into a Communication Channel.",
+      "description": "Create, manage and deliver the right content to the right screens — across one location or many — with a digital signage solution designed around how your organization communicates.",
+      "primaryCta": "Talk to Thunder",
+      "secondaryCta": "Explore the Solution",
+      "footNote": "TECHNOLOGY FOR A MORE CONNECTED WORLD",
+      "imageCaption": "More than screens. A more connected world.",
+      "imageOverlayLines": ["SPACES", "PEOPLE", "IDEAS", "IN MOTION"],
+      "imageAlt": "Building lobby with a large digital display (placeholder)"
+    },
+    "why": {
+      "label": "WHY DIGITAL SIGNAGE",
+      "title": "Your Screens Should Do More Than Just Display Content.",
+      "description": "When screens, content and locations are managed separately, keeping information accurate and up to date becomes harder as your organization grows.",
+      "beforeLabel": "Before",
+      "afterLabel": "After",
+      "cards": [
+        {
+          "before": {
+            "title": "Static & Manual",
+            "description": "Content updated screen by screen."
+          },
+          "after": {
+            "title": "Connected & Managed",
+            "description": "Content managed centrally and delivered where it needs to go."
+          }
+        },
+        {
+          "before": {
+            "title": "Same Content Everywhere",
+            "description": "Every screen shows the same thing."
+          },
+          "after": {
+            "title": "Right Content, Right Place",
+            "description": "Different content for different audiences, locations and times."
+          }
+        },
+        {
+          "before": {
+            "title": "Difficult to Monitor",
+            "description": "You do not always know what is playing or whether a screen is operating correctly."
+          },
+          "after": {
+            "title": "Visible & Manageable",
+            "description": "See what should be playing, where it should be playing and how your screen network is operating."
+          }
+        }
+      ]
+    },
+    "solution": {
+      "label": "THE SOLUTION",
+      "title": "One Connected Digital Signage System.",
+      "description": "Thunder brings together displays, content management, connectivity and ongoing operation into a solution designed for your environment.",
+      "cta": "See How It Works",
+      "steps": [
+        {
+          "name": "CONTENT",
+          "items": ["Media", "Messages", "Information", "Campaigns"]
+        },
+        {
+          "name": "MANAGE",
+          "items": ["Create", "Organize", "Schedule", "Publish"]
+        },
+        {
+          "name": "DELIVER",
+          "items": ["Location", "Channel", "Screen", "Device"]
+        },
+        {
+          "name": "OPERATE",
+          "items": ["Monitor", "Update", "Support", "Improve"]
+        }
+      ],
+      "caption": "FROM CONTENT TO IMPACT. EVERYWHERE."
+    },
+    "thunderone": {
+      "label": "CONNECTED BY THUNDERONE",
+      "title": "From Screens to a Managed Media Network.",
+      "description": "ThunderOne Media connects content, screens, channels and operations so your team can manage digital communication as one connected system.",
+      "cta": "Explore ThunderOne Media",
+      "dashboardCaption": "Media Library",
+      "imageAlt": "Laptop showing the Media Library dashboard (placeholder)",
+      "features": [
+        {
+          "title": "Manage Your Media",
+          "description": "Keep images, videos and other media organized."
+        },
+        {
+          "title": "Build Playlists",
+          "description": "Combine content for different audiences."
+        },
+        {
+          "title": "Plan & Schedule",
+          "description": "Decide what should play, where and when."
+        },
+        {
+          "title": "Publish Across Channels",
+          "description": "Deliver content to selected screens and locations."
+        },
+        {
+          "title": "Know What's Playing",
+          "description": "See current and upcoming content."
+        },
+        {
+          "title": "Manage Screens",
+          "description": "Keep screen information and status connected."
+        }
+      ]
+    },
+    "useCases": {
+      "label": "USE CASES",
+      "title": "One Platform. Many Ways to Communicate.",
+      "description": "Digital Signage can support different communication needs across your organization, customers and physical spaces.",
+      "cta": "Talk to Us About Your Use Case",
+      "items": [
+        { "label": "Corporate Communication" },
+        { "label": "Retail & Customer Experience" },
+        { "label": "Information & Wayfinding" },
+        { "label": "Public Communication" },
+        { "label": "Operations & Dashboard" },
+        { "label": "Multi-Site Communication" }
+      ]
+    },
+    "designedForSpace": {
+      "label": "DESIGNED FOR YOUR SPACE",
+      "title": "The Right Solution Starts With the Right Context.",
+      "description": "The right digital signage system depends on more than screen size. We consider the space, audience, content, operating environment and how your team will manage it over time.",
+      "link": "Tell Us About Your Environment",
+      "items": [
+        {
+          "title": "Space",
+          "lines": ["Indoor · Outdoor", "Viewing Distance · Lighting", "Installation"]
+        },
+        {
+          "title": "Audience",
+          "lines": ["Employees · Customers", "Visitors · Public"]
+        },
+        {
+          "title": "Content",
+          "lines": ["Information · Promotion", "Video · Data · Interactive"]
+        },
+        {
+          "title": "Operation",
+          "lines": ["Hours · Locations", "Content Frequency", "User Roles"]
+        },
+        {
+          "title": "Technology",
+          "lines": ["Display · Player · Network", "Control · Integration"]
+        },
+        {
+          "title": "Support",
+          "lines": ["Monitoring · Maintenance", "Service · Lifecycle"]
+        }
+      ]
+    }
+  }
+}

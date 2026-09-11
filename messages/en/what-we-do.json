@@ -1,0 +1,25 @@
+{
+  "metaTitle": "What We Do — Thunder",
+  "metaDescription": "How Thunder helps you buy, rent and build with technology — and keep it all running.",
+  "hero": {
+    "eyebrow": "What We Do",
+    "title": "Start with what you need.",
+    "description": "Buy or rent technology, build a smarter workplace, solve IT and operations problems, or shape better places — we help you find the right path."
+  },
+  "primary": {
+    "eyebrow": "How we help",
+    "title": "Four ways to get moving",
+    "description": "Each path connects you to the right people, technology and partners to make it happen."
+  },
+  "secondary": {
+    "eyebrow": "Our approach",
+    "title": "Co-creation, end to end",
+    "description": "From the first conversation to long-term support, we work alongside your team. Detailed content is on the way."
+  },
+  "items": [
+    { "title": "Buy Technology", "description": "Find and own the right technology for your business." },
+    { "title": "Rent Technology", "description": "Access the technology you need, only for as long as you need it." },
+    { "title": "Build a Smarter Workplace", "description": "Create a more connected, productive place to work." },
+    { "title": "Solve IT & Operations Problems", "description": "Keep your technology and operations running reliably." }
+  ]
+}

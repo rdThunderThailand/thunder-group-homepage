@@ -1,0 +1,25 @@
+{
+  "metaTitle": "Businesses — Thunder",
+  "metaDescription": "The Thunder businesses: Thunder Display, ThunderOne, CityZen and Wonder.",
+  "hero": {
+    "eyebrow": "Businesses",
+    "title": "Different capabilities. A wider possibility.",
+    "description": "Four businesses, each with its own focus, working together to create greater value for our customers."
+  },
+  "primary": {
+    "eyebrow": "The Thunder businesses",
+    "title": "Four businesses, one group",
+    "description": "Explore each business — dedicated pages are on the way."
+  },
+  "secondary": {
+    "eyebrow": "How they work together",
+    "title": "Better together",
+    "description": "The businesses share people, platforms and partners so a single team can deliver across all of them. Detailed content is on the way."
+  },
+  "items": [
+    { "title": "Thunder Display", "description": "Visual experiences for real spaces." },
+    { "title": "ThunderOne", "description": "Workplace technology and communication." },
+    { "title": "CityZen", "description": "Smarter places for better communities." },
+    { "title": "Wonder", "description": "Experiences that bring people closer." }
+  ]
+}

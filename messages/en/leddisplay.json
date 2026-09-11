@@ -1,0 +1,218 @@
+{
+  "metaTitle": "LED Display — Thunder",
+  "metaDescription": "Create large-scale visual experiences designed around your space, audience and purpose — from indoor environments to outdoor landmarks and uniquely shaped installations.",
+  "content": {
+    "breadcrumb": {
+      "home": "Home",
+      "display": "Display Solutions",
+      "current": "LED Display"
+    },
+    "hero": {
+      "label": "LED DISPLAY",
+      "title": "Make Every Space More Visible.",
+      "description": "Create large-scale visual experiences designed around your space, audience and purpose — from indoor environments to outdoor landmarks and uniquely shaped installations.",
+      "primaryCta": "Talk to Thunder",
+      "secondaryCta": "Explore LED Solutions",
+      "cornerLines": ["SPACES", "PEOPLE", "POSSIBILITIES"],
+      "imageOverlayLines": ["REAL SPACES", "REAL PEOPLE", "REAL POSSIBILITIES"],
+      "imageAlt": "Building with a large curved LED display showing generative art (placeholder)"
+    },
+    "whyLed": {
+      "label": "WHY LED",
+      "title": "When the Experience Needs More Scale.",
+      "description": "LED Display gives you the freedom to create visual experiences beyond conventional screen sizes — across different dimensions, viewing distances, environments and architectural forms.",
+      "features": [
+        {
+          "title": "Larger Scale",
+          "description": "Create visual surfaces beyond conventional display sizes."
+        },
+        {
+          "title": "Flexible Form",
+          "description": "Design around different dimensions, shapes and spaces."
+        },
+        {
+          "title": "Designed for the Environment",
+          "description": "Perform in various lighting and weather conditions."
+        },
+        {
+          "title": "Built for Continuous Use",
+          "description": "Engineered for long-term operation, maintenance and support."
+        }
+      ],
+      "imageOverlay": "BIGGER BRIGHTER TOGETHER",
+      "imageAlt": "Building exterior with an LED facade at dusk (placeholder)"
+    },
+    "designedAroundSpace": {
+      "label": "DESIGNED AROUND YOUR SPACE",
+      "title": "The Right LED Display Starts With Where It Will Live.",
+      "description": "There is no single LED specification that fits every project. The right solution depends on the environment, how people will see it, what it needs to communicate and how it will operate over time.",
+      "factors": [
+        "Space",
+        "Viewing Distance",
+        "Audience",
+        "Content",
+        "Environment",
+        "Operation"
+      ],
+      "linkText": "→ We design from context before selecting technology.",
+      "imageAlt": "Shopping mall with large ceiling and wall LED displays (placeholder)"
+    },
+    "ledSolutions": {
+      "label": "LED SOLUTIONS",
+      "title": "LED for Different Spaces and Experiences.",
+      "viewAll": "Explore All LED Solutions",
+      "cards": [
+        {
+          "title": "Indoor LED",
+          "description": "High-impact visual experiences for indoor environments.",
+          "linkLabel": "Explore"
+        },
+        {
+          "title": "Outdoor LED",
+          "description": "High-visibility LED systems for outdoor environments.",
+          "linkLabel": "Explore"
+        },
+        {
+          "title": "Fine-Pitch LED",
+          "description": "High-resolution LED for closer viewing environments.",
+          "linkLabel": "Explore"
+        },
+        {
+          "title": "Creative & Architectural LED",
+          "description": "Designed around curved surfaces and unique forms.",
+          "linkLabel": "Explore"
+        },
+        {
+          "title": "Transparent LED",
+          "description": "Integrate with glass and architectural environments.",
+          "linkLabel": "Explore"
+        },
+        {
+          "title": "Large-Format LED",
+          "description": "For spaces where scale, visibility and impact are central.",
+          "linkLabel": "Explore"
+        }
+      ]
+    },
+    "realWorld": {
+      "label": "LED IN THE REAL WORLD",
+      "title": "Built Around What the Space Needs to Do.",
+      "viewAll": "See All Use Cases",
+      "items": [
+        { "label": "Retail & Brand Experience" },
+        { "label": "Corporate & Workplace" },
+        { "label": "Control Room & Command Center" },
+        { "label": "Event & Venue" },
+        { "label": "Public Space & Transportation" },
+        { "label": "Architecture & Landmark" }
+      ]
+    },
+    "completeSystem": {
+      "label": "THE COMPLETE SYSTEM",
+      "title": "More Than an LED Screen.",
+      "description": "A successful LED installation depends on more than the display itself. Thunder brings together the display, structure, control, connectivity, power and operational requirements as one complete system.",
+      "primaryCta": "Talk to Thunder",
+      "secondaryCta": "Learn about our approach",
+      "layers": [
+        { "name": "Content" },
+        { "name": "Control & Processing" },
+        { "name": "LED Display" },
+        { "name": "Structure & Installation" },
+        { "name": "Power & Connectivity" },
+        { "name": "Monitoring & Operation" }
+      ],
+      "imageAlt": "Isometric graphic of the layered LED system (placeholder)"
+    },
+    "designingRightLed": {
+      "label": "DESIGNING THE RIGHT LED",
+      "title": "Technology Follows the Viewing Experience.",
+      "description": "We select the LED configuration based on how the display needs to perform in its real environment.",
+      "items": [
+        { "title": "Viewing Distance" },
+        { "title": "Resolution & Pixel Pitch" },
+        { "title": "Brightness" },
+        { "title": "Display Size & Ratio" },
+        { "title": "Installation & Structure" },
+        { "title": "Operating Environment" }
+      ],
+      "imageAlt": "Close-up of an LED module (placeholder)"
+    },
+    "connectedOperation": {
+      "label": "CONNECTED OPERATION",
+      "title": "From Visual Installation to Managed Experience.",
+      "description": "Where the project requires ongoing content, device and operational management, Thunder can connect the display environment with the systems needed to manage it over time.",
+      "primaryCta": "Explore Digital Signage",
+      "secondaryCta": "Connected by ThunderOne",
+      "imageOverlay": "TURN SPACES INTO POSSIBILITIES",
+      "imageAlt": "Operator working at control-room screens (placeholder)"
+    },
+    "howWeWork": {
+      "label": "HOW WE WORK",
+      "title": "From Space to Operation.",
+      "note": "A clear process. A brighter outcome.",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Understand",
+          "items": ["Space", "Purpose", "Audience", "Environment"]
+        },
+        {
+          "number": "02",
+          "title": "Design",
+          "items": ["Viewing", "LED Configuration", "Structure", "System"]
+        },
+        {
+          "number": "03",
+          "title": "Deliver",
+          "items": ["Supply", "Installation", "Integration", "Commissioning"]
+        },
+        {
+          "number": "04",
+          "title": "Operate",
+          "items": ["Monitoring", "Maintenance", "Support", "Improvement"]
+        }
+      ]
+    },
+    "inAction": {
+      "label": "LED DISPLAY IN ACTION",
+      "title": "See It in the Real World.",
+      "viewAll": "View All Projects",
+      "projects": [
+        { "name": "Project Name 01", "tag": "Retail · Indoor LED" },
+        { "name": "Project Name 02", "tag": "Corporate · Fine-Pitch LED" },
+        { "name": "Project Name 03", "tag": "Public Space · Outdoor LED" },
+        { "name": "Project Name 04", "tag": "Event · Creative LED" }
+      ]
+    },
+    "howToStart": {
+      "label": "HOW DO YOU WANT TO START?",
+      "title": "Choose the Path That Fits Your Project.",
+      "viewAll": "View All Options",
+      "options": [
+        {
+          "title": "Build / Buy",
+          "description": "For permanent LED installations designed around your space.",
+          "linkLabel": "Talk to Thunder"
+        },
+        {
+          "title": "Rent",
+          "description": "For events, campaigns or short-term requirements.",
+          "linkLabel": "Explore Rental"
+        },
+        {
+          "title": "Not Sure Yet",
+          "description": "Start with the space and what you're trying to achieve. We'll help you work through the options.",
+          "linkLabel": "Talk to Thunder"
+        }
+      ]
+    },
+    "bottomCta": {
+      "label": "START YOUR LED PROJECT",
+      "title": "What Do You Want the Space to Become?",
+      "description": "Tell us about the space, how people will experience it, and what you want the display to achieve. We'll help you work through the right LED approach.",
+      "primaryCta": "Talk to Thunder",
+      "secondaryCta": "Get a Quote",
+      "sideText": "A MORE CONNECTED WORLD"
+    }
+  }
+}
