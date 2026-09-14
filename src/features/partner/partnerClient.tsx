@@ -124,6 +124,7 @@ export function PartnerClient({ content, locale }: PartnerClientProps) {
                       }
                       onContinue={() => dispatch({ type: "NEXT_STEP" })}
                       canContinue={isStep1Valid(state.account)}
+                      incompleteHint={content.incompleteHint}
                     />
                     <Step1Panel content={content.step1.panel} />
                   </div>
@@ -140,6 +141,7 @@ export function PartnerClient({ content, locale }: PartnerClientProps) {
                       onBack={() => dispatch({ type: "BACK_STEP" })}
                       onContinue={() => dispatch({ type: "NEXT_STEP" })}
                       canContinue={isStep2Valid(state.company)}
+                      incompleteHint={content.incompleteHint}
                     />
                     <Step2Panel content={content.step2.panel} />
                   </div>
@@ -154,6 +156,7 @@ export function PartnerClient({ content, locale }: PartnerClientProps) {
                       onBack={() => dispatch({ type: "BACK_STEP" })}
                       onContinue={() => dispatch({ type: "NEXT_STEP" })}
                       canContinue={isStep3Valid(state.partnerTypes)}
+                      incompleteHint={content.incompleteHint}
                     />
                     <Step3Panel content={content.step3.panel} />
                   </div>
@@ -176,6 +179,7 @@ export function PartnerClient({ content, locale }: PartnerClientProps) {
                       onBack={() => dispatch({ type: "BACK_STEP" })}
                       onContinue={() => dispatch({ type: "NEXT_STEP" })}
                       canContinue={isStep4Valid(state.additional)}
+                      incompleteHint={content.incompleteHint}
                     />
                     <Step4Panel
                       content={content.step4.panel}

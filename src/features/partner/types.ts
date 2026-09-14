@@ -295,6 +295,10 @@ export type PartnerPageContent = {
   heading: string;
   subtitleStep1: string;
   subtitleDefault: string;
+  /** Shown under a step's "Continue" button while it's disabled — the
+   *  dropdown fields are the easiest required field to miss since they don't
+   *  look empty the way a blank text input does. */
+  incompleteHint: string;
   stepper: StepperContent;
   step1: Step1Content;
   step2: Step2Content;

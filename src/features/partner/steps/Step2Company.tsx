@@ -17,6 +17,7 @@ type Step2CompanyProps = {
   onBack: () => void;
   onContinue: () => void;
   canContinue: boolean;
+  incompleteHint: string;
 };
 
 export function Step2Company({
@@ -26,6 +27,7 @@ export function Step2Company({
   onBack,
   onContinue,
   canContinue,
+  incompleteHint,
 }: Step2CompanyProps) {
   const { form } = content;
 
@@ -136,6 +138,7 @@ export function Step2Company({
           onBack={onBack}
           onContinue={onContinue}
           continueDisabled={!canContinue}
+          incompleteHint={incompleteHint}
         />
       </div>
     </div>
