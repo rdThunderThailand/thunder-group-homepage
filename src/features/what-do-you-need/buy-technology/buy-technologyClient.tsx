@@ -14,6 +14,15 @@
 // namespace, plus the brand wordmark from `Common`) and passed in as plain
 // props — nothing in this tree calls `useTranslations`.
 
+import { useRef } from "react";
+import {
+  motion,
+  useMotionValue,
+  useReducedMotion,
+  useScroll,
+  useSpring,
+  useTransform,
+} from "framer-motion";
 import {
   ArrowRight,
   BarChart3,
@@ -29,7 +38,6 @@ import {
   Tag,
   Touchpad,
   Users,
-  Zap,
 } from "lucide-react";
 import Image, { type StaticImageData } from "next/image";
 import technologyHero from "@/image/buy-technology/technology-hero.png";
@@ -82,7 +90,6 @@ type BuyTechnologyClientProps = {
 
 export function BuyTechnologyClient({
   breadcrumb,
-  brand,
   hero,
   categorySection,
   ctaStrip,
@@ -90,7 +97,7 @@ export function BuyTechnologyClient({
 }: BuyTechnologyClientProps) {
   return (
     <>
-      <HeroSection content={hero} breadcrumb={breadcrumb} brand={brand} />
+      <HeroSection content={hero} breadcrumb={breadcrumb} />
       <CategorySection content={categorySection} />
       <CtaStrip content={ctaStrip} />
       <BottomBanner content={bottomBanner} />
@@ -108,32 +115,96 @@ export function BuyTechnologyClient({
 type HeroSectionProps = {
   content: TechnologyHeroContent;
   breadcrumb: BreadcrumbContent;
-  brand: string;
 };
 
-function HeroSection({ content, breadcrumb, brand }: HeroSectionProps) {
-  const sideNoteWords = content.imageSideNote
-    .split("/")
-    .map((word) => word.trim())
-    .filter(Boolean);
+function HeroSection({ content, breadcrumb }: HeroSectionProps) {
+  const sectionRef = useRef<HTMLElement>(null);
+  const shouldReduceMotion = useReducedMotion();
+  const pointerX = useMotionValue(0);
+  const pointerY = useMotionValue(0);
+  const smoothX = useSpring(pointerX, { stiffness: 75, damping: 24 });
+  const smoothY = useSpring(pointerY, { stiffness: 75, damping: 24 });
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const parallaxY = useTransform(scrollYProgress, [0, 1], [0, 72]);
+
+  const moveImage = (event: React.PointerEvent<HTMLElement>) => {
+    if (shouldReduceMotion || event.pointerType === "touch") return;
+
+    const bounds = event.currentTarget.getBoundingClientRect();
+    pointerX.set(((event.clientX - bounds.left) / bounds.width - 0.5) * -12);
+    pointerY.set(((event.clientY - bounds.top) / bounds.height - 0.5) * -8);
+  };
+
+  const resetImage = () => {
+    pointerX.set(0);
+    pointerY.set(0);
+  };
 
   return (
-    <section className="relative -mt-16 overflow-hidden bg-ink text-white lg:-mt-20">
+    <section
+      ref={sectionRef}
+      className="relative -mt-16 overflow-hidden bg-ink text-white lg:-mt-20"
+      onPointerMove={moveImage}
+      onPointerLeave={resetImage}
+    >
       {/* Full-bleed hero photo — showroom video wall + welcome desk. The image
           carries its own dark panel on the left; the scrims deepen it so the
           copy stays legible while the video wall keeps its glow on the right. */}
-      <div className="absolute inset-0" aria-hidden="true">
-        <Image
-          src={technologyHero}
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-[65%_50%]"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/10 to-transparent" />
-      </div>
+      <motion.div
+        className="absolute -inset-[3%]"
+        style={shouldReduceMotion ? undefined : { y: parallaxY }}
+        aria-hidden="true"
+      >
+        <motion.div
+          className="relative h-full w-full"
+          initial={shouldReduceMotion ? false : { scale: 1.08 }}
+          animate={{ scale: 1.02 }}
+          transition={{ duration: 2.4, ease: [0.22, 1, 0.36, 1] }}
+          style={
+            shouldReduceMotion
+              ? undefined
+              : { x: smoothX, y: smoothY }
+          }
+        >
+          <Image
+            src={technologyHero}
+            alt=""
+            fill
+            priority
+            sizes="106vw"
+            className="object-cover object-[65%_50%] brightness-[1.18] contrast-[1.04] saturate-[1.08]"
+          />
+
+          <motion.div
+            className="absolute right-[4%] top-[4%] h-[58%] w-[52%] rounded-[50%] bg-cyan-300/15 blur-3xl mix-blend-screen"
+            animate={
+              shouldReduceMotion
+                ? undefined
+                : { opacity: [0.25, 0.55, 0.25], scale: [0.96, 1.04, 0.96] }
+            }
+            transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+          />
+
+          {!shouldReduceMotion && (
+            <motion.div
+              className="absolute inset-y-[-20%] -left-[35%] w-[34%] rotate-12 bg-gradient-to-r from-transparent via-cyan-200/25 to-transparent blur-xl mix-blend-screen"
+              animate={{ x: ["0%", "410%"] }}
+              transition={{
+                duration: 1.35,
+                repeat: Infinity,
+                repeatDelay: 4.15,
+                ease: [0.4, 0, 0.2, 1],
+              }}
+            />
+          )}
+        </motion.div>
+
+        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/72 to-ink/15" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/65 via-ink/5 to-transparent" />
+      </motion.div>
 
       <div className="relative mx-auto max-w-7xl px-4 pb-14 pt-28 sm:px-6 lg:px-8 lg:pb-24 lg:pt-36">
         {/* Breadcrumb — "Home > Technology" */}
@@ -148,7 +219,7 @@ function HeroSection({ content, breadcrumb, brand }: HeroSectionProps) {
           <span className="text-white/85">{breadcrumb.current}</span>
         </nav>
 
-        <div className="mt-10 grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
+        <div className="mt-10 lg:min-h-[22rem] lg:max-w-[calc(50%-2rem)]">
           {/* Left — copy */}
           <div>
             <SectionEyebrow label={content.eyebrow} tone="dark" />
@@ -163,49 +234,24 @@ function HeroSection({ content, breadcrumb, brand }: HeroSectionProps) {
               {content.features.map((feature, index) => {
                 const Icon = FEATURE_ICONS[index] ?? FEATURE_ICONS[0];
                 return (
-                  <div key={feature.title} className="flex flex-col gap-2">
+                  <div key={feature.title} className="flex items-start gap-3">
                     <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white">
                       <Icon className="h-4 w-4" aria-hidden="true" />
                     </span>
-                    <p className="text-sm font-semibold text-white">
-                      {feature.title}
-                    </p>
-                    <p className="text-xs leading-relaxed text-white/55">
-                      {feature.description}
-                    </p>
+                    <div className="min-w-0 pt-0.5">
+                      <p className="text-sm font-semibold text-white">
+                        {feature.title}
+                      </p>
+                      <p className="mt-1 text-xs leading-relaxed text-white/55">
+                        {feature.description}
+                      </p>
+                    </div>
                   </div>
                 );
               })}
             </div>
           </div>
 
-          {/* Right — labels sitting directly on the photo (desktop only); the
-              image itself is the full-section background above. */}
-          <div className="relative hidden min-h-[22rem] lg:block">
-            {/* Overlay title — reads across the video wall */}
-            <p className="absolute left-2 top-2 max-w-[13rem] text-[0.8rem] font-semibold uppercase leading-relaxed tracking-[0.2em] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]">
-              {content.imageOverlayTitle}
-            </p>
-
-            {/* Vertical side note */}
-            <ul className="absolute right-0 top-1/2 flex -translate-y-1/2 flex-col items-end gap-1 text-[0.6rem] font-semibold uppercase tracking-[0.25em] text-white/75 drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]">
-              {sideNoteWords.map((word, index) => (
-                <li key={`${word}-${index}`}>{word}</li>
-              ))}
-            </ul>
-
-            {/* Brand watermark — over the welcome desk */}
-            <span className="absolute bottom-2 right-2 flex items-center gap-1.5 text-white/90 drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]">
-              <Zap
-                className="h-4 w-4 fill-current"
-                strokeWidth={0}
-                aria-hidden="true"
-              />
-              <span className="text-xs font-bold uppercase tracking-[0.2em]">
-                {brand}
-              </span>
-            </span>
-          </div>
         </div>
       </div>
     </section>
@@ -363,17 +409,45 @@ type BottomBannerProps = {
 };
 
 function BottomBanner({ content }: BottomBannerProps) {
+  const sectionRef = useRef<HTMLElement>(null);
+  const shouldReduceMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+  const panoramaX = useTransform(scrollYProgress, [0, 1], ["-4%", "4%"]);
+  const imageBrightness = useTransform(
+    scrollYProgress,
+    [0, 0.8],
+    ["brightness(0.72)", "brightness(1.15)"],
+  );
+  const scrimOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0.68]);
+
   return (
-    <section className="relative overflow-hidden bg-ink text-white">
-      <Image
-        src={technologyConnectedBanner}
-        alt=""
-        fill
-        sizes="100vw"
-        className="object-cover"
-      />
-      <div
+    <section
+      ref={sectionRef}
+      className="relative overflow-hidden bg-ink text-white"
+    >
+      <motion.div
+        className="absolute inset-y-0 -left-[5%] w-[110%]"
+        style={
+          shouldReduceMotion
+            ? { filter: "brightness(1)" }
+            : { x: panoramaX, filter: imageBrightness }
+        }
+        aria-hidden="true"
+      >
+        <Image
+          src={technologyConnectedBanner}
+          alt=""
+          fill
+          sizes="110vw"
+          className="object-cover"
+        />
+      </motion.div>
+      <motion.div
         className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/75 to-slate-900/60"
+        style={shouldReduceMotion ? undefined : { opacity: scrimOpacity }}
         aria-hidden="true"
       />
 

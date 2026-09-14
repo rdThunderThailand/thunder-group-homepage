@@ -1,0 +1,431 @@
+{
+  "metaTitle": "สมัครเป็น Thunder Partner — Thunder",
+  "metaDescription": "ร่วมเป็นพันธมิตรกับ Thunder ขยายโอกาสทางธุรกิจไปด้วยกัน สมัครเป็น Thunder Partner ได้ในไม่กี่ขั้นตอน",
+  "sidebar": {
+    "label": "THUNDER PARTNER PROGRAM",
+    "titleLine1": "Grow Together",
+    "titleLine2": "Create Greater Impact.",
+    "subtitle": "เป็นพันธมิตรกับ Thunder ขยายโอกาสทางธุรกิจ ไปด้วยกัน",
+    "description": "เรามองหาพันธมิตรที่พร้อมนำเทคโนโลยีและโซลูชันของเรา ไปสร้างคุณค่าให้กับลูกค้าในทุกภาคธุรกิจ",
+    "highlights": [
+      { "title": "New Revenue Opportunities", "description": "เพิ่มโอกาสทางรายได้" },
+      { "title": "Dedicated Partner Support", "description": "ทีมสนับสนุนที่เชี่ยวชาญ" },
+      { "title": "Sales & Marketing Materials", "description": "เครื่องมือการขายและการตลาด" },
+      { "title": "Training & Certification", "description": "อบรมและรับรองความรู้" },
+      { "title": "Be Part of Our Growth", "description": "เติบโตไปด้วยกัน อย่างยั่งยืน" }
+    ],
+    "imageAlt": "บรรยากาศงานอีเวนต์ Thunder คนจับมือกัน พร้อมจอดิสเพลย์ในพื้นหลัง",
+    "steps": {
+      "step1": {
+        "overlayText": "TECHNOLOGY CONNECTS PEOPLE",
+        "captionLine1": "More Opportunities",
+        "captionLine2": "A Stronger Tomorrow"
+      },
+      "step2": {
+        "overlayText": "PEOPLE PLACES POSSIBILITIES",
+        "captionLine1": "Technology Partners",
+        "captionLine2": "for a Brighter Tomorrow"
+      },
+      "step3": {
+        "overlayText": "IDEAS PEOPLE PLACES",
+        "captionLine1": "People. Technology.",
+        "captionLine2": "A Better Tomorrow."
+      },
+      "step4": {
+        "overlayText": "TECHNOLOGY PEOPLE PLACES POSSIBILITIES",
+        "captionLine1": "More Partners.",
+        "captionLine2": "A Smarter Tomorrow."
+      },
+      "step5": {
+        "overlayText": "PARTNERSHIP CONNECTS EVERYTHING",
+        "captionLine1": "One Step Away.",
+        "captionLine2": "A Shared Tomorrow."
+      },
+      "success": {
+        "overlayText": "PEOPLE TECHNOLOGY A BRIGHTER TOMORROW",
+        "captionLine1": "Partners Today,",
+        "captionLine2": "A Brighter Tomorrow."
+      }
+    }
+  },
+  "breadcrumb": {
+    "home": "หน้าแรก",
+    "partnerProgram": "Partner Program",
+    "register": "Register",
+    "applicationReceived": "Application Received"
+  },
+  "heading": "สมัครเป็น Thunder Partner",
+  "subtitleStep1": "เริ่มต้นสร้างโอกาสทางธุรกิจไปด้วยกัน เพียงไม่กี่ขั้นตอน",
+  "subtitleDefault": "ร่วมเป็นพันธมิตรกับเรา เพื่อสร้างโอกาสทางธุรกิจที่มากกว่า",
+  "stepper": {
+    "labels": [
+      "สร้างบัญชีผู้ใช้งาน",
+      "ข้อมูลบริษัท",
+      "ประเภทพันธมิตร",
+      "ข้อมูลเพิ่มเติม",
+      "ตรวจสอบและส่ง"
+    ]
+  },
+  "step1": {
+    "cardTitle": "ขั้นตอนที่ 1: สร้างบัญชีผู้ใช้งาน",
+    "cardDescription": "เริ่มต้นด้วยข้อมูลพื้นฐานของคุณ เพื่อเข้าสู่กระบวนการสมัครเป็นพันธมิตร",
+    "form": {
+      "firstNameLabel": "ชื่อ",
+      "firstNamePlaceholder": "ชื่อจริง",
+      "lastNameLabel": "นามสกุล",
+      "lastNamePlaceholder": "นามสกุล",
+      "emailLabel": "อีเมลสำหรับธุรกิจ",
+      "emailPlaceholder": "you@company.co.th",
+      "emailHelper": "ใช้สำหรับเข้าสู่ระบบและรับการติดต่อจากทีม Thunder",
+      "phoneLabel": "เบอร์โทรศัพท์",
+      "phonePlaceholder": "0X XXXX XXXX",
+      "passwordLabel": "รหัสผ่าน",
+      "passwordPlaceholder": "อย่างน้อย 8 ตัวอักษร",
+      "passwordHelper": "ต้องมีตัวอักษรภาษาอังกฤษ ตัวเลข และอักขระพิเศษ",
+      "showPasswordLabel": "แสดงรหัสผ่าน",
+      "hidePasswordLabel": "ซ่อนรหัสผ่าน",
+      "agreement": {
+        "prefix": "ฉันยอมรับ",
+        "termsLink": "ข้อกำหนดการใช้งาน",
+        "middle": "และ",
+        "privacyLink": "นโยบายความเป็นส่วนตัว",
+        "suffix": "ของ Thunder"
+      },
+      "continueButton": "ดำเนินการต่อ",
+      "loginPrompt": "มีบัญชีอยู่แล้ว?",
+      "loginLink": "เข้าสู่ระบบ"
+    },
+    "panel": {
+      "confidentialTitle": "ข้อมูลของคุณจะถูกเก็บเป็นความลับ",
+      "confidentialDescription": "เราให้ความสำคัญกับความปลอดภัย และจะใช้ข้อมูลของคุณเฉพาะเพื่อการพิจารณาการเป็นพันธมิตรเท่านั้น",
+      "help": {
+        "title": "ต้องการความช่วยเหลือ?",
+        "description": "ติดต่อทีม Partner Support",
+        "phoneLabel": "โทร",
+        "phone": "064 789 2562",
+        "emailLabel": "อีเมล",
+        "email": "partner@thunder.co.th"
+      },
+      "quote": {
+        "text": "พันธมิตรที่ดี ไม่ใช่แค่ช่วยขาย แต่คือการสร้างอนาคตไปด้วยกัน",
+        "source": "Thunder Partner Program"
+      }
+    }
+  },
+  "step2": {
+    "cardTitle": "ขั้นตอนที่ 2: ข้อมูลบริษัท",
+    "cardDescription": "กรุณากรอกข้อมูลบริษัทของคุณ เพื่อให้เราเข้าใจธุรกิจของคุณมากขึ้น",
+    "form": {
+      "nameThLabel": "ชื่อบริษัท (ภาษาไทย)",
+      "nameThPlaceholder": "บริษัท ตัวอย่าง จำกัด",
+      "nameEnLabel": "ชื่อบริษัท (ภาษาอังกฤษ)",
+      "nameEnPlaceholder": "Example Co., Ltd.",
+      "taxIdLabel": "เลขประจำตัวผู้เสียภาษีอากร",
+      "taxIdPlaceholder": "0105555123456",
+      "businessTypeLabel": "ประเภทธุรกิจ",
+      "businessTypePlaceholder": "เลือกประเภทธุรกิจ",
+      "businessTypeOptions": [
+        "Event Organizer / Exhibition",
+        "Booth Contractor",
+        "System Integrator (SI)",
+        "IT Reseller / ร้านค้า IT",
+        "ตัวแทนจำหน่าย (Dealer)",
+        "ที่ปรึกษาธุรกิจ (Consultant)",
+        "องค์กรเครือข่าย",
+        "อื่นๆ"
+      ],
+      "websiteLabel": "เว็บไซต์บริษัท",
+      "websiteOptionalTag": "(ไม่บังคับ)",
+      "websitePlaceholder": "https://www.example.co.th",
+      "phoneLabel": "เบอร์โทรศัพท์บริษัท",
+      "phonePlaceholder": "02 123 4567",
+      "addressLabel": "ที่อยู่บริษัท",
+      "addressPlaceholder": "99/88 อาคารตัวอย่าง ชั้น 10 ถนนสุทธิสารวินิจฉัย",
+      "provinceLabel": "จังหวัด",
+      "provincePlaceholder": "เลือกจังหวัด",
+      "provinceOptions": [
+        "กรุงเทพมหานคร",
+        "นนทบุรี",
+        "ปทุมธานี",
+        "สมุทรปราการ",
+        "ชลบุรี",
+        "ระยอง",
+        "เชียงใหม่",
+        "ขอนแก่น",
+        "นครราชสีมา",
+        "ภูเก็ต",
+        "สงขลา",
+        "สุราษฎร์ธานี"
+      ],
+      "districtLabel": "เขต/อำเภอ",
+      "districtPlaceholder": "เลือกเขต/อำเภอ",
+      "districtOptions": [
+        "ห้วยขวาง",
+        "บางรัก",
+        "ปทุมวัน",
+        "คลองเตย",
+        "จตุจักร",
+        "บางนา",
+        "ดินแดง",
+        "วัฒนา",
+        "สาทร",
+        "ลาดพร้าว"
+      ],
+      "postalCodeLabel": "รหัสไปรษณีย์",
+      "postalCodePlaceholder": "10310"
+    },
+    "backButton": "ย้อนกลับ",
+    "continueButton": "ดำเนินการต่อ",
+    "panel": {
+      "confidentialTitle": "ข้อมูลบริษัทของคุณจะถูกเก็บในความลับ",
+      "confidentialDescription": "เราใช้ข้อมูลนี้เพื่อการพิจารณาการเป็นพันธมิตร และจะไม่เปิดเผยข้อมูลของคุณต่อบุคคลภายนอกโดยไม่ได้รับอนุญาต",
+      "documentsBoxTitle": "เอกสารที่อาจใช้ในการพิจารณา",
+      "documentsBoxDescription": "เราอาจขอเอกสารเพิ่มเติมในภายหลัง เช่น หนังสือรับรองบริษัท หรือเอกสารภาษี",
+      "help": {
+        "title": "ต้องการความช่วยเหลือ?",
+        "description": "ติดต่อทีม Partner Support",
+        "phoneLabel": "โทร",
+        "phone": "064 789 2562",
+        "emailLabel": "อีเมล",
+        "email": "partner@thunder.co.th"
+      },
+      "quote": {
+        "text": "ความร่วมมือที่ดี เริ่มจาก ความเข้าใจในกันและกัน",
+        "source": "Thunder Partner Program"
+      }
+    }
+  },
+  "step3": {
+    "cardTitle": "ขั้นตอนที่ 3: ประเภทพันธมิตร",
+    "cardDescription": "เลือกประเภทความร่วมมือที่เหมาะกับธุรกิจของคุณ",
+    "helperNote": "คุณสามารถเลือกได้มากกว่า 1 ประเภท",
+    "options": [
+      {
+        "id": "dealer",
+        "title": "Dealer / Referral Partner",
+        "subtitle": "แนะนำลูกค้าให้ Thunder",
+        "bullets": [
+          "แนะนำโอกาสทางธุรกิจให้กับเรา",
+          "Thunder ดูแลการเสนอราคา สัญญา และการส่งมอบ",
+          "รับค่าตอบแทนตามเงื่อนไข"
+        ],
+        "suitableForLabel": "เหมาะสำหรับ:",
+        "tags": ["ตัวแทนจำหน่าย", "ที่ปรึกษา", "องค์กรเครือข่าย"]
+      },
+      {
+        "id": "reseller",
+        "title": "Reseller",
+        "subtitle": "ซื้อหรือเช่าจาก Thunder เพื่อนำไปเสนอให้ลูกค้าของคุณ",
+        "bullets": [
+          "เข้าถึงราคาพิเศษสำหรับ Partner",
+          "บริหารลูกค้าและกำหนดราคาขายเอง",
+          "Thunder สนับสนุนการส่งมอบและบริการหลังการขาย"
+        ],
+        "suitableForLabel": "เหมาะสำหรับ:",
+        "tags": ["ผู้แทนจำหน่าย", "ร้านค้า IT", "System Integrator"]
+      },
+      {
+        "id": "solution",
+        "title": "Solution / Event Partner",
+        "subtitle": "สำหรับ Event Organizer, Booth Contractor และ System Integrator",
+        "bullets": [
+          "นำสินค้าและโซลูชันของ Thunder ไปประกอบงานของคุณ",
+          "รับการสนับสนุนด้านเทคนิคและทีมงาน",
+          "ร่วมพัฒนาโซลูชันสำหรับงานเฉพาะ"
+        ],
+        "suitableForLabel": "เหมาะสำหรับ:",
+        "tags": ["Event Organizer", "Booth Contractor", "SI"]
+      },
+      {
+        "id": "both",
+        "title": "Both (Referral & Resell)",
+        "subtitle": "ทำงานร่วมกับเราทั้ง 2 รูปแบบ",
+        "bullets": [
+          "แนะนำลูกค้า และ/หรือ ซื้อไปขายต่อ",
+          "เข้าถึงสิทธิประโยชน์จากทั้งสองรูปแบบ",
+          "ยืดหยุ่นตามโมเดลธุรกิจของคุณ"
+        ],
+        "suitableForLabel": "เหมาะสำหรับ:",
+        "tags": ["ผู้ให้บริการรอบด้าน", "องค์กรขนาดใหญ่", "พันธมิตรเชิงกลยุทธ์"]
+      }
+    ],
+    "notSureBox": {
+      "title": "ไม่แน่ใจว่าแบบไหนเหมาะกับคุณ?",
+      "description": "ทีมของเรายินดีให้คำปรึกษา เพื่อช่วยเลือกประเภทความร่วมมือที่เหมาะสมกับธุรกิจของคุณ",
+      "link": "พูดคุยกับทีม Thunder →"
+    },
+    "backButton": "ย้อนกลับ",
+    "continueButton": "ดำเนินการต่อ",
+    "panel": {
+      "benefitsTitle": "สิทธิประโยชน์สำหรับ Partner",
+      "benefits": [
+        "ราคาพิเศษสำหรับ Partner",
+        "เครื่องมือการขายและสื่อการตลาด",
+        "การฝึกอบรมและให้คำปรึกษา",
+        "การสนับสนุนด้านเทคนิค",
+        "โอกาสในการร่วมโครงการพิเศษ"
+      ],
+      "quote": {
+        "text": "การมีพันธมิตรที่ดี ช่วยให้เราขยายโอกาสและสร้างคุณค่าให้กับลูกค้าได้มากขึ้น",
+        "source": "Thunder Partner Program"
+      },
+      "help": {
+        "title": "ต้องการความช่วยเหลือ?",
+        "description": "ติดต่อทีม Partner Support",
+        "phoneLabel": "โทร",
+        "phone": "064 789 2562",
+        "emailLabel": "อีเมล",
+        "email": "partner@thunder.co.th"
+      }
+    }
+  },
+  "step4": {
+    "cardTitle": "ขั้นตอนที่ 4: ข้อมูลเพิ่มเติม",
+    "cardDescription": "บอกข้อมูลเพิ่มเติมเกี่ยวกับธุรกิจของคุณ เพื่อให้เราดูแลและสนับสนุนได้ตรงความต้องการ",
+    "customerSegments": {
+      "label": "กลุ่มลูกค้าหลักของคุณคือใคร? (เลือกได้มากกว่า 1 ข้อ)",
+      "options": [
+        { "id": "enterprise", "label": "องค์กรขนาดใหญ่ (Enterprise)" },
+        { "id": "sme", "label": "องค์กรขนาดกลาง (SME)" },
+        { "id": "government", "label": "หน่วยงานภาครัฐ" },
+        { "id": "retail", "label": "ค้าปลีก / ศูนย์การค้า" },
+        { "id": "hospitality", "label": "โรงแรม / การท่องเที่ยว" },
+        { "id": "events", "label": "งานอีเวนต์ / นิทรรศการ" },
+        { "id": "education", "label": "การศึกษา" },
+        { "id": "healthcare", "label": "โรงพยาบาล / สาธารณสุข" },
+        { "id": "industrial", "label": "อุตสาหกรรม / โรงงาน" }
+      ],
+      "otherLabel": "อื่นๆ",
+      "otherPlaceholder": "ระบุ..."
+    },
+    "interestedProducts": {
+      "label": "ผลิตภัณฑ์และโซลูชันที่สนใจ (เลือกได้มากกว่า 1 ข้อ)",
+      "options": [
+        { "id": "eventRental", "label": "Event Rental (เช่าอุปกรณ์งานอีเวนต์)" },
+        { "id": "digitalDisplay", "label": "Digital Display (ซื้อขาย)" },
+        { "id": "businessRental", "label": "Business Rental (เช่าอุปกรณ์ธุรกิจ)" },
+        { "id": "workspaceSolutions", "label": "Workspace Solutions (ซอฟต์แวร์)" }
+      ],
+      "otherLabel": "อื่นๆ",
+      "otherPlaceholder": "ระบุ..."
+    },
+    "projectsPerYearLabel": "คาดการณ์จำนวนโครงการต่อปี",
+    "projectsPerYearPlaceholder": "เลือกจำนวนโครงการ",
+    "projectsPerYearOptions": [
+      "น้อยกว่า 10 โครงการ",
+      "10 - 30 โครงการ",
+      "31 - 50 โครงการ",
+      "มากกว่า 50 โครงการ"
+    ],
+    "avgProjectValueLabel": "มูลค่าโครงการเฉลี่ยต่อโครงการ (โดยประมาณ)",
+    "avgProjectValuePlaceholder": "เลือกมูลค่าโครงการ",
+    "avgProjectValueOptions": [
+      "น้อยกว่า 100,000 บาท",
+      "100,000 - 500,000 บาท",
+      "500,001 - 1,000,000 บาท",
+      "มากกว่า 1,000,000 บาท"
+    ],
+    "aboutBusinessLabel": "เล่าเกี่ยวกับธุรกิจของคุณ",
+    "aboutBusinessPlaceholder": "เราจัดงานอีเวนต์และนิทรรศการทั่วประเทศ มีทีมติดตั้งและออกแบบบูธ ต้องการนำ Digital Display และ Kiosk ของ Thunder ไปเสริมบริการให้ลูกค้า",
+    "backButton": "ย้อนกลับ",
+    "continueButton": "ดำเนินการต่อ",
+    "panel": {
+      "uploadTitle": "อัปโหลดเอกสาร (ไม่บังคับในขั้นตอนนี้)",
+      "uploadDescription": "คุณสามารถแนบเอกสารเพิ่มเติม เพื่อช่วยในการพิจารณาได้ เช่น หนังสือรับรองบริษัท, Company Profile, หรือเอกสารอื่นๆ",
+      "dropzoneLabel": "ลากไฟล์มาที่นี่ หรือ",
+      "dropzoneLink": "คลิกเพื่อเลือกไฟล์",
+      "dropzoneHint": "รองรับไฟล์ PDF, JPG, PNG (ขนาดไม่เกิน 10 MB)",
+      "tipTitle": "เคล็ดลับ",
+      "tipDescription": "การแนบเอกสารเพิ่มเติมจะช่วยให้การพิจารณาเร็วขึ้น แต่คุณสามารถข้ามขั้นตอนนี้ได้ และส่งภายหลัง",
+      "consentTitle": "คุณยินยอมรับ",
+      "consentAccurate": "ฉันยืนยันว่าข้อมูลที่ให้เป็นความจริงและถูกต้อง",
+      "consentTerms": {
+        "prefix": "ฉันยอมรับ",
+        "termsLink": "ข้อกำหนดการใช้งาน",
+        "middle": "และ",
+        "privacyLink": "นโยบายความเป็นส่วนตัว",
+        "suffix": "ของ Thunder"
+      },
+      "consentContact": "ฉันยินยอมให้ Thunder ติดต่อฉันเพื่อวัตถุประสงค์ในการเป็นพันธมิตร"
+    }
+  },
+  "step5": {
+    "cardTitle": "ขั้นตอนที่ 5: ตรวจสอบและส่ง",
+    "cardDescription": "ตรวจสอบข้อมูลทั้งหมดก่อนส่งใบสมัครสมัครพันธมิตร",
+    "sections": {
+      "account": "1. ข้อมูลผู้ใช้งาน",
+      "company": "2. ข้อมูลบริษัท",
+      "partnerType": "3. ประเภทพันธมิตรที่เลือก",
+      "additional": "4. ข้อมูลเพิ่มเติม"
+    },
+    "editLink": "แก้ไข",
+    "fields": {
+      "fullName": "ชื่อ-นามสกุล",
+      "email": "อีเมลสำหรับธุรกิจ",
+      "phone": "เบอร์โทรศัพท์",
+      "companyNameTh": "ชื่อบริษัท (ไทย)",
+      "companyNameEn": "ชื่อบริษัท (อังกฤษ)",
+      "taxId": "เลขประจำตัวผู้เสียภาษีอากร",
+      "businessType": "ประเภทธุรกิจ",
+      "website": "เว็บไซต์บริษัท",
+      "companyPhone": "เบอร์โทรศัพท์บริษัท",
+      "address": "ที่อยู่บริษัท",
+      "customerSegments": "กลุ่มลูกค้าหลัก",
+      "interestedProducts": "ผลิตภัณฑ์ที่สนใจ",
+      "projectsPerYear": "คาดการณ์จำนวนโครงการต่อปี",
+      "avgProjectValue": "มูลค่าโครงการเฉลี่ยต่อโครงการ",
+      "aboutBusiness": "เกี่ยวกับธุรกิจของคุณ"
+    },
+    "notProvided": "ไม่ได้ระบุ",
+    "backButton": "ย้อนกลับ",
+    "submitButton": "ส่งใบสมัคร"
+  },
+  "success": {
+    "thankYouLabel": "THANK YOU",
+    "title": "เราได้รับใบสมัครของคุณแล้ว",
+    "description": "ขอบคุณที่สนใจร่วมเป็นพันธมิตรกับ Thunder ทีมของเราจะตรวจสอบข้อมูล และติดต่อกลับโดยเร็วที่สุด",
+    "imageAlt": "ไอคอนซองจดหมาย",
+    "progress": {
+      "submittedLabel": "ใบสมัครถูกส่งแล้ว",
+      "reviewingLabel": "อยู่ระหว่างการตรวจสอบ",
+      "reviewingHint": "ปัจจุบัน",
+      "approvedLabel": "อนุมัติจาก Thunder",
+      "approvedHint": "รอการดำเนินการ",
+      "readyLabel": "พร้อมใช้งาน",
+      "readyHint": "คุณจะได้รับอีเมลแจ้งเมื่ออนุมัติ"
+    },
+    "applicationCard": {
+      "title": "ข้อมูลใบสมัคร",
+      "applicationNoLabel": "หมายเลขใบสมัคร",
+      "copyLabel": "คัดลอก",
+      "copiedLabel": "คัดลอกแล้ว",
+      "submittedAtLabel": "วันที่ส่งใบสมัคร",
+      "applicantLabel": "ชื่อผู้สมัคร",
+      "companyLabel": "ชื่อบริษัท",
+      "partnerTypeLabel": "ประเภทพันธมิตรที่เลือก",
+      "productsLabel": "ผลิตภัณฑ์ที่สนใจ",
+      "projectsPerYearLabel": "จำนวนโครงการต่อปี",
+      "avgProjectValueLabel": "มูลค่าโครงการโดยประมาณ"
+    },
+    "viewDetailsLink": "ดูรายละเอียดใบสมัครทั้งหมด →",
+    "nextSteps": {
+      "title": "ขั้นตอนถัดไป",
+      "items": [
+        "ทีม Thunder ตรวจสอบข้อมูล (โดยปกติใช้เวลา 1-2 วันทำการ)",
+        "เราจะติดต่อกลับทางอีเมลหรือโทรศัพท์ (หากต้องการข้อมูลเพิ่มเติม)",
+        "เมื่อได้รับการอนุมัติ คุณจะสามารถเข้าสู่ Partner Portal เพื่อใช้งานสิทธิประโยชน์ทั้งหมด"
+      ]
+    },
+    "help": {
+      "title": "ต้องการความช่วยเหลือ?",
+      "description": "ทีม Partner Support พร้อมดูแลคุณ",
+      "phoneLabel": "โทร",
+      "phone": "064 789 2562",
+      "emailLabel": "อีเมล",
+      "email": "partner@thunder.co.th",
+      "contactButton": "ติดต่อเรา →"
+    },
+    "closingNote": "คุณสามารถปิดหน้านี้ได้ เราจะส่งอีเมลยืนยันการรับใบสมัครไปยังคุณ และคุณสามารถเข้าสู่ระบบเพื่อตรวจสอบสถานะได้ตลอดเวลา",
+    "loginButton": "เข้าสู่ระบบ →"
+  }
+}

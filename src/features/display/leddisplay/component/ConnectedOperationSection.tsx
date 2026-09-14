@@ -24,7 +24,7 @@ export function ConnectedOperationSection({
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
           <div>
             <SectionEyebrow label={content.label} />
-            <h2 className="mt-5 text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl">
+            <h2 className="mt-5 text-3xl font-bold tracking-tight text-neutral-900 sm:text-[32px]">
               {content.title}
             </h2>
             <p className="mt-5 max-w-md text-base leading-relaxed text-slate-500">

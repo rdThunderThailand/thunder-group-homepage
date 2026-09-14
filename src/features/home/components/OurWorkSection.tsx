@@ -32,10 +32,10 @@ export function OurWorkSection({ content }: OurWorkSectionProps) {
             label={content.eyebrow}
             tone="dark"
           />
-          <h2 className="mt-5 text-3xl font-bold tracking-tight sm:text-4xl">
+          <h2 className="mt-5 whitespace-pre-line text-3xl font-bold tracking-tight sm:text-4xl">
             {content.title}
           </h2>
-          <p className="mt-5 max-w-md text-base leading-relaxed text-white/60">
+          <p className="mt-5 max-w-md whitespace-pre-line text-base leading-relaxed text-white/60">
             {content.description}
           </p>
           <Link
@@ -65,7 +65,7 @@ export function OurWorkSection({ content }: OurWorkSectionProps) {
               <p className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-white/60">
                 {content.featured.label}
               </p>
-              <h3 className="mt-2 text-xl font-bold leading-snug sm:text-2xl">
+              <h3 className="mt-2 whitespace-pre-line text-xl font-bold leading-snug sm:text-2xl">
                 {content.featured.title}
               </h3>
               <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-white transition-transform group-hover:translate-x-0.5">
@@ -91,7 +91,7 @@ export function OurWorkSection({ content }: OurWorkSectionProps) {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/10" />
               <div className="relative">
-                <h3 className="text-lg font-bold leading-snug">
+                <h3 className="whitespace-pre-line text-lg font-bold leading-snug">
                   {project.title}
                 </h3>
                 <span className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-white transition-transform group-hover:translate-x-0.5">

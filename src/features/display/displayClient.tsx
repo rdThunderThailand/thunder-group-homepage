@@ -24,7 +24,15 @@
 //   6      Why Thunder Display (light — copy + a four-step process flow)
 //   7      Bottom CTA banner (dark — placeholder skyline)
 
-import { Fragment } from "react";
+import { Fragment, useRef } from "react";
+import {
+  motion,
+  useMotionValue,
+  useReducedMotion,
+  useScroll,
+  useSpring,
+  useTransform,
+} from "framer-motion";
 import Image from "next/image";
 import {
   ArrowRight,
@@ -79,6 +87,20 @@ const HERO_HIGHLIGHT_ICONS: LucideIcon[] = [
   ShieldCheck,
   SlidersHorizontal,
   Handshake,
+];
+
+const DISPLAY_PARTICLES = [
+  { left: "12%", top: "72%", size: 3, delay: 0.2, duration: 5.2 },
+  { left: "21%", top: "48%", size: 2, delay: 1.4, duration: 4.6 },
+  { left: "30%", top: "64%", size: 4, delay: 2.1, duration: 5.8 },
+  { left: "39%", top: "35%", size: 2, delay: 0.8, duration: 4.9 },
+  { left: "47%", top: "78%", size: 3, delay: 3.2, duration: 5.4 },
+  { left: "56%", top: "52%", size: 2, delay: 1.9, duration: 4.4 },
+  { left: "64%", top: "24%", size: 4, delay: 0.5, duration: 6.1 },
+  { left: "72%", top: "69%", size: 3, delay: 2.7, duration: 5.1 },
+  { left: "80%", top: "42%", size: 2, delay: 1.1, duration: 4.7 },
+  { left: "88%", top: "58%", size: 4, delay: 3.6, duration: 5.7 },
+  { left: "94%", top: "30%", size: 2, delay: 2.3, duration: 4.5 },
 ];
 
 /** Feature-strip icons, paired to `featureStrip.items` by index. */
@@ -156,22 +178,110 @@ function HeroSection({
   content: DisplayHeroContent;
   breadcrumb: DisplayBreadcrumb;
 }) {
+  const sectionRef = useRef<HTMLElement>(null);
+  const shouldReduceMotion = useReducedMotion();
+  const pointerX = useMotionValue(0);
+  const pointerY = useMotionValue(0);
+  const smoothX = useSpring(pointerX, { stiffness: 75, damping: 24 });
+  const smoothY = useSpring(pointerY, { stiffness: 75, damping: 24 });
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const parallaxY = useTransform(scrollYProgress, [0, 1], [0, 68]);
+
+  const moveImage = (event: React.PointerEvent<HTMLElement>) => {
+    if (shouldReduceMotion || event.pointerType === "touch") return;
+
+    const bounds = event.currentTarget.getBoundingClientRect();
+    pointerX.set(((event.clientX - bounds.left) / bounds.width - 0.5) * -12);
+    pointerY.set(((event.clientY - bounds.top) / bounds.height - 0.5) * -8);
+  };
+
+  const resetImage = () => {
+    pointerX.set(0);
+    pointerY.set(0);
+  };
+
   return (
-    <section className="relative -mt-16 overflow-hidden bg-ink text-white lg:-mt-20">
+    <section
+      ref={sectionRef}
+      className="relative -mt-16 overflow-hidden bg-ink text-white lg:-mt-20"
+      onPointerMove={moveImage}
+      onPointerLeave={resetImage}
+    >
       {/* Full-bleed hero photo */}
-      <div className="absolute inset-0" aria-hidden="true">
-        <Image
-          src={displayHero}
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-        />
-        {/* Scrims keep the left-hand copy readable over the photo */}
-        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-ink/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-transparent to-ink/40" />
-      </div>
+      <motion.div
+        className="absolute -inset-[3%]"
+        style={shouldReduceMotion ? undefined : { y: parallaxY }}
+        aria-hidden="true"
+      >
+        <motion.div
+          className="relative h-full w-full"
+          initial={shouldReduceMotion ? false : { scale: 1.07 }}
+          animate={{ scale: 1.015 }}
+          transition={{ duration: 2.5, ease: [0.22, 1, 0.36, 1] }}
+          style={
+            shouldReduceMotion ? undefined : { x: smoothX, y: smoothY }
+          }
+        >
+          <Image
+            src={displayHero}
+            alt=""
+            fill
+            priority
+            sizes="106vw"
+            className="object-cover object-center brightness-110 saturate-[1.12]"
+          />
+
+          <motion.div
+            className="absolute right-[-4%] top-[-8%] h-[68%] w-[60%] rounded-full bg-[radial-gradient(ellipse,rgba(83,224,255,0.28)_0%,rgba(37,99,235,0.12)_42%,transparent_72%)] blur-2xl mix-blend-screen"
+            animate={
+              shouldReduceMotion
+                ? undefined
+                : { opacity: [0.32, 0.7, 0.32], scale: [0.97, 1.04, 0.97] }
+            }
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          />
+
+          <div className="absolute right-0 top-0 h-[66%] w-[58%] overflow-hidden">
+            {DISPLAY_PARTICLES.map((particle, index) => (
+              <motion.span
+                key={`${particle.left}-${particle.top}`}
+                className="absolute rounded-full bg-cyan-100 shadow-[0_0_10px_2px_rgba(34,211,238,0.8)]"
+                style={{
+                  left: particle.left,
+                  top: particle.top,
+                  width: particle.size,
+                  height: particle.size,
+                }}
+                initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }}
+                animate={
+                  shouldReduceMotion
+                    ? { opacity: 0.45 }
+                    : {
+                        opacity: [0, 0.9, 0],
+                        y: [10, -18],
+                        scale: [0.7, 1.25, 0.7],
+                      }
+                }
+                transition={{
+                  duration: particle.duration,
+                  delay: particle.delay + index * 0.05,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+            ))}
+          </div>
+
+        </motion.div>
+      </motion.div>
+
+      {/* Scrims keep the copy dark while the LED display remains vivid. */}
+      <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/78 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-ink/25" />
+      <div className="absolute inset-y-0 right-0 w-[58%] bg-gradient-to-l from-cyan-100/15 via-blue-400/5 to-transparent mix-blend-screen" />
 
       <div className="relative mx-auto max-w-7xl px-4 pb-16 pt-28 sm:px-6 lg:px-8 lg:pb-24 lg:pt-36">
         {/* Breadcrumb — "Home > Display Solutions" */}
@@ -224,38 +334,62 @@ function HeroSection({
 
           {/* Centre — slogan laid over the in-photo LED screen */}
           <div className="relative hidden min-h-[16rem] lg:col-span-4 lg:block">
-            <p className="absolute inset-x-2 bottom-6 text-right text-xl font-bold uppercase leading-tight tracking-wide text-white/90 sm:text-2xl">
-              {content.imageOverlay}
+            <p className="absolute -right-60 -top-10 -rotate-6 text-left text-xl font-bold uppercase leading-[0.95] tracking-tight text-white/95 drop-shadow-[0_2px_10px_rgba(0,20,60,0.9)] sm:text-2xl">
+              {content.imageOverlay.split(" ").map((word) => (
+                <span key={word} className="block">
+                  {word}
+                </span>
+              ))}
             </p>
           </div>
 
           {/* Right — highlight rail */}
-          <div className="lg:col-span-3">
+          <div className="text-[#ffffff] lg:absolute lg:bottom-8 lg:right-8 lg:w-60">
             <ul className="grid grid-cols-2 gap-x-4 gap-y-3 sm:grid-cols-4 lg:grid-cols-1 lg:gap-0">
               {content.highlights.map((highlight, index) => {
                 const Icon =
                   HERO_HIGHLIGHT_ICONS[index] ?? HERO_HIGHLIGHT_ICONS[0];
                 const withRule = index < content.highlights.length - 1;
                 return (
-                  <li
+                  <motion.li
                     key={highlight.label}
+                    initial={
+                      shouldReduceMotion ? false : { opacity: 0, x: 16 }
+                    }
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{
+                      duration: 0.55,
+                      delay: shouldReduceMotion ? 0 : 0.55 + index * 0.14,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
                     className={
-                      "flex items-center gap-3 lg:py-3.5 " +
-                      (withRule ? "lg:border-b lg:border-white/10" : "")
+                      "relative flex items-center gap-3 lg:py-3.5"
                     }
                   >
                     <Icon
-                      className="h-5 w-5 shrink-0 text-blue-400"
+                      className="h-7 w-7 shrink-0 text-blue-400"
                       aria-hidden="true"
                     />
-                    <span className="text-xs font-medium leading-tight text-white/85">
+                    <span className="text-xs font-medium leading-tight text-[#ffffff]">
                       {highlight.label}
                     </span>
-                  </li>
+                    {withRule && (
+                      <motion.span
+                        className="absolute inset-x-0 bottom-0 hidden h-px origin-left bg-white/10 lg:block"
+                        initial={shouldReduceMotion ? false : { scaleX: 0 }}
+                        animate={{ scaleX: 1 }}
+                        transition={{
+                          duration: 0.65,
+                          delay: shouldReduceMotion ? 0 : 0.75 + index * 0.14,
+                          ease: [0.22, 1, 0.36, 1],
+                        }}
+                      />
+                    )}
+                  </motion.li>
                 );
               })}
             </ul>
-            <p className="mt-4 border-t border-white/15 pt-4 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-white/45">
+            <p className="mt-4 border-t border-white/15 pt-4 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[#ffffff]">
               {content.highlightsNote}
             </p>
           </div>
@@ -377,6 +511,8 @@ function SectionHeader({
 // circular arrow button pinned bottom-right.
 
 function SolutionsSection({ content }: { content: DisplaySolutionsContent }) {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <section id="solutions" className="scroll-mt-20 bg-slate-50">
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
@@ -387,36 +523,73 @@ function SolutionsSection({ content }: { content: DisplaySolutionsContent }) {
           action={{ label: content.viewAll, href: "/solutions" }}
         />
 
-        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <motion.div
+          className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3"
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.16 } },
+          }}
+          initial={shouldReduceMotion ? false : "hidden"}
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.08 }}
+        >
           {content.cards.map((card, index) => {
             const { href, Icon } = SOLUTION_META[index] ?? SOLUTION_META[0];
             return (
-              <Link
+              <motion.div
                 key={card.title}
-                href={href}
-                className="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all hover:-translate-y-0.5 hover:border-brand hover:shadow-lg hover:shadow-slate-200/70"
+                className="h-full"
+                variants={{
+                  hidden: { opacity: 0, y: 32, scale: 0.98 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    transition: {
+                      duration: 0.65,
+                      ease: [0.22, 1, 0.36, 1],
+                    },
+                  },
+                }}
               >
-                <div className="relative flex aspect-[16/10] items-center justify-center overflow-hidden bg-slate-100">
-                  <Image src={SOLUTION_IMAGES[index]} alt={card.title} fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
-                  <span className="absolute -bottom-5 left-4 flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-brand shadow-sm">
-                    <Icon className="h-5 w-5" aria-hidden="true" />
+                <Link
+                  href={href}
+                  className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all duration-500 hover:-translate-y-1 hover:border-blue-400 hover:shadow-xl hover:shadow-blue-200/50"
+                >
+                  <span className="pointer-events-none absolute inset-0 z-20 rounded-2xl ring-1 ring-inset ring-blue-400/0 transition-all duration-500 group-hover:ring-blue-400/70 group-hover:shadow-[inset_0_0_28px_rgba(59,130,246,0.12)]" />
+                  <div className="relative flex aspect-[16/10] items-center justify-center overflow-hidden bg-slate-100">
+                    <Image
+                      src={SOLUTION_IMAGES[index]}
+                      alt={card.title}
+                      fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover transition-transform duration-700 ease-out group-hover:-translate-y-1 group-hover:scale-[1.08]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-blue-950/20 via-transparent to-cyan-200/0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                    <span className="absolute bottom-4 left-4 flex h-10 w-10 items-center justify-center rounded-xl border border-white/70 bg-white/95 text-brand shadow-md backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:border-blue-300 group-hover:shadow-[0_0_24px_rgba(37,99,235,0.55)]">
+                      <span className="absolute inset-0 rounded-xl border border-blue-400 opacity-0 group-hover:animate-ping group-hover:opacity-30" />
+                      <Icon className="relative h-5 w-5" aria-hidden="true" />
+                    </span>
+                  </div>
+                  <div className="flex flex-1 flex-col p-5 pb-14">
+                    <h3 className="text-sm font-semibold text-neutral-900">
+                      {card.title}
+                    </h3>
+                    <p className="mt-2 text-xs leading-relaxed text-slate-500">
+                      {card.description}
+                    </p>
+                  </div>
+                  <span className="absolute bottom-4 right-4 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-brand transition-colors group-hover:border-brand group-hover:bg-brand group-hover:text-white">
+                    <ArrowRight
+                      className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5"
+                      aria-hidden="true"
+                    />
                   </span>
-                </div>
-                <div className="flex flex-1 flex-col p-5 pb-14 pt-8">
-                  <h3 className="text-sm font-semibold text-neutral-900">
-                    {card.title}
-                  </h3>
-                  <p className="mt-2 text-xs leading-relaxed text-slate-500">
-                    {card.description}
-                  </p>
-                </div>
-                <span className="absolute bottom-4 right-4 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-brand transition-colors group-hover:border-brand group-hover:bg-brand group-hover:text-white">
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </span>
-              </Link>
+                </Link>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -540,9 +713,30 @@ function WhySection({ content }: { content: DisplayWhyContent }) {
 // solid + outline button pair on the right.
 
 function BottomCtaSection({ content }: { content: DisplayBottomCtaContent }) {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <section className="relative overflow-hidden bg-ink text-white">
-      <Image src={displayCta} alt="" fill sizes="100vw" className="object-cover" />
+      <motion.div
+        className="absolute inset-y-0 -left-[8%] w-[116%]"
+        animate={
+          shouldReduceMotion ? undefined : { x: ["-3%", "3%", "-3%"] }
+        }
+        transition={{
+          duration: 16,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        aria-hidden="true"
+      >
+        <Image
+          src={displayCta}
+          alt=""
+          fill
+          sizes="116vw"
+          className="object-cover"
+        />
+      </motion.div>
       <div
         className="absolute inset-0 bg-gradient-to-t from-ink via-ink/90 to-slate-900/50"
         aria-hidden="true"

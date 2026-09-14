@@ -21,7 +21,14 @@ export function HeroSection({ content, breadcrumb }: HeroSectionProps) {
     <section className="relative -mt-16 overflow-hidden bg-ink text-white lg:-mt-20">
       {/* LED installation background */}
       <div className="absolute inset-0" aria-hidden="true">
-        <Image src={heroImage} alt="" fill priority sizes="100vw" className="object-cover" />
+        <Image
+          src={heroImage}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover brightness-[1.2]"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-ink/30" />
       </div>

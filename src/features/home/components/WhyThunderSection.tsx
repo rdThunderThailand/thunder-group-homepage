@@ -88,20 +88,20 @@ export function WhyThunderSection({ content }: WhyThunderSectionProps) {
         <div className="absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-black/45 to-transparent lg:w-56" />
       </div>
 
-      <div className="relative mx-auto flex min-h-[20rem] max-w-7xl flex-col justify-center px-4 py-14 sm:px-6 lg:grid lg:min-h-[28rem] lg:grid-cols-12 lg:items-center lg:gap-10 lg:px-8 lg:py-20">
-        <div className="lg:col-span-5">
+      <div className="relative mx-auto flex min-h-[20rem] max-w-7xl flex-col justify-center px-4 py-14 sm:px-6 lg:grid lg:min-h-[28rem] lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.2fr)_max-content] lg:items-center lg:gap-8 lg:px-8 lg:py-20">
+        <div>
           <SectionEyebrow
             number={content.number}
             label={content.eyebrow}
             tone="dark"
           />
-          <h2 className="mt-5 text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-[2.75rem]">
+          <h2 className="mt-5 whitespace-pre-line text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-[2.75rem]">
             {content.title}
           </h2>
         </div>
 
-        <div className="mt-8 lg:col-span-5 lg:mt-0">
-          <p className="max-w-md text-base leading-relaxed text-white/75 sm:text-lg">
+        <div className="mt-8 lg:mt-0">
+          <p className="whitespace-pre-line text-base leading-relaxed text-white/75 sm:text-lg">
             {content.description}
           </p>
           <Link
@@ -113,7 +113,7 @@ export function WhyThunderSection({ content }: WhyThunderSectionProps) {
           </Link>
         </div>
 
-        <ul className="mt-10 flex flex-wrap gap-x-4 gap-y-1.5 lg:col-span-2 lg:mt-0 lg:flex-col lg:items-end lg:text-right">
+        <ul className="mt-10 flex flex-wrap gap-x-4 gap-y-1.5 lg:mt-0 lg:flex-col lg:items-start lg:text-left">
           {content.words.map((word, index) => (
             <li
               key={word}
