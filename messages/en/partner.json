@@ -1,0 +1,431 @@
+{
+  "metaTitle": "Become a Thunder Partner — Thunder",
+  "metaDescription": "Partner with Thunder and grow your business together. Apply to become a Thunder Partner in just a few steps.",
+  "sidebar": {
+    "label": "THUNDER PARTNER PROGRAM",
+    "titleLine1": "Grow Together",
+    "titleLine2": "Create Greater Impact.",
+    "subtitle": "Partner with Thunder and grow your business, together.",
+    "description": "We're looking for partners ready to bring our technology and solutions to create value for customers across every industry.",
+    "highlights": [
+      { "title": "New Revenue Opportunities", "description": "Grow your revenue potential" },
+      { "title": "Dedicated Partner Support", "description": "An expert support team" },
+      { "title": "Sales & Marketing Materials", "description": "Sales and marketing tools" },
+      { "title": "Training & Certification", "description": "Training and certification" },
+      { "title": "Be Part of Our Growth", "description": "Grow together, sustainably" }
+    ],
+    "imageAlt": "A Thunder event with people shaking hands in front of display screens",
+    "steps": {
+      "step1": {
+        "overlayText": "TECHNOLOGY CONNECTS PEOPLE",
+        "captionLine1": "More Opportunities",
+        "captionLine2": "A Stronger Tomorrow"
+      },
+      "step2": {
+        "overlayText": "PEOPLE PLACES POSSIBILITIES",
+        "captionLine1": "Technology Partners",
+        "captionLine2": "for a Brighter Tomorrow"
+      },
+      "step3": {
+        "overlayText": "IDEAS PEOPLE PLACES",
+        "captionLine1": "People. Technology.",
+        "captionLine2": "A Better Tomorrow."
+      },
+      "step4": {
+        "overlayText": "TECHNOLOGY PEOPLE PLACES POSSIBILITIES",
+        "captionLine1": "More Partners.",
+        "captionLine2": "A Smarter Tomorrow."
+      },
+      "step5": {
+        "overlayText": "PARTNERSHIP CONNECTS EVERYTHING",
+        "captionLine1": "One Step Away.",
+        "captionLine2": "A Shared Tomorrow."
+      },
+      "success": {
+        "overlayText": "PEOPLE TECHNOLOGY A BRIGHTER TOMORROW",
+        "captionLine1": "Partners Today,",
+        "captionLine2": "A Brighter Tomorrow."
+      }
+    }
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "partnerProgram": "Partner Program",
+    "register": "Register",
+    "applicationReceived": "Application Received"
+  },
+  "heading": "Become a Thunder Partner",
+  "subtitleStep1": "Start building business opportunities together in just a few steps",
+  "subtitleDefault": "Partner with us to create even greater business opportunities",
+  "stepper": {
+    "labels": [
+      "Create Account",
+      "Company Info",
+      "Partner Type",
+      "Additional Info",
+      "Review & Submit"
+    ]
+  },
+  "step1": {
+    "cardTitle": "Step 1: Create Your Account",
+    "cardDescription": "Start with your basic details to begin the partner application process.",
+    "form": {
+      "firstNameLabel": "First Name",
+      "firstNamePlaceholder": "First name",
+      "lastNameLabel": "Last Name",
+      "lastNamePlaceholder": "Last name",
+      "emailLabel": "Business Email",
+      "emailPlaceholder": "you@company.co.th",
+      "emailHelper": "Used to sign in and to hear from the Thunder team",
+      "phoneLabel": "Phone Number",
+      "phonePlaceholder": "0X XXXX XXXX",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "At least 8 characters",
+      "passwordHelper": "Must include letters, numbers, and a special character",
+      "showPasswordLabel": "Show password",
+      "hidePasswordLabel": "Hide password",
+      "agreement": {
+        "prefix": "I accept the",
+        "termsLink": "Terms of Use",
+        "middle": "and",
+        "privacyLink": "Privacy Policy",
+        "suffix": "of Thunder"
+      },
+      "continueButton": "Continue",
+      "loginPrompt": "Already have an account?",
+      "loginLink": "Log in"
+    },
+    "panel": {
+      "confidentialTitle": "Your information stays confidential",
+      "confidentialDescription": "We take security seriously and will only use your information to review your partner application.",
+      "help": {
+        "title": "Need help?",
+        "description": "Contact the Partner Support team",
+        "phoneLabel": "Call",
+        "phone": "064 789 2562",
+        "emailLabel": "Email",
+        "email": "partner@thunder.co.th"
+      },
+      "quote": {
+        "text": "A great partner doesn't just help you sell — they help build the future with you.",
+        "source": "Thunder Partner Program"
+      }
+    }
+  },
+  "step2": {
+    "cardTitle": "Step 2: Company Information",
+    "cardDescription": "Tell us about your company so we can better understand your business.",
+    "form": {
+      "nameThLabel": "Company Name (Thai)",
+      "nameThPlaceholder": "บริษัท ตัวอย่าง จำกัด",
+      "nameEnLabel": "Company Name (English)",
+      "nameEnPlaceholder": "Example Co., Ltd.",
+      "taxIdLabel": "Tax ID",
+      "taxIdPlaceholder": "0105555123456",
+      "businessTypeLabel": "Business Type",
+      "businessTypePlaceholder": "Select a business type",
+      "businessTypeOptions": [
+        "Event Organizer / Exhibition",
+        "Booth Contractor",
+        "System Integrator (SI)",
+        "IT Reseller",
+        "Dealer",
+        "Business Consultant",
+        "Network Organization",
+        "Other"
+      ],
+      "websiteLabel": "Company Website",
+      "websiteOptionalTag": "(optional)",
+      "websitePlaceholder": "https://www.example.co.th",
+      "phoneLabel": "Company Phone",
+      "phonePlaceholder": "02 123 4567",
+      "addressLabel": "Company Address",
+      "addressPlaceholder": "99/88 Example Building, 10th Floor, Sutthisan Winitchai Road",
+      "provinceLabel": "Province",
+      "provincePlaceholder": "Select a province",
+      "provinceOptions": [
+        "Bangkok",
+        "Nonthaburi",
+        "Pathum Thani",
+        "Samut Prakan",
+        "Chonburi",
+        "Rayong",
+        "Chiang Mai",
+        "Khon Kaen",
+        "Nakhon Ratchasima",
+        "Phuket",
+        "Songkhla",
+        "Surat Thani"
+      ],
+      "districtLabel": "District",
+      "districtPlaceholder": "Select a district",
+      "districtOptions": [
+        "Huai Khwang",
+        "Bang Rak",
+        "Pathum Wan",
+        "Khlong Toei",
+        "Chatuchak",
+        "Bang Na",
+        "Din Daeng",
+        "Watthana",
+        "Sathon",
+        "Lat Phrao"
+      ],
+      "postalCodeLabel": "Postal Code",
+      "postalCodePlaceholder": "10310"
+    },
+    "backButton": "Back",
+    "continueButton": "Continue",
+    "panel": {
+      "confidentialTitle": "Your company information stays confidential",
+      "confidentialDescription": "We use this information to review your partner application and will never share it with third parties without your consent.",
+      "documentsBoxTitle": "Documents we may request",
+      "documentsBoxDescription": "We may ask for additional documents later, such as a company registration certificate or tax documents.",
+      "help": {
+        "title": "Need help?",
+        "description": "Contact the Partner Support team",
+        "phoneLabel": "Call",
+        "phone": "064 789 2562",
+        "emailLabel": "Email",
+        "email": "partner@thunder.co.th"
+      },
+      "quote": {
+        "text": "A great collaboration starts with understanding one another.",
+        "source": "Thunder Partner Program"
+      }
+    }
+  },
+  "step3": {
+    "cardTitle": "Step 3: Partner Type",
+    "cardDescription": "Choose the type of collaboration that fits your business.",
+    "helperNote": "You can select more than one type.",
+    "options": [
+      {
+        "id": "dealer",
+        "title": "Dealer / Referral Partner",
+        "subtitle": "Refer customers to Thunder",
+        "bullets": [
+          "Refer business opportunities to us",
+          "Thunder handles quoting, contracts, and delivery",
+          "Earn compensation based on the agreed terms"
+        ],
+        "suitableForLabel": "Best for:",
+        "tags": ["Dealers", "Consultants", "Network organizations"]
+      },
+      {
+        "id": "reseller",
+        "title": "Reseller",
+        "subtitle": "Buy or rent from Thunder to offer to your own customers",
+        "bullets": [
+          "Access special partner pricing",
+          "Manage your customers and set your own prices",
+          "Thunder supports delivery and after-sales service"
+        ],
+        "suitableForLabel": "Best for:",
+        "tags": ["Distributors", "IT retailers", "System integrators"]
+      },
+      {
+        "id": "solution",
+        "title": "Solution / Event Partner",
+        "subtitle": "For event organizers, booth contractors, and system integrators",
+        "bullets": [
+          "Bring Thunder's products and solutions into your projects",
+          "Get technical and on-site team support",
+          "Co-develop solutions for specialized projects"
+        ],
+        "suitableForLabel": "Best for:",
+        "tags": ["Event organizers", "Booth contractors", "SI"]
+      },
+      {
+        "id": "both",
+        "title": "Both (Referral & Resell)",
+        "subtitle": "Work with us in both formats",
+        "bullets": [
+          "Refer customers and/or resell products",
+          "Access the benefits of both formats",
+          "Stay flexible around your business model"
+        ],
+        "suitableForLabel": "Best for:",
+        "tags": ["Full-service providers", "Large organizations", "Strategic partners"]
+      }
+    ],
+    "notSureBox": {
+      "title": "Not sure which one fits you?",
+      "description": "Our team is happy to help you choose the right type of collaboration for your business.",
+      "link": "Talk to the Thunder team →"
+    },
+    "backButton": "Back",
+    "continueButton": "Continue",
+    "panel": {
+      "benefitsTitle": "Partner Benefits",
+      "benefits": [
+        "Special partner pricing",
+        "Sales and marketing tools",
+        "Training and consultation",
+        "Technical support",
+        "Opportunities to join special projects"
+      ],
+      "quote": {
+        "text": "Great partners help us reach further and create more value for our customers.",
+        "source": "Thunder Partner Program"
+      },
+      "help": {
+        "title": "Need help?",
+        "description": "Contact the Partner Support team",
+        "phoneLabel": "Call",
+        "phone": "064 789 2562",
+        "emailLabel": "Email",
+        "email": "partner@thunder.co.th"
+      }
+    }
+  },
+  "step4": {
+    "cardTitle": "Step 4: Additional Information",
+    "cardDescription": "Tell us more about your business so we can support you in the right way.",
+    "customerSegments": {
+      "label": "Who are your main customers? (select all that apply)",
+      "options": [
+        { "id": "enterprise", "label": "Large organizations (Enterprise)" },
+        { "id": "sme", "label": "Mid-sized organizations (SME)" },
+        { "id": "government", "label": "Government agencies" },
+        { "id": "retail", "label": "Retail / shopping centers" },
+        { "id": "hospitality", "label": "Hotels / hospitality" },
+        { "id": "events", "label": "Events / exhibitions" },
+        { "id": "education", "label": "Education" },
+        { "id": "healthcare", "label": "Hospitals / healthcare" },
+        { "id": "industrial", "label": "Industrial / factories" }
+      ],
+      "otherLabel": "Other",
+      "otherPlaceholder": "Please specify..."
+    },
+    "interestedProducts": {
+      "label": "Products and solutions you're interested in (select all that apply)",
+      "options": [
+        { "id": "eventRental", "label": "Event Rental (event equipment rental)" },
+        { "id": "digitalDisplay", "label": "Digital Display (buy/sell)" },
+        { "id": "businessRental", "label": "Business Rental (business equipment rental)" },
+        { "id": "workspaceSolutions", "label": "Workspace Solutions (software)" }
+      ],
+      "otherLabel": "Other",
+      "otherPlaceholder": "Please specify..."
+    },
+    "projectsPerYearLabel": "Estimated projects per year",
+    "projectsPerYearPlaceholder": "Select a range",
+    "projectsPerYearOptions": [
+      "Fewer than 10 projects",
+      "10 - 30 projects",
+      "31 - 50 projects",
+      "More than 50 projects"
+    ],
+    "avgProjectValueLabel": "Average project value (estimated)",
+    "avgProjectValuePlaceholder": "Select a range",
+    "avgProjectValueOptions": [
+      "Less than 100,000 THB",
+      "100,000 - 500,000 THB",
+      "500,001 - 1,000,000 THB",
+      "More than 1,000,000 THB"
+    ],
+    "aboutBusinessLabel": "Tell us about your business",
+    "aboutBusinessPlaceholder": "We organize events and exhibitions nationwide, with our own booth installation and design team. We'd like to bring Thunder's Digital Display and Kiosk products into our client services.",
+    "backButton": "Back",
+    "continueButton": "Continue",
+    "panel": {
+      "uploadTitle": "Upload documents (optional at this step)",
+      "uploadDescription": "You can attach extra documents to help with the review, such as your company registration certificate, company profile, or other files.",
+      "dropzoneLabel": "Drag a file here, or",
+      "dropzoneLink": "click to choose a file",
+      "dropzoneHint": "Supports PDF, JPG, PNG (up to 10 MB)",
+      "tipTitle": "Tip",
+      "tipDescription": "Attaching extra documents can speed up the review, but you can skip this step and send them later.",
+      "consentTitle": "You agree that",
+      "consentAccurate": "I confirm the information provided is true and accurate",
+      "consentTerms": {
+        "prefix": "I accept the",
+        "termsLink": "Terms of Use",
+        "middle": "and",
+        "privacyLink": "Privacy Policy",
+        "suffix": "of Thunder"
+      },
+      "consentContact": "I consent to Thunder contacting me for partnership purposes"
+    }
+  },
+  "step5": {
+    "cardTitle": "Step 5: Review & Submit",
+    "cardDescription": "Review all your information before submitting your partner application.",
+    "sections": {
+      "account": "1. Account Information",
+      "company": "2. Company Information",
+      "partnerType": "3. Selected Partner Type",
+      "additional": "4. Additional Information"
+    },
+    "editLink": "Edit",
+    "fields": {
+      "fullName": "Full name",
+      "email": "Business email",
+      "phone": "Phone number",
+      "companyNameTh": "Company name (Thai)",
+      "companyNameEn": "Company name (English)",
+      "taxId": "Tax ID",
+      "businessType": "Business type",
+      "website": "Company website",
+      "companyPhone": "Company phone",
+      "address": "Company address",
+      "customerSegments": "Main customer segments",
+      "interestedProducts": "Products of interest",
+      "projectsPerYear": "Estimated projects per year",
+      "avgProjectValue": "Average project value",
+      "aboutBusiness": "About your business"
+    },
+    "notProvided": "Not provided",
+    "backButton": "Back",
+    "submitButton": "Submit Application"
+  },
+  "success": {
+    "thankYouLabel": "THANK YOU",
+    "title": "We've received your application",
+    "description": "Thank you for your interest in partnering with Thunder. Our team will review your information and get back to you as soon as possible.",
+    "imageAlt": "Envelope icon",
+    "progress": {
+      "submittedLabel": "Application submitted",
+      "reviewingLabel": "Under review",
+      "reviewingHint": "In progress",
+      "approvedLabel": "Approved by Thunder",
+      "approvedHint": "Pending",
+      "readyLabel": "Ready to go",
+      "readyHint": "You'll get an email once approved"
+    },
+    "applicationCard": {
+      "title": "Application Details",
+      "applicationNoLabel": "Application number",
+      "copyLabel": "Copy",
+      "copiedLabel": "Copied",
+      "submittedAtLabel": "Submitted on",
+      "applicantLabel": "Applicant",
+      "companyLabel": "Company",
+      "partnerTypeLabel": "Selected partner type",
+      "productsLabel": "Products of interest",
+      "projectsPerYearLabel": "Projects per year",
+      "avgProjectValueLabel": "Estimated project value"
+    },
+    "viewDetailsLink": "View full application details →",
+    "nextSteps": {
+      "title": "What happens next",
+      "items": [
+        "The Thunder team reviews your information (usually within 1-2 business days)",
+        "We'll follow up by email or phone if we need more information",
+        "Once approved, you'll get access to the Partner Portal and all its benefits"
+      ]
+    },
+    "help": {
+      "title": "Need help?",
+      "description": "The Partner Support team is here for you",
+      "phoneLabel": "Call",
+      "phone": "064 789 2562",
+      "emailLabel": "Email",
+      "email": "partner@thunder.co.th",
+      "contactButton": "Contact us →"
+    },
+    "closingNote": "You can close this page — we'll send a confirmation email, and you can log in anytime to check your status.",
+    "loginButton": "Log in →"
+  }
+}
