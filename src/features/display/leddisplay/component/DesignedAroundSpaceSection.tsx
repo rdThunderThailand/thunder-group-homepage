@@ -24,7 +24,11 @@ export function DesignedAroundSpaceSection({
     <section className="bg-slate-50">
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
-          <Placeholder src={designedAroundSpaceImage} alt={content.title} className="aspect-[4/3] w-full lg:aspect-[5/4]" />
+          <Placeholder
+            src={designedAroundSpaceImage}
+            alt={content.title}
+            className="aspect-[4/3] w-full lg:aspect-[5/4]"
+          />
 
           <div>
             <SectionEyebrow label={content.label} />
@@ -35,19 +39,18 @@ export function DesignedAroundSpaceSection({
               {content.description}
             </p>
 
-            <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3">
+            <div className="mt-8 grid grid-cols-3 gap-x-3 gap-y-6 sm:grid-cols-6">
               {content.factors.map((factor, index) => {
                 const Icon = FACTOR_ICONS[index] ?? FACTOR_ICONS[0];
                 return (
                   <div
                     key={factor}
-                    className="flex items-center gap-2.5 rounded-xl border border-slate-200 bg-white px-3 py-2.5"
+                    className="flex flex-col items-center text-center"
                   >
-                    <Icon
-                      className="h-4 w-4 shrink-0 text-brand"
-                      aria-hidden="true"
-                    />
-                    <span className="text-xs font-medium leading-tight text-neutral-800">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-full border border-blue-100 bg-white text-brand shadow-[0_0_0_6px_rgba(37,99,235,0.04)]">
+                      <Icon className="h-5 w-5" aria-hidden="true" />
+                    </span>
+                    <span className="mt-3 whitespace-nowrap text-xs font-medium leading-tight text-neutral-800">
                       {factor}
                     </span>
                   </div>

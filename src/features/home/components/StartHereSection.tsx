@@ -1,7 +1,3 @@
-// === 01 · START HERE ===
-// Entry points into the site. Heading block on the left, a 3 × 2 card grid on
-// the right that collapses to two columns on tablet and one on mobile.
-
 import Image, { type StaticImageData } from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
@@ -34,15 +30,15 @@ export function StartHereSection({ content }: StartHereSectionProps) {
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:grid lg:grid-cols-12 lg:gap-12 lg:px-8 lg:py-28">
         <div className="lg:col-span-4">
           <SectionEyebrow number={content.number} label={content.eyebrow} />
-          <h2 className="mt-5 text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl">
+          <h2 className="mt-5 whitespace-pre-line text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl">
             {content.title}
           </h2>
-          <p className="mt-5 max-w-md text-base leading-relaxed text-slate-500">
+          <p className="mt-5 max-w-md whitespace-pre-line text-base leading-relaxed text-slate-500">
             {content.description}
           </p>
         </div>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:col-span-8 lg:mt-0 xl:grid-cols-3">
+        <div className="mt-10 grid min-w-0 gap-5 sm:grid-cols-2 lg:col-span-8 lg:mt-0 lg:grid-cols-3">
           {content.cards.map((card, index) => (
             <Link
               key={card.title}
@@ -60,10 +56,10 @@ export function StartHereSection({ content }: StartHereSectionProps) {
               </div>
               <div className="flex flex-1 items-start justify-between gap-3 p-5">
                 <div>
-                  <h3 className="text-base font-semibold text-neutral-900">
+                  <h3 className="whitespace-pre-line text-base font-semibold text-neutral-900">
                     {card.title}
                   </h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-slate-500">
+                  <p className="mt-1.5 whitespace-pre-line text-sm leading-relaxed text-slate-500">
                     {card.description}
                   </p>
                 </div>

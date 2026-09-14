@@ -26,7 +26,10 @@ type TalkToThunderSectionProps = {
 
 export function TalkToThunderSection({ content }: TalkToThunderSectionProps) {
   return (
-    <section className="relative overflow-hidden bg-ink text-white">
+    <section
+      id="talk-to-thunder"
+      className="relative scroll-mt-20 overflow-hidden bg-ink text-white"
+    >
       {/* Placeholder skyline */}
       <div
         className="pointer-events-none absolute inset-x-0 bottom-0 flex h-28 items-end gap-1 opacity-20"
@@ -46,7 +49,7 @@ export function TalkToThunderSection({ content }: TalkToThunderSectionProps) {
       />
 
       <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:grid lg:grid-cols-12 lg:items-center lg:gap-10 lg:px-8 lg:py-20">
-        <div className="lg:col-span-6">
+        <div className="lg:col-span-5">
           <SectionEyebrow
             number={content.number}
             label={content.eyebrow}
@@ -60,25 +63,25 @@ export function TalkToThunderSection({ content }: TalkToThunderSectionProps) {
           </p>
         </div>
 
-        <div className="mt-8 lg:col-span-6 lg:mt-0">
+        <div className="mt-8 flex flex-wrap items-center gap-6 lg:col-span-7 lg:mt-0 xl:justify-between">
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-neutral-900 transition-colors hover:bg-white/90"
+            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-neutral-900 transition-colors hover:bg-white/90"
           >
             {content.cta}
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Link>
 
-          <div className="mt-6 flex flex-wrap gap-x-6 gap-y-3">
+          <div className="contents">
             {content.channels.map((channel, index) => {
               const Icon = CHANNEL_ICONS[index];
               return (
                 <Link
                   key={channel.label}
                   href="/contact"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-white/70 transition-colors hover:text-white"
+                  className="inline-flex items-center gap-2 text-base font-medium text-white/70 transition-colors hover:text-white"
                 >
-                  <Icon className="h-4 w-4" aria-hidden="true" />
+                  <Icon className="h-5 w-5 shrink-0" aria-hidden="true" />
                   {channel.label}
                 </Link>
               );
