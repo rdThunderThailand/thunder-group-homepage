@@ -23,6 +23,7 @@ type Step4AdditionalInfoProps = {
   onBack: () => void;
   onContinue: () => void;
   canContinue: boolean;
+  incompleteHint: string;
 };
 
 export function Step4AdditionalInfo({
@@ -34,6 +35,7 @@ export function Step4AdditionalInfo({
   onBack,
   onContinue,
   canContinue,
+  incompleteHint,
 }: Step4AdditionalInfoProps) {
   return (
     <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
@@ -98,6 +100,7 @@ export function Step4AdditionalInfo({
           onBack={onBack}
           onContinue={onContinue}
           continueDisabled={!canContinue}
+          incompleteHint={incompleteHint}
         />
       </div>
     </div>

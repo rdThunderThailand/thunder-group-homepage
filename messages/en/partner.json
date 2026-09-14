@@ -57,6 +57,7 @@
   "heading": "Become a Thunder Partner",
   "subtitleStep1": "Start building business opportunities together in just a few steps",
   "subtitleDefault": "Partner with us to create even greater business opportunities",
+  "incompleteHint": "Please fill in or select every required field (marked with *) before continuing.",
   "stepper": {
     "labels": [
       "Create Account",

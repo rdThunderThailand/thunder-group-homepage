@@ -20,6 +20,7 @@ type Step1AccountProps = {
   onChange: (field: keyof AccountData, value: string | boolean) => void;
   onContinue: () => void;
   canContinue: boolean;
+  incompleteHint: string;
 };
 
 export function Step1Account({
@@ -28,6 +29,7 @@ export function Step1Account({
   onChange,
   onContinue,
   canContinue,
+  incompleteHint,
 }: Step1AccountProps) {
   const [showPassword, setShowPassword] = useState(false);
   const { form } = content;
@@ -125,6 +127,9 @@ export function Step1Account({
           {form.continueButton}
           <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </button>
+        {!canContinue ? (
+          <p className="-mt-2 text-center text-xs text-slate-400">{incompleteHint}</p>
+        ) : null}
 
         <p className="text-center text-sm text-slate-500">
           {form.loginPrompt}{" "}

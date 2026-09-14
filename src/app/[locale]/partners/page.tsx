@@ -113,6 +113,7 @@ export default async function PartnerRegisterPage({
         heading: t("heading"),
         subtitleStep1: t("subtitleStep1"),
         subtitleDefault: t("subtitleDefault"),
+        incompleteHint: t("incompleteHint"),
         stepper: {
           labels: t.raw("stepper.labels") as [string, string, string, string, string],
         },
