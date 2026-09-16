@@ -37,7 +37,7 @@ export function WhatWeBuildSection({ content }: WhatWeBuildSectionProps) {
             {content.description}
           </p>
           <Link
-            href="/businesses"
+            href="#/businesses"
             className="mt-6 inline-flex items-center gap-2 text-sm font-semibold transition-colors hover:text-brand-strong"
           >
             {content.cta}

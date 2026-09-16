@@ -78,8 +78,8 @@ export function RegisterSuccess({
   };
 
   return (
-    <div>
-      <div className="relative rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+    <div className="grid gap-4 md:grid-cols-2">
+      <div className="relative rounded-2xl border border-slate-200 bg-white p-4 shadow-sm md:col-span-full sm:p-5">
         <div
           className="absolute right-6 top-6 hidden h-14 w-14 items-center justify-center rounded-xl border border-dashed border-slate-300 bg-slate-50 text-slate-300 sm:flex"
           aria-hidden="true"
@@ -87,21 +87,21 @@ export function RegisterSuccess({
           <Mail className="h-6 w-6" />
         </div>
 
-        <span className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
-          <Check className="h-7 w-7" strokeWidth={3} aria-hidden="true" />
+        <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+          <Check className="h-5 w-5" strokeWidth={3} aria-hidden="true" />
         </span>
-        <p className="mt-4 text-xs font-bold uppercase tracking-[0.22em] text-emerald-600">
+        <p className="mt-2 text-xs font-bold uppercase tracking-[0.22em] text-emerald-600">
           {content.thankYouLabel}
         </p>
-        <h2 className="mt-2 max-w-lg text-2xl font-bold text-neutral-900 sm:text-3xl">
+        <h2 className="mt-1 max-w-lg text-2xl font-bold text-neutral-900">
           {content.title}
         </h2>
-        <p className="mt-3 max-w-xl text-sm leading-relaxed text-slate-500">
+        <p className="mt-2 max-w-xl text-sm leading-relaxed text-slate-500">
           {content.description}
         </p>
 
         {/* Progress stepper */}
-        <div className="mt-8 flex items-start">
+        <div className="mt-4 flex items-start">
           <ProgressNode
             icon={<Check className="h-4 w-4" aria-hidden="true" />}
             state="done"
@@ -129,12 +129,12 @@ export function RegisterSuccess({
       </div>
 
       {/* Application summary card */}
-      <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm md:row-span-2">
         <h3 className="text-sm font-bold text-neutral-900">
           {content.applicationCard.title}
         </h3>
 
-        <div className="mt-4 flex flex-wrap items-center gap-3 rounded-xl bg-slate-50 px-4 py-3">
+        <div className="mt-3 flex flex-wrap items-center gap-3 rounded-xl bg-slate-50 px-3 py-2">
           <div>
             <p className="text-xs text-slate-400">{content.applicationCard.applicationNoLabel}</p>
             <p className="text-base font-bold text-neutral-900">{applicationId}</p>
@@ -149,7 +149,7 @@ export function RegisterSuccess({
           </button>
         </div>
 
-        <div className="mt-5 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2">
+        <div className="mt-3 grid grid-cols-1 gap-x-3 gap-y-2 sm:grid-cols-2">
           <SummaryField
             label={content.applicationCard.submittedAtLabel}
             value={submittedAtLabel}
@@ -179,16 +179,16 @@ export function RegisterSuccess({
 
         <Link
           href={`/partners/application/${applicationId}`}
-          className="mt-6 inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-2.5 text-sm font-semibold text-neutral-800 transition-colors hover:border-brand hover:text-brand"
+          className="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-2.5 text-sm font-semibold text-neutral-800 transition-colors hover:border-brand hover:text-brand"
         >
           👁 {content.viewDetailsLink}
         </Link>
       </div>
 
       {/* Next steps */}
-      <div className="mt-6 rounded-2xl bg-sky-50 p-6 sm:p-8">
+      <div className="rounded-2xl bg-sky-50 p-4">
         <h3 className="text-sm font-bold text-neutral-900">{content.nextSteps.title}</h3>
-        <ol className="mt-4 flex flex-col gap-4">
+        <ol className="mt-3 flex flex-col gap-3">
           {content.nextSteps.items.map((item, index) => (
             <li key={item} className="flex gap-3">
               <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand text-xs font-bold text-white">
@@ -201,8 +201,8 @@ export function RegisterSuccess({
       </div>
 
       {/* Help */}
-      <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-6 sm:p-8">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+      <div className="rounded-2xl border border-slate-200 bg-white p-4">
+        <div className="flex flex-col gap-3">
           <HelpBox content={content.help} />
           <Link
             href="/contact"
@@ -215,7 +215,7 @@ export function RegisterSuccess({
       </div>
 
       {/* Closing note */}
-      <div className="mt-6 flex flex-col items-start gap-3 rounded-2xl bg-slate-100 p-5 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex flex-col items-start gap-3 rounded-2xl bg-slate-100 p-4 md:col-span-full sm:flex-row sm:items-center sm:justify-between">
         <p className="text-xs leading-relaxed text-slate-500">{content.closingNote}</p>
         <Link
           href="/login"
@@ -241,7 +241,7 @@ type ProgressNodeProps = {
 function ProgressNode({ state, label, hint, icon, isFirst, isLast }: ProgressNodeProps) {
   const lineDone = state === "done";
   return (
-    <div className="flex flex-1 flex-col items-center last:flex-none">
+    <div className="min-w-0 flex flex-1 flex-col items-center">
       <div className="flex w-full items-center">
         <span
           className={isFirst ? "invisible h-px flex-1" : "h-px flex-1 " + (lineDone ? "bg-brand" : "bg-slate-200")}
@@ -287,7 +287,7 @@ function SummaryField({ label, value }: SummaryFieldProps) {
   return (
     <div>
       <p className="text-xs text-slate-400">{label}</p>
-      <p className="mt-0.5 text-sm font-medium text-neutral-800">{value || "—"}</p>
+      <p className="mt-0.5 break-words text-sm font-medium text-neutral-800">{value || "—"}</p>
     </div>
   );
 }

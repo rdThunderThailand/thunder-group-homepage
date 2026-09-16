@@ -5,8 +5,8 @@
     "label": "THUNDER PARTNER PROGRAM",
     "titleLine1": "Grow Together",
     "titleLine2": "Create Greater Impact.",
-    "subtitle": "เป็นพันธมิตรกับ Thunder ขยายโอกาสทางธุรกิจ ไปด้วยกัน",
-    "description": "เรามองหาพันธมิตรที่พร้อมนำเทคโนโลยีและโซลูชันของเรา ไปสร้างคุณค่าให้กับลูกค้าในทุกภาคธุรกิจ",
+    "subtitle": "เป็นพันธมิตรกับ Thunder\nขยายโอกาสทางธุรกิจ ไปด้วยกัน",
+    "description": "เรามองหาพันธมิตรที่พร้อมนำเทคโนโลยีและโซลูชันของเรา\nไปสร้างคุณค่าให้กับลูกค้าในทุกภาคธุรกิจ",
     "highlights": [
       { "title": "New Revenue Opportunities", "description": "เพิ่มโอกาสทางรายได้" },
       { "title": "Dedicated Partner Support", "description": "ทีมสนับสนุนที่เชี่ยวชาญ" },
@@ -318,7 +318,7 @@
       "31 - 50 โครงการ",
       "มากกว่า 50 โครงการ"
     ],
-    "avgProjectValueLabel": "มูลค่าโครงการเฉลี่ยต่อโครงการ (โดยประมาณ)",
+    "avgProjectValueLabel": "มูลค่าโครงการเฉลี่ยต่อโครงการ\n(โดยประมาณ)",
     "avgProjectValuePlaceholder": "เลือกมูลค่าโครงการ",
     "avgProjectValueOptions": [
       "น้อยกว่า 100,000 บาท",

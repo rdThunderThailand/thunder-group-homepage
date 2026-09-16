@@ -29,7 +29,6 @@ import {
   Calendar,
   CalendarDays,
   ChevronDown,
-  ChevronRight,
   FileText,
   Hand,
   HelpCircle,
@@ -182,7 +181,7 @@ type HeroSectionProps = {
   breadcrumb: BreadcrumbContent;
 };
 
-function HeroSection({ content, breadcrumb }: HeroSectionProps) {
+function HeroSection({ content }: HeroSectionProps) {
   const sideNoteWords = content.imageSideNote
     .split("/")
     .map((word) => word.trim())
@@ -200,19 +199,6 @@ function HeroSection({ content, breadcrumb }: HeroSectionProps) {
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 pb-16 pt-28 sm:px-6 lg:px-8 lg:pb-24 lg:pt-36">
-        {/* Breadcrumb — "Home > Display > Rental" */}
-        <nav
-          aria-label={breadcrumb.rental}
-          className="flex flex-wrap items-center gap-2 text-xs font-medium text-white/55"
-        >
-          <Link href="/" className="transition-colors hover:text-white">
-            {breadcrumb.home}
-          </Link>
-          <ChevronRight className="h-3.5 w-3.5" aria-hidden="true" />
-          <span>{breadcrumb.display}</span>
-          <ChevronRight className="h-3.5 w-3.5" aria-hidden="true" />
-          <span className="text-white/85">{breadcrumb.rental}</span>
-        </nav>
 
         <div className="mt-10 grid items-center gap-12 lg:grid-cols-12 lg:gap-10">
           {/* Left — copy + search form */}

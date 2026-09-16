@@ -46,28 +46,35 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "INVALID_PAYLOAD" }, { status: 400 });
   }
 
-  // NOTE: `applicationData.account.password` must never reach here -- it
-  // lands in a plain jsonb column for reviewers to read. The client already
-  // omits it, but strip it again defensively since this endpoint only
-  // records the application; creating the partner's actual login credential
-  // (Supabase Auth) is a separate, not-yet-built concern.
-  const applicationData: Record<string, unknown> = { ...body.applicationData };
-  if (applicationData.account && typeof applicationData.account === "object") {
-    const account: Record<string, unknown> = { ...applicationData.account };
-    delete account.password;
-    applicationData.account = account;
-  }
-
   const lineToken = request.cookies.get(LINE_TOKEN_COOKIE)?.value ?? null;
 
   const supabase = createServiceRoleClient();
+
+  // public.users.id must equal auth.users.id (docs/PARTNER_WEB_TENANT_USER_HANDOFF.md)
+  // -- a Postgres function can't create an Auth user itself, so find-or-create
+  // it here first. generateLink with type "magiclink" creates the user if the
+  // email doesn't exist yet and returns the existing one otherwise, without
+  // actually sending anything (Partner Web has no email flow built yet -- the
+  // link/OTP in the response is discarded). No password: the account step no
+  // longer collects one.
+  const { data: linkData, error: linkError } = await supabase.auth.admin.generateLink({
+    type: "magiclink",
+    email: body.email,
+  });
+
+  if (linkError || !linkData.user) {
+    console.error("auth user find-or-create failed", linkError);
+    return NextResponse.json({ error: "INTERNAL_ERROR" }, { status: 500 });
+  }
+
   const { data, error } = await supabase.rpc("submit_partner_application", {
     p_submission_id: body.submissionId,
     p_tax_id: body.taxId,
     p_company_name: body.companyName,
     p_email: body.email,
     p_actor_id: SYSTEM_ACTOR_ID,
-    p_application_data: applicationData,
+    p_user_id: linkData.user.id,
+    p_application_data: body.applicationData,
     p_line_token: lineToken,
   });
 

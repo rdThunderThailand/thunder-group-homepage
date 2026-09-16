@@ -39,12 +39,12 @@ export function Step3PartnerType({
   incompleteHint,
 }: Step3PartnerTypeProps) {
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+    <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
       <h2 className="text-xl font-bold text-neutral-900">{content.cardTitle}</h2>
       <p className="mt-1.5 text-sm leading-relaxed text-slate-500">
-        {content.cardDescription}
+        {content.cardDescription}{" "}
+        <span className="text-xs text-slate-400">{content.helperNote}</span>
       </p>
-      <p className="mt-1 text-xs text-slate-400">{content.helperNote}</p>
 
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
         {content.options.map((option) => (
@@ -55,24 +55,6 @@ export function Step3PartnerType({
             onToggle={() => onToggle(option.id)}
           />
         ))}
-      </div>
-
-      <div className="mt-6 flex gap-3 rounded-2xl bg-sky-50 p-4">
-        <Info className="h-5 w-5 shrink-0 text-brand" aria-hidden="true" />
-        <div className="min-w-0">
-          <p className="text-sm font-semibold text-neutral-900">
-            {content.notSureBox.title}
-          </p>
-          <p className="mt-1 text-xs leading-relaxed text-slate-500">
-            {content.notSureBox.description}
-          </p>
-          <Link
-            href="/contact"
-            className="mt-1.5 inline-flex text-xs font-semibold text-brand hover:underline"
-          >
-            {content.notSureBox.link}
-          </Link>
-        </div>
       </div>
 
       <div className="mt-7">
@@ -128,13 +110,14 @@ function PartnerTypeCard({ option, checked, onToggle }: PartnerTypeCardProps) {
             </svg>
           ) : null}
         </span>
-        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-slate-100 text-brand">
+        <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center text-brand">
           <Icon className="h-4.5 w-4.5" aria-hidden="true" />
         </span>
+        <div className="min-w-0">
+          <p className="text-sm font-semibold text-neutral-900">{option.title}</p>
+          <p className="mt-1 text-xs leading-relaxed text-slate-500">{option.subtitle}</p>
+        </div>
       </div>
-
-      <p className="mt-3 text-sm font-semibold text-neutral-900">{option.title}</p>
-      <p className="mt-1 text-xs leading-relaxed text-slate-500">{option.subtitle}</p>
 
       <ul className="mt-3 flex flex-col gap-1.5">
         {option.bullets.map((bullet) => (
@@ -164,11 +147,30 @@ function PartnerTypeCard({ option, checked, onToggle }: PartnerTypeCardProps) {
 
 type Step3PanelProps = {
   content: Step3Content["panel"];
+  notSureBox: Step3Content["notSureBox"];
 };
 
-export function Step3Panel({ content }: Step3PanelProps) {
+export function Step3Panel({ content, notSureBox }: Step3PanelProps) {
   return (
     <div className="flex flex-col gap-5">
+      <div className="flex gap-3 rounded-2xl bg-sky-50 p-4">
+        <Info className="h-5 w-5 shrink-0 text-brand" aria-hidden="true" />
+        <div className="min-w-0">
+          <p className="text-sm font-semibold text-neutral-900">
+            {notSureBox.title}
+          </p>
+          <p className="mt-1 text-xs leading-relaxed text-slate-500">
+            {notSureBox.description}
+          </p>
+          <Link
+            href="/contact"
+            className="mt-1.5 inline-flex text-xs font-semibold text-brand hover:underline"
+          >
+            {notSureBox.link}
+          </Link>
+        </div>
+      </div>
+
       <div className="rounded-2xl bg-slate-50 p-5">
         <p className="text-sm font-semibold text-neutral-900">{content.benefitsTitle}</p>
         <ul className="mt-3 flex flex-col gap-2">

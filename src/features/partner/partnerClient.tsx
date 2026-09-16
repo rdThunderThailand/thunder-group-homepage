@@ -24,7 +24,6 @@
 import { useReducer } from "react";
 import type { Locale } from "@/i18n/routing";
 import { PartnerSidebar } from "./components/PartnerSidebar";
-import { Breadcrumb } from "./components/Breadcrumb";
 import { Stepper } from "./components/Stepper";
 import { Step1Account, Step1Panel } from "./steps/Step1Account";
 import { Step2Company, Step2Panel } from "./steps/Step2Company";
@@ -52,6 +51,7 @@ export function PartnerClient({ content, locale }: PartnerClientProps) {
   const [state, dispatch] = useReducer(wizardReducer, undefined, createInitialWizardState);
 
   async function handleSubmit() {
+    if (!state.account.agreeTerms || state.submitting) return;
     dispatch({ type: "SUBMIT_START" });
     try {
       const response = await fetch("/api/partner/applications", {
@@ -63,7 +63,7 @@ export function PartnerClient({ content, locale }: PartnerClientProps) {
           companyName: state.company.nameEn,
           email: state.account.email,
           applicationData: {
-            account: { ...state.account, password: undefined },
+            account: state.account,
             company: state.company,
             partnerTypes: state.partnerTypes,
             additional: state.additional,
@@ -90,30 +90,15 @@ export function PartnerClient({ content, locale }: PartnerClientProps) {
     : content.sidebar.steps[`step${state.step}` as `step${StepNumber}`];
 
   return (
-    <div className="relative -mt-16 w-full bg-white lg:-mt-20">
-      <div
-        className="absolute inset-x-0 top-0 h-16 bg-ink lg:h-20"
-        aria-hidden="true"
-      />
-
+    <div className="relative w-full bg-white">
       <div className="relative mx-auto flex w-full max-w-7xl flex-col lg:min-h-screen lg:flex-row">
         <PartnerSidebar content={content.sidebar} stepCopy={sidebarStepCopy} />
 
-        {/* `lg:mt-20` (margin, not padding) leaves the full-width dark strip
-            exposed behind the transparent overlay navbar. */}
-        <div className="flex-1 bg-white lg:mt-20">
-          <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-10 lg:py-14">
+        <div className="flex-1 bg-white">
+          <div className="mx-auto max-w-5xl px-4 pb-10 pt-6 sm:px-6 lg:px-10 lg:pb-14 lg:pt-8">
           {state.submitted ? (
             <>
-              <Breadcrumb
-                items={[
-                  content.breadcrumb.home,
-                  content.breadcrumb.partnerProgram,
-                  content.breadcrumb.register,
-                  content.breadcrumb.applicationReceived,
-                ]}
-              />
-              <div className="mt-6">
+              <div>
                 <RegisterSuccess
                   content={content.success}
                   locale={locale}
@@ -130,14 +115,7 @@ export function PartnerClient({ content, locale }: PartnerClientProps) {
             </>
           ) : (
             <>
-              <Breadcrumb
-                items={[
-                  content.breadcrumb.home,
-                  content.breadcrumb.partnerProgram,
-                  content.breadcrumb.register,
-                ]}
-              />
-              <h1 className="mt-4 text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl">
+              <h1 className="text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl">
                 {content.heading}
               </h1>
               <p className="mt-2 text-sm leading-relaxed text-slate-500 sm:text-base">
@@ -151,7 +129,7 @@ export function PartnerClient({ content, locale }: PartnerClientProps) {
                 onStepClick={(step) => dispatch({ type: "GO_TO_STEP", step })}
               />
 
-              <div className="mt-8">
+              <div className={state.step >= 4 ? "mt-4" : "mt-8"}>
                 {state.step === 1 && (
                   <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_20rem]">
                     <Step1Account
@@ -185,8 +163,9 @@ export function PartnerClient({ content, locale }: PartnerClientProps) {
                   </div>
                 )}
 
+                {/* Grow the original left track by 20%, taking space from the benefits panel. */}
                 {state.step === 3 && (
-                  <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_20rem]">
+                  <div className="grid gap-6 lg:grid-cols-[minmax(0,calc((100%_-_1.5rem_-_20rem)*1.2))_minmax(0,1fr)]">
                     <Step3PartnerType
                       content={content.step3}
                       value={state.partnerTypes}
@@ -196,7 +175,7 @@ export function PartnerClient({ content, locale }: PartnerClientProps) {
                       canContinue={isStep3Valid(state.partnerTypes)}
                       incompleteHint={content.incompleteHint}
                     />
-                    <Step3Panel content={content.step3.panel} />
+                    <Step3Panel content={content.step3.panel} notSureBox={content.step3.notSureBox} />
                   </div>
                 )}
 
@@ -232,6 +211,10 @@ export function PartnerClient({ content, locale }: PartnerClientProps) {
                 {state.step === 5 && (
                   <Step5Review
                     content={content.step5}
+                    agreement={content.step1.form.agreement}
+                    onAgreeTermsChange={(value) =>
+                      dispatch({ type: "SET_ACCOUNT_FIELD", field: "agreeTerms", value })
+                    }
                     account={state.account}
                     company={state.company}
                     partnerTypeIds={state.partnerTypes}

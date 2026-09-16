@@ -45,34 +45,34 @@ const LINK_COLUMNS: readonly FooterLinkColumn[] = [
   {
     key: "solutions",
     links: [
-      { key: "digitalSignageMedia", href: "/solutions/digital-signage-media" },
-      { key: "communication", href: "/solutions/communication" },
-      { key: "thunderCare", href: "/solutions/thunder-care" },
-      { key: "assetIntelligence", href: "/solutions/asset-intelligence" },
+      { key: "digitalSignageMedia", href: "#/solutions/digital-signage-media" },
+      { key: "communication", href: "#/solutions/communication" },
+      { key: "thunderCare", href: "#/solutions/thunder-care" },
+      { key: "assetIntelligence", href: "#/solutions/asset-intelligence" },
     ],
   },
   {
     key: "businesses",
     links: [
-      { key: "thunderDisplay", href: "/businesses/thunder-display" },
-      { key: "thunderOne", href: "/businesses/thunderone" },
-      { key: "cityZen", href: "/businesses/cityzen" },
-      { key: "wonder", href: "/businesses/wonder" },
+      { key: "thunderDisplay", href: "#/businesses/thunder-display" },
+      { key: "thunderOne", href: "#/businesses/thunderone" },
+      { key: "cityZen", href: "#/businesses/cityzen" },
+      { key: "wonder", href: "#/businesses/wonder" },
     ],
   },
   {
     key: "explore",
     links: [
-      { key: "projects", href: "/projects" },
-      { key: "insights", href: "/insights" },
+      { key: "projects", href: "#/projects" },
+      { key: "insights", href: "#/insights" },
       { key: "partners", href: "/partners" },
     ],
   },
   {
     key: "thunder",
     links: [
-      { key: "about", href: "/about" },
-      { key: "purpose", href: "/about/purpose" },
+      { key: "about", href: "#/about" },
+      { key: "purpose", href: "#/about/purpose" },
       { key: "careers", href: "/careers" },
       { key: "contact", href: "/contact" },
     ],
@@ -112,7 +112,7 @@ export async function Footer({ className }: FooterProps) {
           {/* Brand + tagline */}
           <div className="max-w-[16rem] lg:shrink-0">
             <Link href="/" aria-label={tCommon("wordmark")} className="block">
-              <Image src={thunderLogoWhite} alt="" aria-hidden="true" className="h-14 w-auto" />
+              <Image src={thunderLogoWhite} alt="" aria-hidden="true" className="h-[123.032px] w-auto" />
             </Link>
             <p className="mt-4 text-sm leading-relaxed">{t("tagline")}</p>
           </div>

@@ -39,7 +39,7 @@ export function CompleteExperienceSection({
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
               <Link
-                href="/what-we-do"
+                href="#/what-we-do"
                 className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand transition-colors hover:text-brand-strong"
               >
                 {content.secondaryCta}

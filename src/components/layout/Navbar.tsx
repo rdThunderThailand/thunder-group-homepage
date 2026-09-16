@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { ArrowRight, ChevronDown, Menu, Search, X } from "lucide-react";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import thunderLogoWhite from "@/image/logo/thunder-logo-white.png";
 import thunderLogoBlack from "@/image/logo/thunder-logo-black.png";
@@ -27,13 +27,13 @@ interface NavItem {
 }
 
 const NAV_ITEMS: readonly NavItem[] = [
-  { key: "whatWeDo", href: "/what-we-do" },
-  { key: "solutions", href: "/solutions", hasMenu: true },
-  { key: "businesses", href: "/businesses", hasMenu: true },
-  { key: "projects", href: "/projects" },
+  { key: "whatWeDo", href: "#/what-we-do" },
+  { key: "solutions", href: "#/solutions", hasMenu: true },
+  { key: "businesses", href: "#/businesses", hasMenu: true },
+  { key: "projects", href: "#/projects" },
   { key: "partners", href: "/partners" },
-  { key: "insights", href: "/insights" },
-  { key: "about", href: "/about" },
+  { key: "insights", href: "#/insights" },
+  { key: "about", href: "#/about" },
 ];
 
 /** Distance scrolled before an `overlay` navbar switches to its solid style. */
@@ -55,6 +55,7 @@ export interface NavbarProps {
 export function Navbar({ overlay = false, className }: NavbarProps) {
   const t = useTranslations("Navbar");
   const tCommon = useTranslations("Common");
+  const pathname = usePathname();
 
   const [scrolled, setScrolled] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
@@ -114,6 +115,8 @@ export function Navbar({ overlay = false, className }: NavbarProps) {
     hoverSurface,
   );
 
+  if (pathname === "/partners") return null;
+
   return (
     <header
       className={cx(
@@ -142,7 +145,7 @@ export function Navbar({ overlay = false, className }: NavbarProps) {
             src={solid ? thunderLogoBlack : thunderLogoWhite}
             alt={tCommon("wordmark")}
             priority
-            className="h-14 w-auto"
+            className="h-[123.032px] w-auto"
           />
         </Link>
 

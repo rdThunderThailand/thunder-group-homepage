@@ -254,7 +254,7 @@ export function HeroSection({
 
               </div>
               <Link
-                href="/about"
+                href="#/about"
                 className="inline-flex items-center gap-2 text-sm font-semibold text-white/90 transition-colors hover:text-white"
               >
                 {content.ctaSecondary}

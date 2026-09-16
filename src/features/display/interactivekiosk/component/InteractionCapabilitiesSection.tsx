@@ -49,7 +49,7 @@ export function InteractionCapabilitiesSection({
         <SectionHeader
           eyebrow={content.label}
           title={content.title}
-          action={{ label: content.viewAll, href: "/what-we-do" }}
+          action={{ label: content.viewAll, href: "#/what-we-do" }}
         />
 
         <div className="mt-12 grid gap-10 lg:grid-cols-[1.15fr_1fr] lg:gap-14">
@@ -103,7 +103,7 @@ export function InteractionCapabilitiesSection({
             </div>
 
             <Link
-              href="/what-we-do"
+              href="#/what-we-do"
               className="mt-7 inline-flex items-center gap-2 self-start rounded-full border border-white/30 px-4 py-2.5 text-xs font-semibold text-white transition-colors hover:bg-white/10"
             >
               {journey.cta}

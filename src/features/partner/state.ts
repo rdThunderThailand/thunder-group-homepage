@@ -9,7 +9,6 @@ export type AccountData = {
   lastName: string;
   email: string;
   phone: string;
-  password: string;
   agreeTerms: boolean;
 };
 
@@ -76,7 +75,6 @@ export function createInitialWizardState(): WizardState {
       lastName: "",
       email: "",
       phone: "",
-      password: "",
       agreeTerms: false,
     },
     company: {
@@ -199,9 +197,7 @@ export function isStep1Valid(account: AccountData): boolean {
     account.firstName.trim() !== "" &&
     account.lastName.trim() !== "" &&
     account.email.trim() !== "" &&
-    account.phone.trim() !== "" &&
-    account.password.trim() !== "" &&
-    account.agreeTerms
+    account.phone.trim() !== ""
   );
 }
 
