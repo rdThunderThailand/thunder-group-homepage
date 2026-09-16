@@ -379,7 +379,8 @@
     },
     "notProvided": "ไม่ได้ระบุ",
     "backButton": "ย้อนกลับ",
-    "submitButton": "ส่งใบสมัคร"
+    "submitButton": "ส่งใบสมัคร",
+    "submitError": "เกิดข้อผิดพลาดขณะส่งใบสมัคร กรุณาลองใหม่อีกครั้ง"
   },
   "success": {
     "thankYouLabel": "THANK YOU",

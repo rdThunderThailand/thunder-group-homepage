@@ -22,6 +22,8 @@ type Step5ReviewProps = {
   onEditStep: (step: StepNumber) => void;
   onBack: () => void;
   onSubmit: () => void;
+  submitting: boolean;
+  submitError: string | null;
 };
 
 export function Step5Review({
@@ -36,6 +38,8 @@ export function Step5Review({
   onEditStep,
   onBack,
   onSubmit,
+  submitting,
+  submitError,
 }: Step5ReviewProps) {
   const { fields, notProvided } = content;
 
@@ -130,11 +134,18 @@ export function Step5Review({
           <ReviewField label={fields.aboutBusiness} value={additional.aboutBusiness || notProvided} wide />
         </ReviewSection>
 
+        {submitError && (
+          <p role="alert" className="text-sm font-medium text-red-600">
+            {submitError}
+          </p>
+        )}
+
         <div className="flex flex-col-reverse gap-3 sm:flex-row">
           <button
             type="button"
             onClick={onBack}
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-neutral-800 transition-colors hover:border-brand hover:text-brand"
+            disabled={submitting}
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-neutral-800 transition-colors hover:border-brand hover:text-brand disabled:cursor-not-allowed disabled:opacity-50"
           >
             <ArrowLeft className="h-4 w-4" aria-hidden="true" />
             {content.backButton}
@@ -142,7 +153,8 @@ export function Step5Review({
           <button
             type="button"
             onClick={onSubmit}
-            className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-strong"
+            disabled={submitting}
+            className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-strong disabled:cursor-not-allowed disabled:opacity-50"
           >
             {content.submitButton}
             <ArrowRight className="h-4 w-4" aria-hidden="true" />

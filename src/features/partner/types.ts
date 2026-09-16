@@ -246,6 +246,7 @@ export type Step5Content = {
   notProvided: string;
   backButton: string;
   submitButton: string;
+  submitError: string;
 };
 
 export type SuccessProgressContent = {

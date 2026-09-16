@@ -379,7 +379,8 @@
     },
     "notProvided": "Not provided",
     "backButton": "Back",
-    "submitButton": "Submit Application"
+    "submitButton": "Submit Application",
+    "submitError": "Something went wrong while submitting your application. Please try again."
   },
   "success": {
     "thankYouLabel": "THANK YOU",

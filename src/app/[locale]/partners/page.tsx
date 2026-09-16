@@ -38,6 +38,11 @@ export default async function PartnerRegisterPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
+  // A LINE-first `?t=<token>` request never reaches this component: `proxy`
+  // (src/proxy.ts) intercepts it first, since a Server Component can't write
+  // the httpOnly cookie the token needs (only a Route Handler, Server
+  // Action, or proxy can) -- see design review Q17.
+
   const t = await getTranslations(NAMESPACE);
   const helpPanel = (prefix: string) => ({
     title: t(`${prefix}.title`),
@@ -275,6 +280,7 @@ export default async function PartnerRegisterPage({
           notProvided: t("step5.notProvided"),
           backButton: t("step5.backButton"),
           submitButton: t("step5.submitButton"),
+          submitError: t("step5.submitError"),
         },
         success: {
           thankYouLabel: t("success.thankYouLabel"),

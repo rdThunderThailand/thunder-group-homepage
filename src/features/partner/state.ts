@@ -1,6 +1,8 @@
-// Client-only state for the Partner Registration wizard. Nothing here talks
-// to a backend — `SUBMIT` just mints a mock application number and flips
-// `submitted`, per the spec ("ยังไม่ต้องเชื่อมต่อ backend จริง").
+// State for the Partner Registration wizard. The reducer itself still can't
+// do async work, so submitting is split across three actions dispatched by
+// `PartnerClient`: SUBMIT_START before the fetch to
+// /api/partner/applications, then SUBMIT_SUCCESS (with the server-assigned
+// applicationId) or SUBMIT_ERROR once it resolves.
 
 export type AccountData = {
   firstName: string;
@@ -44,6 +46,12 @@ export type WizardState = {
   /** Highest step the user has reached — lets the stepper re-open any
    *  previously visited step without letting them skip ahead. */
   highestStepReached: StepNumber;
+  /** Client-generated once per mount; sent with the submit request so a
+   *  double-click or browser auto-retry doesn't create two applications
+   *  (server also enforces this on tax ID as a second layer). */
+  submissionId: string;
+  submitting: boolean;
+  submitError: string | null;
   submitted: boolean;
   applicationId: string;
   submittedAt: Date | null;
@@ -53,46 +61,51 @@ export type WizardState = {
   additional: AdditionalData;
 };
 
-export const initialWizardState: WizardState = {
-  step: 1,
-  highestStepReached: 1,
-  submitted: false,
-  applicationId: "",
-  submittedAt: null,
-  account: {
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    password: "",
-    agreeTerms: false,
-  },
-  company: {
-    nameTh: "",
-    nameEn: "",
-    taxId: "",
-    businessType: "",
-    website: "",
-    phone: "",
-    address: "",
-    province: "",
-    district: "",
-    postalCode: "",
-  },
-  partnerTypes: [],
-  additional: {
-    customerSegments: [],
-    customerSegmentOther: "",
-    interestedProducts: [],
-    interestedProductOther: "",
-    projectsPerYear: "",
-    avgProjectValue: "",
-    aboutBusiness: "",
-    consentAccurate: true,
-    consentTerms: true,
-    consentContact: true,
-  },
-};
+export function createInitialWizardState(): WizardState {
+  return {
+    step: 1,
+    highestStepReached: 1,
+    submissionId: crypto.randomUUID(),
+    submitting: false,
+    submitError: null,
+    submitted: false,
+    applicationId: "",
+    submittedAt: null,
+    account: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      password: "",
+      agreeTerms: false,
+    },
+    company: {
+      nameTh: "",
+      nameEn: "",
+      taxId: "",
+      businessType: "",
+      website: "",
+      phone: "",
+      address: "",
+      province: "",
+      district: "",
+      postalCode: "",
+    },
+    partnerTypes: [],
+    additional: {
+      customerSegments: [],
+      customerSegmentOther: "",
+      interestedProducts: [],
+      interestedProductOther: "",
+      projectsPerYear: "",
+      avgProjectValue: "",
+      aboutBusiness: "",
+      consentAccurate: true,
+      consentTerms: true,
+      consentContact: true,
+    },
+  };
+}
 
 export type WizardAction =
   | { type: "SET_ACCOUNT_FIELD"; field: keyof AccountData; value: string | boolean }
@@ -111,16 +124,12 @@ export type WizardAction =
   | { type: "GO_TO_STEP"; step: StepNumber }
   | { type: "NEXT_STEP" }
   | { type: "BACK_STEP" }
-  | { type: "SUBMIT" };
+  | { type: "SUBMIT_START" }
+  | { type: "SUBMIT_SUCCESS"; applicationId: string }
+  | { type: "SUBMIT_ERROR"; message: string };
 
 function toggleInList(list: string[], id: string): string[] {
   return list.includes(id) ? list.filter((item) => item !== id) : [...list, id];
-}
-
-function generateApplicationId(): string {
-  const year = new Date().getFullYear();
-  const serial = Math.floor(100000 + Math.random() * 900000);
-  return `PRT-${year}-${serial}`;
 }
 
 export function wizardReducer(
@@ -168,13 +177,18 @@ export function wizardReducer(
     }
     case "BACK_STEP":
       return { ...state, step: Math.max(state.step - 1, 1) as StepNumber };
-    case "SUBMIT":
+    case "SUBMIT_START":
+      return { ...state, submitting: true, submitError: null };
+    case "SUBMIT_SUCCESS":
       return {
         ...state,
+        submitting: false,
         submitted: true,
-        applicationId: generateApplicationId(),
+        applicationId: action.applicationId,
         submittedAt: new Date(),
       };
+    case "SUBMIT_ERROR":
+      return { ...state, submitting: false, submitError: action.message };
     default:
       return state;
   }

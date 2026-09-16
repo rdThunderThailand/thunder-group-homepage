@@ -51,14 +51,13 @@ export function TalkToThunderSection({ content }: TalkToThunderSectionProps) {
       <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:grid lg:grid-cols-12 lg:items-center lg:gap-10 lg:px-8 lg:py-20">
         <div className="lg:col-span-5">
           <SectionEyebrow
-            number={content.number}
             label={content.eyebrow}
             tone="dark"
           />
           <h2 className="mt-5 text-3xl font-bold tracking-tight sm:text-4xl">
             {content.title}
           </h2>
-          <p className="mt-4 max-w-md text-base leading-relaxed text-white/65">
+          <p className="mt-4 max-w-md whitespace-pre-line text-base leading-relaxed text-white/65">
             {content.description}
           </p>
         </div>

@@ -29,7 +29,7 @@ export function WhatWeBuildSection({ content }: WhatWeBuildSectionProps) {
     <section className="bg-white">
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:grid lg:grid-cols-12 lg:gap-12 lg:px-8 lg:py-28">
         <div className="lg:col-span-4">
-          <SectionEyebrow number={content.number} label={content.eyebrow} />
+          <SectionEyebrow label={content.eyebrow} />
           <h2 className="mt-5 whitespace-pre-line text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl">
             {content.title}
           </h2>
@@ -38,7 +38,7 @@ export function WhatWeBuildSection({ content }: WhatWeBuildSectionProps) {
           </p>
           <Link
             href="/businesses"
-            className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand transition-colors hover:text-brand-strong"
+            className="mt-6 inline-flex items-center gap-2 text-sm font-semibold transition-colors hover:text-brand-strong"
           >
             {content.cta}
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -67,7 +67,7 @@ export function WhatWeBuildSection({ content }: WhatWeBuildSectionProps) {
               <p className="mt-1.5 flex-1 whitespace-pre-line text-sm leading-relaxed text-slate-500">
                 {business.description}
               </p>
-              <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-brand transition-colors group-hover:text-brand-strong">
+              <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold transition-colors group-hover:text-brand-strong">
                 {business.cta}
                 <ArrowRight
                   className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
