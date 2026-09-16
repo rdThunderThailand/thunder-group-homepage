@@ -40,7 +40,7 @@ export function ConnectedOperationSection({
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
               <Link
-                href="/businesses/thunderone"
+                href="#/businesses/thunderone"
                 className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-neutral-900 transition-colors hover:border-brand hover:text-brand"
               >
                 {content.secondaryCta}

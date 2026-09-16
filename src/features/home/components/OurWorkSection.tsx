@@ -38,7 +38,7 @@ export function OurWorkSection({ content }: OurWorkSectionProps) {
             {content.description}
           </p>
           <Link
-            href="/projects"
+            href="#/projects"
             className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors hover:text-white/70"
           >
             {content.cta}
@@ -49,7 +49,7 @@ export function OurWorkSection({ content }: OurWorkSectionProps) {
         <div className="mt-10 grid gap-3 sm:grid-cols-[1.15fr_0.85fr] lg:col-span-8 lg:mt-0">
           {/* Featured project */}
           <Link
-            href="/projects"
+            href="#/projects"
             className="group relative flex min-h-[320px] flex-col justify-end overflow-hidden rounded-2xl bg-slate-950 p-6 sm:row-span-2 sm:min-h-[440px]"
           >
             <Image
@@ -78,7 +78,7 @@ export function OurWorkSection({ content }: OurWorkSectionProps) {
           {content.projects.map((project, index) => (
             <Link
               key={project.title}
-              href="/projects"
+              href="#/projects"
               className="group relative flex min-h-[200px] flex-col justify-end overflow-hidden rounded-2xl bg-slate-950 p-6"
             >
               <Image

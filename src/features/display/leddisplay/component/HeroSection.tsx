@@ -5,7 +5,7 @@
 // left-aligned copy + two CTAs sit over the scrim, and two small stacked-word
 // annotations pin to the lower corners.
 
-import { ArrowDown, ArrowRight, ChevronRight } from "lucide-react";
+import { ArrowDown, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import heroImage from "@/image/led-display/hero/led-display-hero.png";
@@ -16,7 +16,7 @@ type HeroSectionProps = {
   breadcrumb: LedBreadcrumb;
 };
 
-export function HeroSection({ content, breadcrumb }: HeroSectionProps) {
+export function HeroSection({ content }: HeroSectionProps) {
   return (
     <section className="relative -mt-16 overflow-hidden bg-ink text-white lg:-mt-20">
       {/* LED installation background */}
@@ -34,24 +34,6 @@ export function HeroSection({ content, breadcrumb }: HeroSectionProps) {
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 pb-16 pt-28 sm:px-6 lg:px-8 lg:pb-20 lg:pt-36">
-        {/* Breadcrumb — "Home > Display Solutions > LED Display" */}
-        <nav
-          aria-label={breadcrumb.current}
-          className="flex flex-wrap items-center gap-2 text-xs font-medium text-white/55"
-        >
-          <Link href="/" className="transition-colors hover:text-white">
-            {breadcrumb.home}
-          </Link>
-          <ChevronRight className="h-3.5 w-3.5" aria-hidden="true" />
-          <Link
-            href="/display"
-            className="transition-colors hover:text-white"
-          >
-            {breadcrumb.display}
-          </Link>
-          <ChevronRight className="h-3.5 w-3.5" aria-hidden="true" />
-          <span className="text-white/85">{breadcrumb.current}</span>
-        </nav>
 
         <div className="mt-10 max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-400">

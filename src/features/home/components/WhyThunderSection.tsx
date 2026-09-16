@@ -104,7 +104,7 @@ export function WhyThunderSection({ content }: WhyThunderSectionProps) {
             {content.description}
           </p>
           <Link
-            href="/about/purpose"
+            href="#/about/purpose"
             className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors hover:text-white/70"
           >
             {content.cta}

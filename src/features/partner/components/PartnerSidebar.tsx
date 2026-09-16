@@ -35,13 +35,13 @@ type PartnerSidebarProps = {
 
 export function PartnerSidebar({ content, stepCopy }: PartnerSidebarProps) {
   return (
-    <aside className="relative isolate shrink-0 overflow-hidden bg-ink px-6 pb-8 pt-20 text-white sm:px-8 lg:w-[36.5%] lg:pb-14 lg:pt-24">
+    <aside className="relative isolate shrink-0 overflow-hidden bg-ink px-6 pb-8 pt-6 text-white sm:px-8 lg:w-[30%] lg:pb-14 lg:pt-8">
       <Image
         src={partnerRegisterVisual}
         alt={content.imageAlt}
         fill
         priority
-        sizes="(min-width: 1024px) 35vw, 100vw"
+        sizes="(min-width: 1280px) 384px, (min-width: 1024px) 30vw, 100vw"
         className="-z-10 object-cover lg:translate-y-40"
       />
       {/* Keep the copy area dark, then reveal 80% of the image at the bottom. */}
@@ -65,12 +65,12 @@ export function PartnerSidebar({ content, stepCopy }: PartnerSidebarProps) {
         <span className="block text-white">{content.titleLine1}</span>
         <span className="block text-sky-400">{content.titleLine2}</span>
       </h2>
-      <p className="mt-4 text-base font-semibold leading-snug text-white/90 sm:text-lg">
+      <p className="mt-4 whitespace-pre-line text-base font-semibold leading-snug text-white/90 sm:text-lg">
         {content.subtitle}
       </p>
 
       {/* Description + highlights + caption collapse away below `lg`. */}
-      <p className="mt-3 hidden max-w-sm text-sm leading-relaxed text-white/60 lg:block">
+      <p className="mt-3 hidden max-w-sm whitespace-pre-line text-sm leading-relaxed text-white/60 lg:block">
         {content.description}
       </p>
 

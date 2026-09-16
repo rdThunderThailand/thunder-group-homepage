@@ -96,7 +96,7 @@ export function SelectField({
 }: SelectFieldProps) {
   return (
     <label htmlFor={id} className="flex flex-col gap-1.5">
-      <span className="text-sm font-medium text-neutral-800">
+      <span className="whitespace-pre-line text-sm font-medium text-neutral-800">
         {label}
         {required ? <RequiredMark /> : null}
       </span>

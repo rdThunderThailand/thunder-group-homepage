@@ -37,7 +37,6 @@ import Image from "next/image";
 import {
   ArrowRight,
   Building2,
-  ChevronRight,
   Eye,
   Handshake,
   Headphones,
@@ -173,7 +172,6 @@ export function DisplayClient({ content }: DisplayClientProps) {
 
 function HeroSection({
   content,
-  breadcrumb,
 }: {
   content: DisplayHeroContent;
   breadcrumb: DisplayBreadcrumb;
@@ -284,17 +282,6 @@ function HeroSection({
       <div className="absolute inset-y-0 right-0 w-[58%] bg-gradient-to-l from-cyan-100/15 via-blue-400/5 to-transparent mix-blend-screen" />
 
       <div className="relative mx-auto max-w-7xl px-4 pb-16 pt-28 sm:px-6 lg:px-8 lg:pb-24 lg:pt-36">
-        {/* Breadcrumb — "Home > Display Solutions" */}
-        <nav
-          aria-label={breadcrumb.current}
-          className="flex flex-wrap items-center gap-2 text-xs font-medium text-white/55"
-        >
-          <Link href="/" className="transition-colors hover:text-white">
-            {breadcrumb.home}
-          </Link>
-          <ChevronRight className="h-3.5 w-3.5" aria-hidden="true" />
-          <span className="text-white/85">{breadcrumb.current}</span>
-        </nav>
 
         <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:gap-8">
           {/* Left — copy */}
@@ -520,7 +507,7 @@ function SolutionsSection({ content }: { content: DisplaySolutionsContent }) {
           eyebrow={content.label}
           title={content.title}
           description={content.description}
-          action={{ label: content.viewAll, href: "/solutions" }}
+          action={{ label: content.viewAll, href: "#/solutions" }}
         />
 
         <motion.div
@@ -612,7 +599,7 @@ function FeaturedProjectsSection({
           eyebrow={content.label}
           title={content.title}
           description={content.description}
-          action={{ label: content.viewAll, href: "/projects" }}
+          action={{ label: content.viewAll, href: "#/projects" }}
           tone="dark"
         />
 
@@ -620,7 +607,7 @@ function FeaturedProjectsSection({
           {content.projects.map((project, index) => (
             <Link
               key={project.name}
-              href="/projects"
+              href="#/projects"
               className="group flex flex-col overflow-hidden rounded-2xl border border-white/15 bg-white/[0.04] transition-colors hover:border-white/40"
             >
               <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden bg-white/[0.03]">

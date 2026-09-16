@@ -606,7 +606,7 @@ function ThunderOneSection({ content }: { content: ThunderOneContent }) {
               {content.description}
             </p>
             <Link
-              href="/businesses/thunderone"
+              href="#/businesses/thunderone"
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-brand px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-strong"
             >
               {content.cta}

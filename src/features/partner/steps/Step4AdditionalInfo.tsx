@@ -44,7 +44,7 @@ export function Step4AdditionalInfo({
         {content.cardDescription}
       </p>
 
-      <div className="mt-7 flex flex-col gap-7">
+      <div className="mt-4 flex flex-col gap-4">
         <CheckboxGroup
           label={content.customerSegments.label}
           options={content.customerSegments.options}
@@ -67,7 +67,7 @@ export function Step4AdditionalInfo({
           onOtherChange={(text) => onChange("interestedProductOther", text)}
         />
 
-        <div className="grid gap-5 sm:grid-cols-2">
+        <div className="grid gap-5 sm:grid-cols-2 sm:gap-y-1.5 sm:[&>label]:row-span-2 sm:[&>label]:grid sm:[&>label]:grid-rows-subgrid">
           <SelectField
             label={content.projectsPerYearLabel}
             placeholder={content.projectsPerYearPlaceholder}

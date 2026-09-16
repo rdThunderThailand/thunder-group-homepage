@@ -7,11 +7,14 @@
 
 import type { ReactNode } from "react";
 import { ArrowLeft, ArrowRight, Pencil } from "lucide-react";
+import { LinkedAgreement } from "../components/LinkedAgreement";
 import type { AccountData, AdditionalData, CompanyData, StepNumber } from "../state";
-import type { CheckboxOption, PartnerTypeOption, Step5Content } from "../types";
+import type { CheckboxOption, LinkedAgreementContent, PartnerTypeOption, Step5Content } from "../types";
 
 type Step5ReviewProps = {
   content: Step5Content;
+  agreement: LinkedAgreementContent;
+  onAgreeTermsChange: (checked: boolean) => void;
   account: AccountData;
   company: CompanyData;
   partnerTypeIds: string[];
@@ -28,6 +31,8 @@ type Step5ReviewProps = {
 
 export function Step5Review({
   content,
+  agreement,
+  onAgreeTermsChange,
   account,
   company,
   partnerTypeIds,
@@ -70,17 +75,17 @@ export function Step5Review({
     .join(" ");
 
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+    <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
       <h2 className="text-xl font-bold text-neutral-900">{content.cardTitle}</h2>
       <p className="mt-1.5 text-sm leading-relaxed text-slate-500">
         {content.cardDescription}
       </p>
 
-      <div className="mt-7 flex flex-col gap-6">
+      <div className="mt-4 grid gap-3 md:grid-cols-2">
         <ReviewSection title={content.sections.account} editLabel={content.editLink} onEdit={() => onEditStep(1)}>
-          <ReviewField label={fields.fullName} value={`${account.firstName} ${account.lastName}`.trim() || notProvided} />
-          <ReviewField label={fields.email} value={account.email || notProvided} />
-          <ReviewField label={fields.phone} value={account.phone || notProvided} />
+          <ReviewField label={fields.fullName} value={`${account.firstName} ${account.lastName}`.trim() || notProvided} wide />
+          <ReviewField label={fields.phone} value={account.phone || notProvided} wide />
+          <ReviewField label={fields.email} value={account.email || notProvided} wide />
         </ReviewSection>
 
         <ReviewSection title={content.sections.company} editLabel={content.editLink} onEdit={() => onEditStep(2)}>
@@ -135,12 +140,23 @@ export function Step5Review({
         </ReviewSection>
 
         {submitError && (
-          <p role="alert" className="text-sm font-medium text-red-600">
+          <p role="alert" className="col-span-full text-sm font-medium text-red-600">
             {submitError}
           </p>
         )}
 
-        <div className="flex flex-col-reverse gap-3 sm:flex-row">
+        <label className="col-span-full flex items-start gap-2.5 text-sm leading-relaxed text-neutral-700">
+          <input
+            type="checkbox"
+            checked={account.agreeTerms}
+            disabled={submitting}
+            onChange={(event) => onAgreeTermsChange(event.target.checked)}
+            className="mt-0.5 h-4 w-4 shrink-0 rounded border-slate-300 accent-brand"
+          />
+          <LinkedAgreement content={agreement} />
+        </label>
+
+        <div className="col-span-full mx-auto flex w-[80%] flex-col-reverse gap-3 sm:flex-row">
           <button
             type="button"
             onClick={onBack}
@@ -153,7 +169,7 @@ export function Step5Review({
           <button
             type="button"
             onClick={onSubmit}
-            disabled={submitting}
+            disabled={submitting || !account.agreeTerms}
             className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-strong disabled:cursor-not-allowed disabled:opacity-50"
           >
             {content.submitButton}
@@ -174,7 +190,7 @@ type ReviewSectionProps = {
 
 function ReviewSection({ title, editLabel, onEdit, children }: ReviewSectionProps) {
   return (
-    <section className="rounded-xl border border-slate-200 p-4 sm:p-5">
+    <section className="min-w-0 rounded-xl border border-slate-200 p-3">
       <div className="flex items-center justify-between gap-3">
         <h3 className="text-sm font-bold text-neutral-900">{title}</h3>
         <button
@@ -186,7 +202,7 @@ function ReviewSection({ title, editLabel, onEdit, children }: ReviewSectionProp
           {editLabel}
         </button>
       </div>
-      <div className="mt-3 grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2">{children}</div>
+      <div className="mt-2 grid grid-cols-1 gap-x-3 gap-y-2 sm:grid-cols-2">{children}</div>
     </section>
   );
 }
@@ -201,7 +217,7 @@ function ReviewField({ label, value, wide }: ReviewFieldProps) {
   return (
     <div className={wide ? "col-span-full" : undefined}>
       <p className="text-xs text-slate-400">{label}</p>
-      <p className="mt-0.5 whitespace-pre-line text-sm font-medium text-neutral-800">{value}</p>
+      <p className="mt-0.5 whitespace-pre-line break-words text-sm font-medium text-neutral-800">{value}</p>
     </div>
   );
 }

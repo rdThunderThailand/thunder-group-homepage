@@ -13,6 +13,8 @@
   "search": "Search",
   "openMenu": "Open menu",
   "closeMenu": "Close menu",
+  "hideNavbar": "Hide navigation bar",
+  "showNavbar": "Show navigation bar",
   "changeLanguage": "Change language",
   "cta": "Talk to Thunder",
   "menuPreview": "{section} menu — coming soon"
