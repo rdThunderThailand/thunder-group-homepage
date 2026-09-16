@@ -1,8 +1,9 @@
 import type { SVGProps } from "react";
-import { Zap } from "lucide-react";
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { LocaleSwitcher } from "./LocaleSwitcher";
+import thunderLogoWhite from "@/image/logo/thunder-logo-white.png";
 
 function cx(...parts: Array<string | false | null | undefined>): string {
   return parts.filter(Boolean).join(" ");
@@ -110,17 +111,8 @@ export async function Footer({ className }: FooterProps) {
         <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between lg:gap-10">
           {/* Brand + tagline */}
           <div className="max-w-[16rem] lg:shrink-0">
-            <Link href="/" className="flex items-center gap-2 text-white">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/10">
-                <Zap
-                  className="h-5 w-5 fill-current"
-                  strokeWidth={0}
-                  aria-hidden="true"
-                />
-              </span>
-              <span className="text-lg font-bold uppercase tracking-[0.2em]">
-                {tCommon("wordmark")}
-              </span>
+            <Link href="/" aria-label={tCommon("wordmark")} className="block">
+              <Image src={thunderLogoWhite} alt="" aria-hidden="true" className="h-14 w-auto" />
             </Link>
             <p className="mt-4 text-sm leading-relaxed">{t("tagline")}</p>
           </div>

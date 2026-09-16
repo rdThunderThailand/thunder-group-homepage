@@ -249,7 +249,7 @@ export function HeroSection({
                   className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-neutral-900 transition-colors hover:bg-white/90"
                 >
                   {content.ctaPrimary}
-                  <ArrowDown className="h-4 w-4" aria-hidden="true" />
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </motion.button>
 
               </div>
@@ -273,7 +273,7 @@ export function HeroSection({
                   type="button"
                   onPointerEnter={() => setActivePillar(index)}
                   onFocus={() => setActivePillar(index)}
-                  onClick={scrollToTalkToThunder}
+                  onClick={index === 0 ? undefined : scrollToTalkToThunder}
                   animate={
                     activePillar === index
                       ? { y: -5, backgroundColor: "rgba(255,255,255,0.12)" }
@@ -307,8 +307,9 @@ export function HeroSection({
           </motion.div>
         </div>
 
-          <p className="whitespace-pre-line  text-[0.7rem] font-semibold uppercase leading-relaxed tracking-[0.25em] text-white/40">
-            {content.sideNote}
+          <p className="flex items-center gap-3 text-[0.7rem] font-semibold uppercase leading-relaxed tracking-[0.25em] text-white/40">
+            <span className="h-px w-8 shrink-0 bg-current" aria-hidden="true" />
+            <span className="whitespace-pre-line">{content.sideNote}</span>
           </p>
 
         {/* Scroll cue */}

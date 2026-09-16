@@ -28,7 +28,6 @@ export function OurWorkSection({ content }: OurWorkSectionProps) {
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:grid lg:grid-cols-12 lg:gap-12 lg:px-8 lg:py-28">
         <div className="lg:col-span-4">
           <SectionEyebrow
-            number={content.number}
             label={content.eyebrow}
             tone="dark"
           />
@@ -47,7 +46,7 @@ export function OurWorkSection({ content }: OurWorkSectionProps) {
           </Link>
         </div>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:col-span-8 lg:mt-0">
+        <div className="mt-10 grid gap-3 sm:grid-cols-[1.15fr_0.85fr] lg:col-span-8 lg:mt-0">
           {/* Featured project */}
           <Link
             href="/projects"

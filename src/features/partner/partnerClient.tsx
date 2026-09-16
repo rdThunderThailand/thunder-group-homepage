@@ -33,7 +33,7 @@ import { Step4AdditionalInfo, Step4Panel } from "./steps/Step4AdditionalInfo";
 import { Step5Review } from "./steps/Step5Review";
 import { RegisterSuccess } from "./steps/RegisterSuccess";
 import {
-  initialWizardState,
+  createInitialWizardState,
   isStep1Valid,
   isStep2Valid,
   isStep3Valid,
@@ -49,22 +49,60 @@ type PartnerClientProps = {
 };
 
 export function PartnerClient({ content, locale }: PartnerClientProps) {
-  const [state, dispatch] = useReducer(wizardReducer, initialWizardState);
+  const [state, dispatch] = useReducer(wizardReducer, undefined, createInitialWizardState);
+
+  async function handleSubmit() {
+    dispatch({ type: "SUBMIT_START" });
+    try {
+      const response = await fetch("/api/partner/applications", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          submissionId: state.submissionId,
+          taxId: state.company.taxId,
+          companyName: state.company.nameEn,
+          email: state.account.email,
+          applicationData: {
+            account: { ...state.account, password: undefined },
+            company: state.company,
+            partnerTypes: state.partnerTypes,
+            additional: state.additional,
+          },
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("submit failed");
+      }
+
+      const result = (await response.json()) as { applicationId: string };
+      dispatch({ type: "SUBMIT_SUCCESS", applicationId: result.applicationId });
+    } catch {
+      dispatch({
+        type: "SUBMIT_ERROR",
+        message: content.step5.submitError,
+      });
+    }
+  }
 
   const sidebarStepCopy = state.submitted
     ? content.sidebar.steps.success
     : content.sidebar.steps[`step${state.step}` as `step${StepNumber}`];
 
   return (
-    <div className="relative -mt-16 flex flex-col bg-ink lg:-mt-20 lg:min-h-screen lg:flex-row">
-      <PartnerSidebar content={content.sidebar} stepCopy={sidebarStepCopy} />
+    <div className="relative -mt-16 w-full bg-white lg:-mt-20">
+      <div
+        className="absolute inset-x-0 top-0 h-16 bg-ink lg:h-20"
+        aria-hidden="true"
+      />
 
-      {/* `lg:mt-20` (margin, not padding) leaves the dark wrapper's background
-          exposed above this column too, matching the navbar's own height —
-          padding would fill that strip with this div's own white background
-          and make the transparent overlay navbar's white text unreadable. */}
-      <div className="flex-1 bg-white lg:mt-20">
-        <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-10 lg:py-14">
+      <div className="relative mx-auto flex w-full max-w-7xl flex-col lg:min-h-screen lg:flex-row">
+        <PartnerSidebar content={content.sidebar} stepCopy={sidebarStepCopy} />
+
+        {/* `lg:mt-20` (margin, not padding) leaves the full-width dark strip
+            exposed behind the transparent overlay navbar. */}
+        <div className="flex-1 bg-white lg:mt-20">
+          <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-10 lg:py-14">
           {state.submitted ? (
             <>
               <Breadcrumb
@@ -203,12 +241,15 @@ export function PartnerClient({ content, locale }: PartnerClientProps) {
                     interestedProductOptions={content.step4.interestedProducts.options}
                     onEditStep={(step) => dispatch({ type: "GO_TO_STEP", step })}
                     onBack={() => dispatch({ type: "BACK_STEP" })}
-                    onSubmit={() => dispatch({ type: "SUBMIT" })}
+                    onSubmit={handleSubmit}
+                    submitting={state.submitting}
+                    submitError={state.submitError}
                   />
                 )}
               </div>
             </>
           )}
+          </div>
         </div>
       </div>
     </div>

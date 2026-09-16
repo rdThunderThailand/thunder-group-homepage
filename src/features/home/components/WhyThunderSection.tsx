@@ -91,7 +91,6 @@ export function WhyThunderSection({ content }: WhyThunderSectionProps) {
       <div className="relative mx-auto flex min-h-[20rem] max-w-7xl flex-col justify-center px-4 py-14 sm:px-6 lg:grid lg:min-h-[28rem] lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.2fr)_max-content] lg:items-center lg:gap-8 lg:px-8 lg:py-20">
         <div>
           <SectionEyebrow
-            number={content.number}
             label={content.eyebrow}
             tone="dark"
           />

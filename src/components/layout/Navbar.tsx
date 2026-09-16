@@ -2,9 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
-import { ArrowRight, ChevronDown, Menu, Search, X, Zap } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, ChevronDown, Menu, Search, X } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { LocaleSwitcher } from "./LocaleSwitcher";
+import thunderLogoWhite from "@/image/logo/thunder-logo-white.png";
+import thunderLogoBlack from "@/image/logo/thunder-logo-black.png";
 
 function cx(...parts: Array<string | false | null | undefined>): string {
   return parts.filter(Boolean).join(" ");
@@ -126,28 +129,21 @@ export function Navbar({ overlay = false, className }: NavbarProps) {
         aria-label={t("primaryLabel")}
         className="mx-auto flex h-16 max-w-7xl items-center gap-3 px-4 sm:px-6 lg:h-20 lg:px-8"
       >
-        {/* Logo */}
+        {/* Logo. Swap marks instead of theming one: black reads on the solid
+            (white) navbar, white reads on the transparent overlay over the
+            dark hero. */}
         <Link
           href="/"
           aria-label={t("brandHome")}
           onClick={closeMenu}
-          className="flex shrink-0 items-center gap-2"
+          className="flex shrink-0 items-center"
         >
-          <span
-            className={cx(
-              "flex h-8 w-8 items-center justify-center rounded-lg transition-colors",
-              solid ? "bg-neutral-900 text-white" : "bg-white/15 text-white",
-            )}
-          >
-            <Zap
-              className="h-5 w-5 fill-current"
-              strokeWidth={0}
-              aria-hidden="true"
-            />
-          </span>
-          <span className="text-lg font-bold uppercase tracking-[0.2em]">
-            {tCommon("wordmark")}
-          </span>
+          <Image
+            src={solid ? thunderLogoBlack : thunderLogoWhite}
+            alt={tCommon("wordmark")}
+            priority
+            className="h-14 w-auto"
+          />
         </Link>
 
         {/* Desktop primary nav */}
@@ -280,9 +276,11 @@ export function Navbar({ overlay = false, className }: NavbarProps) {
           )}
         >
           <div className="flex h-16 shrink-0 items-center justify-between px-4">
-            <span className="text-lg font-bold uppercase tracking-[0.2em]">
-              {tCommon("wordmark")}
-            </span>
+            <Image
+              src={thunderLogoBlack}
+              alt={tCommon("wordmark")}
+              className="h-14 w-auto"
+            />
             <button
               type="button"
               onClick={closeMobile}

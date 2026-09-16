@@ -7,8 +7,8 @@
   },
   "hero": {
     "eyebrow": "TECHNOLOGY",
-    "title": "Technology for a Brighter Tomorrow",
-    "description": "Discover technology and solutions that fit your organization. Start with what you need, and we'll take you to the right path.",
+    "title": "Technology\nfor a Brighter\nTomorrow",
+    "description": "Discover technology and solutions that fit your\norganization. Start with what you need, and we'll\ntake you to the right path.",
     "features": [
       { "title": "Trusted Products", "description": "From leading global brands" },
       { "title": "Reliable Solutions", "description": "With deployment and care" },
@@ -26,27 +26,27 @@
     "categories": [
       {
         "name": "Display & Signage",
-        "description": "Visual communication and display solutions for real-world spaces.",
+        "description": "Visual communication and display solutions\nfor real-world spaces.",
         "tags": ["LED Display", "Digital Signage", "Video Wall", "Control"]
       },
       {
         "name": "Interactive & Kiosk",
-        "description": "Engaging interactive solutions for better experiences.",
+        "description": "Engaging interactive solutions\nfor better experiences.",
         "tags": ["Interactive Kiosk", "Self Service", "Touch Display", "Queue System"]
       },
       {
         "name": "Workplace Technology",
-        "description": "Create a smarter, more connected workplace.",
+        "description": "Create a smarter, more connected\nworkplace.",
         "tags": ["Meeting & Collaboration", "Workspace", "Smart Entrance"]
       },
       {
         "name": "Computers & Devices",
-        "description": "Essential devices and equipment for your business.",
+        "description": "Essential devices and equipment\nfor your business.",
         "tags": ["Laptop", "Desktop", "Monitor", "Printer", "Accessories"]
       },
       {
         "name": "Network & Infrastructure",
-        "description": "Secure and reliable infrastructure for a stronger foundation.",
+        "description": "Secure and reliable infrastructure\nfor a stronger foundation.",
         "tags": ["Network", "Wi-Fi", "Security", "Infrastructure"]
       }
     ]

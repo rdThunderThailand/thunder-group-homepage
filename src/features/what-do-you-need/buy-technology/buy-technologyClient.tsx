@@ -219,14 +219,14 @@ function HeroSection({ content, breadcrumb }: HeroSectionProps) {
           <span className="text-white/85">{breadcrumb.current}</span>
         </nav>
 
-        <div className="mt-10 lg:min-h-[22rem] lg:max-w-[calc(50%-2rem)]">
+        <div className="mt-10 lg:min-h-[22rem] lg:max-w-[56%]">
           {/* Left — copy */}
           <div>
             <SectionEyebrow label={content.eyebrow} tone="dark" />
-            <h1 className="mt-5 text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl">
+            <h1 className="mt-5 whitespace-pre-line text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl">
               {content.title}
             </h1>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-white/70 sm:text-lg">
+            <p className="mt-5 max-w-xl whitespace-pre-line text-base leading-relaxed text-white/70 sm:text-lg">
               {content.description}
             </p>
 
@@ -235,8 +235,8 @@ function HeroSection({ content, breadcrumb }: HeroSectionProps) {
                 const Icon = FEATURE_ICONS[index] ?? FEATURE_ICONS[0];
                 return (
                   <div key={feature.title} className="flex items-start gap-3">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white">
-                      <Icon className="h-4 w-4" aria-hidden="true" />
+                    <span className="mt-0.5 flex shrink-0 text-white">
+                      <Icon className="h-6 w-6" aria-hidden="true" />
                     </span>
                     <div className="min-w-0 pt-0.5">
                       <p className="text-sm font-semibold text-white">
@@ -287,7 +287,7 @@ function CategorySection({ content }: CategorySectionProps) {
           </div>
 
           {/* Decorative right-aligned note — "DIFFERENT NEEDS. ONE THUNDER." */}
-          <p className="absolute right-0 top-0 hidden max-w-[8rem] border-l border-slate-200 pl-4 text-right text-[0.7rem] font-semibold uppercase leading-relaxed tracking-[0.2em] text-slate-400 lg:block">
+          <p className="absolute right-0 top-0 hidden max-w-[11rem] border-l border-slate-200 pl-4 text-right text-[0.7rem] font-semibold uppercase leading-relaxed tracking-[0.2em] text-slate-400 lg:block">
             {content.aside}
           </p>
         </div>
@@ -315,23 +315,23 @@ function CategorySection({ content }: CategorySectionProps) {
                       : "(min-width: 1280px) 384px, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"}
                     className="object-cover"
                   />
-                  <span className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-brand shadow-sm">
+                  <span className="absolute bottom-4 left-4 flex h-11 w-11 items-center justify-center rounded-lg border border-slate-200 bg-white text-brand shadow-sm">
                     <Icon className="h-5 w-5" aria-hidden="true" />
                   </span>
                 </div>
 
                 {/* Body */}
                 <div className="flex flex-1 flex-col p-5 sm:p-6">
-                  <div className="flex items-start justify-between gap-3">
-                    <div>
-                      <h3 className="text-lg font-semibold text-neutral-900">
+                  <div className="relative flex items-start">
+                    <div className="w-full min-w-0">
+                      <h3 className="pr-12 text-lg font-semibold text-neutral-900">
                         {category.name}
                       </h3>
-                      <p className="mt-1.5 text-sm leading-relaxed text-slate-500">
+                      <p className="mt-1.5 whitespace-pre-line text-sm leading-relaxed text-slate-500">
                         {category.description}
                       </p>
                     </div>
-                    <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-400 transition-colors group-hover:border-brand group-hover:bg-brand group-hover:text-white">
+                    <span className="absolute right-0 top-0.5 flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 text-slate-400 transition-colors group-hover:border-brand group-hover:bg-brand group-hover:text-white">
                       <ArrowRight className="h-4 w-4" aria-hidden="true" />
                     </span>
                   </div>
@@ -452,19 +452,19 @@ function BottomBanner({ content }: BottomBannerProps) {
       />
 
       <div className="relative mx-auto flex max-w-7xl flex-col gap-10 px-4 py-14 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:px-8 lg:py-16">
-        <h2 className="max-w-xs text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
+        <h2 className="max-w-md text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
           {content.title}
         </h2>
 
-        <div className="grid gap-6 sm:grid-cols-3 lg:max-w-2xl">
+        <div className="grid gap-10 sm:grid-cols-3 lg:shrink-0 lg:grid-cols-[max-content_max-content_max-content]">
           {content.items.map((item, index) => {
             const Icon = BANNER_ICONS[index] ?? BANNER_ICONS[0];
             return (
-              <div key={item.title} className="flex items-start gap-3">
-                <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/20 text-white">
-                  <Icon className="h-4 w-4" aria-hidden="true" />
+              <div key={item.title} className="flex items-start gap-4">
+                <span className="mt-0.5 flex shrink-0 text-white">
+                  <Icon className="h-8 w-8" aria-hidden="true" />
                 </span>
-                <div>
+                <div className="lg:whitespace-nowrap">
                   <p className="text-sm font-semibold text-white">{item.title}</p>
                   <p className="mt-1 text-xs leading-relaxed text-white/60">
                     {item.description}
