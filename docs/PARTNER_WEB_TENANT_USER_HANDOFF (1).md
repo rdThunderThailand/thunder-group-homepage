@@ -102,6 +102,8 @@ Token มีอายุ 30 นาที ใช้ได้ครั้งเด
 → Partner Web สร้าง/ค้นหา auth user, public user, tenant และ membership
 → Partner Web บันทึกใบสมัครฉบับเต็ม
 → ส่ง PENDING callback ไป LINE Service
+→ Admin ตรวจและอนุมัติใบสมัคร
+→ Partner Web ได้สถานะ APPROVED
 → ขอ WEB_TO_LINE token
 → ผู้ใช้ส่ง LINK <token> เข้า LINE OA
 → LINE Service เชื่อม line_user กับ public user
@@ -109,9 +111,10 @@ Token มีอายุ 30 นาที ใช้ได้ครั้งเด
 
 ลำดับ API:
 
-1. `POST /callbacks/partner`
-2. `POST /partner/link-token`
-3. ผู้ใช้ส่ง `LINK <token>` ใน LINE OA
+1. `POST /callbacks/partner` ด้วยสถานะ `PENDING`
+2. Admin เปลี่ยนใบสมัครเป็น `APPROVED`
+3. `POST /partner/link-token` หลังอนุมัติแล้วเท่านั้น
+4. ผู้ใช้ส่ง `LINK <token>` ใน LINE OA
 
 ## Application Callback
 
