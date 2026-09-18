@@ -31,7 +31,7 @@ const NAV_ITEMS: readonly NavItem[] = [
   { key: "solutions", href: "#/solutions", hasMenu: true },
   { key: "businesses", href: "#/businesses", hasMenu: true },
   { key: "projects", href: "#/projects" },
-  { key: "partners", href: "/register" },
+  { key: "partners", href: "#/register" },
   { key: "insights", href: "#/insights" },
   { key: "about", href: "#/about" },
 ];
