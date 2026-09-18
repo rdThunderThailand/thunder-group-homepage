@@ -21,12 +21,12 @@ function hasLocalePrefix(pathname: string) {
   );
 }
 
-// `partner.<domain>` is the standalone entry point for the registration
+// `partners.<domain>` is the standalone entry point for the registration
 // flow -- once that domain is added to this same Vercel project, its root
 // (bare or with just a locale segment, e.g. `/` or `/th`) rewrites straight
 // to `/register` so it never shows the main homepage.
 function isPartnerSubdomain(host: string) {
-  return host.split(":")[0].split(".")[0] === "partner";
+  return host.split(":")[0].split(".")[0] === "partners";
 }
 
 function isSubdomainRootPath(pathname: string) {
