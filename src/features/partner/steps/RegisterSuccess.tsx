@@ -178,7 +178,7 @@ export function RegisterSuccess({
         </div>
 
         <Link
-          href={`/partners/application/${applicationId}`}
+          href={`/register/application/${applicationId}`}
           className="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-2.5 text-sm font-semibold text-neutral-800 transition-colors hover:border-brand hover:text-brand"
         >
           👁 {content.viewDetailsLink}

@@ -1,4 +1,4 @@
-// Shared between the /partners page (sets the cookie from `?t=`) and the
+// Shared between the /register page (sets the cookie from `?t=`) and the
 // submit Route Handler (reads + clears it). Kept in one place so the name
 // and lifetime can't drift between the two.
 

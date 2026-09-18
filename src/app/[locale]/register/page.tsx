@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { PartnerClient } from "@/features/partner/partnerClient";
+import { PartnerClient } from "@/features/partner/partnerRegisterClient";
 import type { Locale } from "@/i18n/routing";
 import type {
   CheckboxOption,

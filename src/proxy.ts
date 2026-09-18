@@ -21,6 +21,18 @@ function hasLocalePrefix(pathname: string) {
   );
 }
 
+// `partner.<domain>` is the standalone entry point for the registration
+// flow -- once that domain is added to this same Vercel project, its root
+// (bare or with just a locale segment, e.g. `/` or `/th`) rewrites straight
+// to `/register` so it never shows the main homepage.
+function isPartnerSubdomain(host: string) {
+  return host.split(":")[0].split(".")[0] === "partner";
+}
+
+function isSubdomainRootPath(pathname: string) {
+  return pathname === "/" || routing.locales.some((locale) => pathname === `/${locale}`);
+}
+
 function localeForCountry(country: string | undefined): Locale {
   if (country === "TH") return "th";
   if (country) return "en";
@@ -30,6 +42,12 @@ function localeForCountry(country: string | undefined): Locale {
 }
 
 export function proxy(request: NextRequest) {
+  const host = request.headers.get("host") ?? "";
+  if (isPartnerSubdomain(host) && isSubdomainRootPath(request.nextUrl.pathname)) {
+    request.nextUrl.pathname =
+      request.nextUrl.pathname === "/" ? "/register" : `${request.nextUrl.pathname}/register`;
+  }
+
   const { pathname } = request.nextUrl;
 
   // LINE-first entry (`?t=<token>`, see docs/partner_web_api_contract.md).
@@ -38,7 +56,7 @@ export function proxy(request: NextRequest) {
   // here, before next-intl's own routing runs. Redirects with `t` stripped
   // in the same hop so a single-use secret never sits in the URL bar,
   // browser history, or Vercel's request logs (design review Q17).
-  if (pathname.endsWith("/partners")) {
+  if (pathname.endsWith("/register")) {
     const token = request.nextUrl.searchParams.get("t");
     if (token) {
       const url = request.nextUrl.clone();

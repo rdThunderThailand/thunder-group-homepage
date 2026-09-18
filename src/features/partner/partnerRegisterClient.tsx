@@ -1,7 +1,7 @@
 "use client";
 
 // === PARTNER REGISTRATION — "สมัครเป็น Thunder Partner" ===
-// Full page body for `/partners`, split out of the route's `page.tsx` as a
+// Full page body for `/register`, split out of the route's `page.tsx` as a
 // Client Component per the project's `features/*Client.tsx` convention
 // (mirrors `src/features/home/HomeClient`). `Navbar` (with `overlay`) and
 // `Footer` already wrap every route from `src/app/[locale]/layout.tsx` — this
@@ -234,6 +234,7 @@ export function PartnerClient({ content, locale }: PartnerClientProps) {
           )}
           </div>
         </div>
+        
       </div>
     </div>
   );
