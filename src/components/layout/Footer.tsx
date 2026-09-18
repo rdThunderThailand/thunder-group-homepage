@@ -65,7 +65,7 @@ const LINK_COLUMNS: readonly FooterLinkColumn[] = [
     links: [
       { key: "projects", href: "#/projects" },
       { key: "insights", href: "#/insights" },
-      { key: "partners", href: "/partners" },
+      { key: "partners", href: "/register" },
     ],
   },
   {

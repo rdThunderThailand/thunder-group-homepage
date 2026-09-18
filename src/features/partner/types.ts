@@ -1,6 +1,6 @@
 // Content shapes for the Partner Registration flow. Every string here is
 // resolved from the `PartnerProgramPage` namespace in
-// `src/app/[locale]/partners/page.tsx` (a Server Component)
+// `src/app/[locale]/register/page.tsx` (a Server Component)
 // and handed to `PartnerClient` as props — the client tree never calls
 // `useTranslations`, matching every other feature in this repo (see
 // `src/features/home/types.ts`).
