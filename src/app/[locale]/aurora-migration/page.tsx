@@ -53,6 +53,9 @@ export default function AuroraMigrationPage() {
   const [site, setSite] = useState("");
   const [lineName, setLineName] = useState<string>();
   const [liffError, setLiffError] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
+  const [referenceNo, setReferenceNo] = useState("");
 
   useEffect(() => {
     const liffId = process.env.NEXT_PUBLIC_LIFF_ID;
@@ -113,6 +116,51 @@ export default function AuroraMigrationPage() {
           ? form.modules.length > 0
           : true;
 
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setSubmitError(false);
+
+    if (step < 4) {
+      setStep((current) => current + 1);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    let idToken: string | null;
+    try {
+      idToken = liff.getIDToken();
+    } catch {
+      idToken = null;
+    }
+    if (!idToken) {
+      setLiffError(true);
+      return;
+    }
+
+    setSubmitting(true);
+    try {
+      const apiUrl = process.env.NEXT_PUBLIC_LINE_API_URL ?? "https://thundercrmlineoa.vercel.app";
+      const { company, ...fields } = form;
+      const response = await fetch(`${apiUrl}/aurora-migration/requests`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${idToken}` },
+        body: JSON.stringify({ ...fields, companyName: company }),
+      });
+      if (!response.ok) throw new Error("Request failed");
+
+      const result = (await response.json()) as { referenceNo: string };
+      if (!result.referenceNo) throw new Error("Missing reference number");
+      setReferenceNo(result.referenceNo);
+      setStep(5);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } catch (error) {
+      console.error("Aurora migration submission failed", error);
+      setSubmitError(true);
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
     <main className="fixed inset-0 z-[100] overflow-y-auto bg-[#eef5ff] text-[#102c61]">
       <div className="mx-auto min-h-screen max-w-lg bg-white shadow-xl">
@@ -149,11 +197,7 @@ export default function AuroraMigrationPage() {
 
         <form
           className="space-y-6 px-5 py-6"
-          onSubmit={(event) => {
-            event.preventDefault();
-            setStep((current) => Math.min(5, current + 1));
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
+          onSubmit={handleSubmit}
         >
           {step === 1 && (
             <Step title="บอกเราว่าคุณคือใคร" subtitle="กรุณากรอกข้อมูลเพื่อให้ทีมงานติดต่อกลับ">
@@ -272,6 +316,7 @@ export default function AuroraMigrationPage() {
               <p className="mt-3 max-w-sm text-[#587096]">
                 ขอบคุณที่ลงทะเบียนกับ THUNDER ทีมงานจะตรวจสอบข้อมูลและติดต่อกลับโดยเร็วที่สุด
               </p>
+              <p className="mt-3 font-bold text-[#1769e8]">เลขอ้างอิง: {referenceNo}</p>
               <div className="mt-8 w-full rounded-lg bg-[#f2f7fd] p-5 text-left">
                 <p className="font-bold">ขั้นตอนต่อไป</p>
                 <ol className="mt-3 space-y-3 text-sm text-[#405a82]">
@@ -280,21 +325,28 @@ export default function AuroraMigrationPage() {
                   <li>3. เปิดใช้งานบัญชีและตั้งค่า MFA</li>
                 </ol>
               </div>
-              <button type="button" onClick={() => { setForm(initialForm); setStep(1); }} className="mt-6 w-full rounded-lg border border-[#1769e8] py-3 font-bold text-[#1769e8]">
+              <button type="button" onClick={() => { setForm(initialForm); setReferenceNo(""); setStep(1); }} className="mt-6 w-full rounded-lg border border-[#1769e8] py-3 font-bold text-[#1769e8]">
                 กลับสู่หน้าแรก
               </button>
             </section>
           )}
 
           {step < 5 && (
-            <button
-              type="submit"
-              disabled={!canContinue}
-              className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#0866f5] py-4 font-bold text-white disabled:cursor-not-allowed disabled:bg-[#a9bdd8]"
-            >
-              {step === 4 ? "ส่งข้อมูล" : "ถัดไป"}
-              {step === 4 ? <Check size={20} /> : <ArrowRight size={20} />}
-            </button>
+            <>
+              {submitError && (
+                <p role="alert" className="rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700">
+                  ส่งข้อมูลไม่สำเร็จ กรุณาลองใหม่อีกครั้ง
+                </p>
+              )}
+              <button
+                type="submit"
+                disabled={!canContinue || submitting}
+                className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#0866f5] py-4 font-bold text-white disabled:cursor-not-allowed disabled:bg-[#a9bdd8]"
+              >
+                {submitting ? "กำลังส่ง..." : step === 4 ? "ส่งข้อมูล" : "ถัดไป"}
+                {!submitting && (step === 4 ? <Check size={20} /> : <ArrowRight size={20} />)}
+              </button>
+            </>
           )}
         </form>
       </div>
