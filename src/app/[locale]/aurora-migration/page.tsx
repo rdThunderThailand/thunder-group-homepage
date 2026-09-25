@@ -205,23 +205,7 @@ export default function AuroraMigrationPage() {
                 <Field icon={<User size={18} />} label="ชื่อ *" value={form.firstName} onChange={(value) => update("firstName", value)} />
                 <Field label="นามสกุล *" value={form.lastName} onChange={(value) => update("lastName", value)} />
               </div>
-              <label className="block">
-                <span className="mb-1.5 block text-sm font-semibold">บริษัท / องค์กร *</span>
-                <span className="flex items-center gap-2 rounded-lg border border-[#c9d9ee] px-3 focus-within:border-[#1769e8]">
-                  <Building2 size={18} className="shrink-0 text-[#1769e8]" />
-                  <select
-                    required
-                    value={form.company}
-                    onChange={(event) => update("company", event.target.value)}
-                    className="min-w-0 flex-1 bg-transparent py-3 outline-none"
-                  >
-                    <option value="" disabled>เลือกบริษัท / องค์กร</option>
-                    <option value="A">A</option>
-                    <option value="B">B</option>
-                    <option value="C">C</option>
-                  </select>
-                </span>
-              </label>
+              <Field icon={<Building2 size={18} />} label="บริษัท / องค์กร *" value={form.company} onChange={(value) => update("company", value)} />
               <Field label="ตำแหน่ง / หน้าที่" value={form.position} onChange={(value) => update("position", value)} />
               <Field icon={<Mail size={18} />} label="Work Email *" type="email" value={form.email} onChange={(value) => update("email", value)} />
               <Field icon={<Phone size={18} />} label="เบอร์โทรศัพท์ *" type="tel" value={form.phone} onChange={(value) => update("phone", value)} />
