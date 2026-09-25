@@ -73,7 +73,7 @@ export default function AuroraMigrationPage() {
         setLineName(profile.displayName);
         setForm((current) => ({
           ...current,
-          firstName: profile.displayName,
+          firstName: "",
           lastName: "",
           company: "",
           position: "",
