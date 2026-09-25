@@ -1,5 +1,5 @@
-import { AuroraMigrationForm } from "@/features/aurora-migration/AuroraMigrationForm";
+import { AuroraMigrationClient } from "@/features/aurora-migration/AuroraMigrationClient";
 
 export default function AuroraMigrationPage() {
-  return <AuroraMigrationForm />;
+  return <AuroraMigrationClient />;
 }
