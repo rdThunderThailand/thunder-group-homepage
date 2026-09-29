@@ -46,8 +46,7 @@ export type WizardState = {
    *  previously visited step without letting them skip ahead. */
   highestStepReached: StepNumber;
   /** Client-generated once per mount; sent with the submit request so a
-   *  double-click or browser auto-retry doesn't create two applications
-   *  (server also enforces this on tax ID as a second layer). */
+   *  double-click or browser auto-retry doesn't create two applications. */
   submissionId: string;
   submitting: boolean;
   submitError: string | null;
