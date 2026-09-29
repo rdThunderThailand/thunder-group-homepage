@@ -5,7 +5,7 @@ export type WizardState = {
   form: AuroraMigrationData;
   siteInput: string;
   submitting: boolean;
-  submitError: boolean;
+  submitError: string | null;
   submitted: boolean;
   referenceNo: string;
 };
@@ -26,7 +26,7 @@ export function createInitialWizardState(): WizardState {
     },
     siteInput: "",
     submitting: false,
-    submitError: false,
+    submitError: null,
     submitted: false,
     referenceNo: "",
   };
@@ -43,7 +43,7 @@ export type WizardAction =
   | { type: "BACK_STEP" }
   | { type: "SUBMIT_START" }
   | { type: "SUBMIT_SUCCESS"; referenceNo: string }
-  | { type: "SUBMIT_ERROR" }
+  | { type: "SUBMIT_ERROR"; message: string }
   | { type: "RESET" };
 
 function toggle(list: string[], value: string) {
@@ -74,15 +74,15 @@ export function wizardReducer(state: WizardState, action: WizardAction): WizardS
     case "GO_TO_STEP":
       return { ...state, step: action.step };
     case "NEXT_STEP":
-      return { ...state, step: Math.min(state.step + 1, 4) as StepNumber, submitError: false };
+      return { ...state, step: Math.min(state.step + 1, 4) as StepNumber, submitError: null };
     case "BACK_STEP":
-      return { ...state, step: Math.max(state.step - 1, 1) as StepNumber, submitError: false };
+      return { ...state, step: Math.max(state.step - 1, 1) as StepNumber, submitError: null };
     case "SUBMIT_START":
-      return { ...state, submitting: true, submitError: false };
+      return { ...state, submitting: true, submitError: null };
     case "SUBMIT_SUCCESS":
       return { ...state, submitting: false, submitted: true, referenceNo: action.referenceNo };
     case "SUBMIT_ERROR":
-      return { ...state, submitting: false, submitError: true };
+      return { ...state, submitting: false, submitError: action.message };
     case "RESET":
       return createInitialWizardState();
   }
