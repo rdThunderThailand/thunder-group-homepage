@@ -25,26 +25,43 @@ async function submitRequest(form: AuroraMigrationData, idToken: string) {
   return result.referenceNo;
 }
 
+async function getExistingRequest(idToken: string) {
+  const response = await fetch("/api/aurora-migration/requests", {
+    headers: { Authorization: `Bearer ${idToken}` },
+    cache: "no-store",
+  });
+  const result = (await response.json()) as Array<{ referenceNo: string }> | { error?: string };
+  if (!response.ok || !Array.isArray(result)) throw new Error("REQUEST_LOOKUP_FAILED");
+  return result[0]?.referenceNo;
+}
+
 export function AuroraMigrationClient() {
   const [state, dispatch] = useReducer(wizardReducer, undefined, createInitialWizardState);
   const [lineName, setLineName] = useState<string>();
   const [liffError, setLiffError] = useState(false);
+  const [checkingRequest, setCheckingRequest] = useState(true);
 
   useEffect(() => {
     const liffId = process.env.NEXT_PUBLIC_LIFF_ID;
-    if (!liffId) return;
 
     async function connectLine() {
       try {
-        await liff.init({ liffId: liffId! });
+        if (!liffId) throw new Error("LIFF_ID_MISSING");
+        await liff.init({ liffId });
         if (!liff.isLoggedIn()) {
           liff.login({ redirectUri: window.location.href });
           return;
         }
         setLineName((await liff.getProfile()).displayName);
+        const idToken = liff.getIDToken();
+        if (!idToken) throw new Error("ID_TOKEN_MISSING");
+        const referenceNo = await getExistingRequest(idToken);
+        if (referenceNo) dispatch({ type: "SUBMIT_SUCCESS", referenceNo });
       } catch (error) {
         console.error("LIFF initialization failed", error);
         setLiffError(true);
+      } finally {
+        setCheckingRequest(false);
       }
     }
 
@@ -108,7 +125,9 @@ export function AuroraMigrationClient() {
         {liffError && <p role="alert" className="mx-5 mt-5 rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700">ไม่สามารถเชื่อมต่อ LINE ได้ กรุณาปิดแล้วเปิดหน้านี้จาก LINE อีกครั้ง</p>}
 
         <form className="space-y-6 px-5 py-6" onSubmit={handleSubmit}>
-          {state.submitted ? (
+          {checkingRequest ? (
+            <p className="py-12 text-center text-sm text-[#6b81a2]">กำลังตรวจสอบคำขอ...</p>
+          ) : state.submitted ? (
             <MigrationSuccess referenceNo={state.referenceNo} onReset={() => dispatch({ type: "RESET" })} />
           ) : (
             <>

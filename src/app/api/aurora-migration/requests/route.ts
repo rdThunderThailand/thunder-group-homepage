@@ -1,6 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 
-export async function POST(request: NextRequest) {
+async function forward(request: NextRequest, method: "GET" | "POST") {
   const apiUrl = process.env.THUNDER_LINE_API_URL;
   if (!apiUrl) return NextResponse.json({ error: "THUNDER_LINE_API_URL_MISSING" }, { status: 500 });
 
@@ -9,9 +9,9 @@ export async function POST(request: NextRequest) {
 
   try {
     const upstream = await fetch(new URL("/aurora-migration/requests", apiUrl), {
-      method: "POST",
+      method,
       headers: { "Content-Type": "application/json", Authorization: authorization },
-      body: await request.text(),
+      body: method === "POST" ? await request.text() : undefined,
       cache: "no-store",
     });
     const payload = await upstream.json().catch(() => ({ error: "UPSTREAM_ERROR" }));
@@ -20,4 +20,12 @@ export async function POST(request: NextRequest) {
     console.error("Aurora migration request failed", error);
     return NextResponse.json({ error: "UPSTREAM_UNAVAILABLE" }, { status: 502 });
   }
+}
+
+export function GET(request: NextRequest) {
+  return forward(request, "GET");
+}
+
+export function POST(request: NextRequest) {
+  return forward(request, "POST");
 }
