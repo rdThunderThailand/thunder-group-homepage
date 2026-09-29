@@ -1,14 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { createServiceRoleClient } from "@/lib/supabase/server";
 import { LINE_TOKEN_COOKIE } from "@/features/partner/lineToken";
-
-// Submits the registration wizard (step 5). Everything that talks to the
-// LINE Service itself happens later, out of band, via the Vercel Cron
-// worker reading thunder_partner.outbound_line_calls -- this handler only
-// has to get the application committed to our own DB, which is why its
-// error surface is just "bad input" / "unexpected failure", not the
-// contract's ~15 LINE Service error codes (those belong to the cron job).
-const SYSTEM_ACTOR_ID = "partner-web";
 
 type SubmitBody = {
   submissionId: string;
@@ -47,50 +38,33 @@ export async function POST(request: NextRequest) {
   }
 
   const lineToken = request.cookies.get(LINE_TOKEN_COOKIE)?.value ?? null;
-
-  const supabase = createServiceRoleClient();
-
-  // public.users.id must equal auth.users.id (docs/PARTNER_WEB_TENANT_USER_HANDOFF.md)
-  // -- a Postgres function can't create an Auth user itself, so find-or-create
-  // it here first. generateLink with type "magiclink" creates the user if the
-  // email doesn't exist yet and returns the existing one otherwise, without
-  // actually sending anything (Partner Web has no email flow built yet -- the
-  // link/OTP in the response is discarded). No password: the account step no
-  // longer collects one.
-  const { data: linkData, error: linkError } = await supabase.auth.admin.generateLink({
-    type: "magiclink",
-    email: body.email,
-  });
-
-  if (linkError || !linkData.user) {
-    console.error("auth user find-or-create failed", linkError);
+  const apiUrl = process.env.THUNDER_LINE_API_URL;
+  const systemSecret = process.env.PARTNER_SYSTEM_SECRET;
+  if (!apiUrl || !systemSecret) {
+    console.error("THUNDER_LINE_API_URL / PARTNER_SYSTEM_SECRET are not set");
     return NextResponse.json({ error: "INTERNAL_ERROR" }, { status: 500 });
   }
 
-  const { data, error } = await supabase.rpc("submit_partner_application", {
-    p_submission_id: body.submissionId,
-    p_tax_id: body.taxId,
-    p_company_name: body.companyName,
-    p_email: body.email,
-    p_actor_id: SYSTEM_ACTOR_ID,
-    p_user_id: linkData.user.id,
-    p_application_data: body.applicationData,
-    p_line_token: lineToken,
-  });
-
-  if (error) {
-    console.error("submit_partner_application failed", error);
+  let upstream: Response;
+  try {
+    upstream = await fetch(new URL("/partner/applications", apiUrl), {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${systemSecret}`,
+      },
+      body: JSON.stringify({ ...body, token: lineToken }),
+      cache: "no-store",
+    });
+  } catch (error) {
+    console.error("partner application request failed", error);
     return NextResponse.json({ error: "INTERNAL_ERROR" }, { status: 500 });
   }
 
-  const response = NextResponse.json({
-    applicationId: data.id,
-    status: data.status,
-  });
+  const payload = await upstream.json().catch(() => ({ error: "UPSTREAM_ERROR" }));
+  const response = NextResponse.json(payload, { status: upstream.status });
 
-  // One-time LINE token has been handed off to the RPC -- clear it so a
-  // page refresh/back-navigation can't resend it.
-  response.cookies.delete(LINE_TOKEN_COOKIE);
+  if (upstream.ok) response.cookies.delete(LINE_TOKEN_COOKIE);
 
   return response;
 }

@@ -37,9 +37,8 @@ onboarding_status = pending
 activated_at      = null
 ```
 
-`tenant_code` ต้องสร้างจาก Partner Web Backend ให้ไม่ซ้ำ โดยฐานข้อมูลมี UNIQUE
-constraint อยู่แล้ว ห้ามใช้ `ON CONFLICT (tax_id)` เพราะ `public.tenants` ปัจจุบันไม่มี
-คอลัมน์ `tax_id`
+`tenant_code` ต้องสร้างจาก `thunderCRM` ให้ไม่ซ้ำ โดยฐานข้อมูลมี UNIQUE constraint
+อยู่แล้ว และบันทึกเลขประจำตัวผู้เสียภาษีลง `public.tenants.tax_id`
 
 ### User
 
@@ -176,15 +175,11 @@ identity link, notification หรือ Rich Menu job
 | Relationship `SUSPENDED` | `partner` | กลับ Default Menu ชั่วคราว |
 | Relationship `REVOKED` | `user` | กลับ Default Menu |
 
-## Tax ID Open Item
+## Tax ID
 
-ทีม ThunderCore กำลังดำเนินการเพิ่มแนวทางจัดเก็บและตรวจสอบ `tax_id` ให้เป็น canonical
-field สำหรับตรวจบริษัทซ้ำ งานส่วนนี้เป็นความรับผิดชอบของ ThunderCore และ Partner Web
-ต้องรอ schema/contract ที่ยืนยันแล้วก่อนเชื่อมใช้งาน
-
-ระหว่างนี้ห้าม Partner Web สมมติว่ามี `public.tenants.tax_id`, ห้ามใช้
-`ON CONFLICT (tax_id)` และไม่ควรสร้าง column หรือ workaround เอง Partner Web ต้องเก็บ
-mapping ของใบสมัครกับ `tenant_id` ที่สร้างแล้ว เพื่อให้การ retry ใช้ tenant เดิมเสมอ
+ThunderCore มี `public.tenants.tax_id` แล้ว `thunderCRM` จึงบันทึก Tax ID ลง tenant และ
+เก็บ snapshot ไว้ในใบสมัครด้วย แต่คอลัมน์นี้ยังไม่มี UNIQUE constraint จึงยังไม่ใช้
+`ON CONFLICT (tax_id)` การ retry ป้องกันข้อมูลซ้ำด้วย `submission_id`
 
 ## Definition of Done
 
