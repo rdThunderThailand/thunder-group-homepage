@@ -12,18 +12,15 @@ import { Step3Usage } from "./steps/Step3Usage";
 import { Step4Review } from "./steps/Step4Review";
 import type { AuroraMigrationData } from "./types";
 
-const apiUrl = process.env.NEXT_PUBLIC_LINE_API_URL ?? "https://thundercrmlineoa.vercel.app";
-
 async function submitRequest(form: AuroraMigrationData, idToken: string) {
   const { company, ...fields } = form;
-  const response = await fetch(`${apiUrl}/aurora-migration/requests`, {
+  const response = await fetch("/api/aurora-migration/requests", {
     method: "POST",
     headers: { "Content-Type": "application/json", Authorization: `Bearer ${idToken}` },
     body: JSON.stringify({ ...fields, companyName: company }),
   });
-  if (!response.ok) throw new Error("Request failed");
-
-  const result = (await response.json()) as { referenceNo?: string };
+  const result = (await response.json()) as { referenceNo?: string; error?: string };
+  if (!response.ok) throw new Error(result.error ?? "REQUEST_FAILED");
   if (!result.referenceNo) throw new Error("Missing reference number");
   return result.referenceNo;
 }
@@ -82,7 +79,10 @@ export function AuroraMigrationClient() {
       scrollTop();
     } catch (error) {
       console.error("Aurora migration submission failed", error);
-      dispatch({ type: "SUBMIT_ERROR" });
+      const code = error instanceof Error ? error.message : "REQUEST_FAILED";
+      dispatch({ type: "SUBMIT_ERROR", message: code === "APPLICATION_ALREADY_SUBMITTED"
+        ? "บัญชี LINE นี้ส่งคำขอไปแล้ว"
+        : `ส่งข้อมูลไม่สำเร็จ (${code})` });
     }
   }
 
@@ -127,7 +127,7 @@ export function AuroraMigrationClient() {
               )}
               {state.step === 4 && <Step4Review value={state.form} onEdit={() => dispatch({ type: "GO_TO_STEP", step: 1 })} />}
 
-              {state.submitError && <p role="alert" className="rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700">ส่งข้อมูลไม่สำเร็จ กรุณาลองใหม่อีกครั้ง</p>}
+              {state.submitError && <p role="alert" className="rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700">{state.submitError}</p>}
               <button type="submit" disabled={!isCurrentStepValid(state) || state.submitting} className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#0866f5] py-4 font-bold text-white disabled:cursor-not-allowed disabled:bg-[#a9bdd8]">
                 {state.submitting ? "กำลังส่ง..." : state.step === 4 ? "ส่งข้อมูล" : "ถัดไป"}
                 {!state.submitting && (state.step === 4 ? <Check size={20} /> : <ArrowRight size={20} />)}
