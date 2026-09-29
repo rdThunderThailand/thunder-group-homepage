@@ -123,6 +123,15 @@ export type WizardAction =
   | { type: "BACK_STEP" }
   | { type: "SUBMIT_START" }
   | { type: "SUBMIT_SUCCESS"; applicationId: string }
+  | {
+      type: "RESTORE_SUBMISSION";
+      applicationId: string;
+      submittedAt: string;
+      account: AccountData;
+      company: CompanyData;
+      partnerTypes: string[];
+      additional: AdditionalData;
+    }
   | { type: "SUBMIT_ERROR"; message: string };
 
 function toggleInList(list: string[], id: string): string[] {
@@ -183,6 +192,17 @@ export function wizardReducer(
         submitted: true,
         applicationId: action.applicationId,
         submittedAt: new Date(),
+      };
+    case "RESTORE_SUBMISSION":
+      return {
+        ...state,
+        submitted: true,
+        applicationId: action.applicationId,
+        submittedAt: new Date(action.submittedAt),
+        account: action.account,
+        company: action.company,
+        partnerTypes: action.partnerTypes,
+        additional: action.additional,
       };
     case "SUBMIT_ERROR":
       return { ...state, submitting: false, submitError: action.message };

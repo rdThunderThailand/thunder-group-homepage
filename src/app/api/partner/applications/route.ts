@@ -62,9 +62,31 @@ export async function POST(request: NextRequest) {
   }
 
   const payload = await upstream.json().catch(() => ({ error: "UPSTREAM_ERROR" }));
-  const response = NextResponse.json(payload, { status: upstream.status });
+  return NextResponse.json(payload, { status: upstream.status });
+}
 
-  if (upstream.ok) response.cookies.delete(LINE_TOKEN_COOKIE);
+export async function GET(request: NextRequest) {
+  const token = request.cookies.get(LINE_TOKEN_COOKIE)?.value;
+  if (!token) return NextResponse.json({ application: null });
 
-  return response;
+  const apiUrl = process.env.THUNDER_LINE_API_URL;
+  const systemSecret = process.env.PARTNER_SYSTEM_SECRET;
+  if (!apiUrl || !systemSecret) {
+    return NextResponse.json({ error: "INTERNAL_ERROR" }, { status: 500 });
+  }
+
+  try {
+    const upstream = await fetch(new URL("/partner/applications/status", apiUrl), {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Authorization: `Bearer ${systemSecret}` },
+      body: JSON.stringify({ token }),
+      cache: "no-store",
+    });
+    if (upstream.status === 404) return NextResponse.json({ application: null });
+    const payload = await upstream.json().catch(() => ({ error: "UPSTREAM_ERROR" }));
+    return NextResponse.json(upstream.ok ? { application: payload } : payload, { status: upstream.status });
+  } catch (error) {
+    console.error("partner application status request failed", error);
+    return NextResponse.json({ error: "INTERNAL_ERROR" }, { status: 500 });
+  }
 }

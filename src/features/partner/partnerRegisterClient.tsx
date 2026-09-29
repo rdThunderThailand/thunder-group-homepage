@@ -7,12 +7,8 @@
 // `Footer` already wrap every route from `src/app/[locale]/layout.tsx` — this
 // file renders only the body.
 //
-// Every string is resolved on the server in `page.tsx` (the
-// `PartnerProgramPage` namespace) and passed in as plain props — nothing here
-// calls `useTranslations`. All state (current step, the four steps' form
-// data, and the mock submit) lives in a single `useReducer` in `state.ts`;
-// there is no backend call — "Submit" on step 5 just mints a mock application
-// number and flips to the success screen.
+// Every string is resolved on the server in `page.tsx` and passed in as plain
+// props. Wizard and submission state live in a single reducer in `state.ts`.
 //
 // Layout: the dark sidebar is pulled up under the transparent overlay navbar
 // with `-mt-16 lg:-mt-20`, same technique as every other page's hero (see
@@ -21,7 +17,7 @@
 // before the user scrolls, so the white content column gets a matching
 // `lg:mt-20` (margin, not padding) instead of starting flush at the top.
 
-import { useReducer } from "react";
+import { useEffect, useReducer, useState } from "react";
 import type { Locale } from "@/i18n/routing";
 import { PartnerSidebar } from "./components/PartnerSidebar";
 import { Stepper } from "./components/Stepper";
@@ -38,6 +34,9 @@ import {
   isStep3Valid,
   isStep4Valid,
   wizardReducer,
+  type AccountData,
+  type AdditionalData,
+  type CompanyData,
   type StepNumber,
 } from "./state";
 import type { PartnerPageContent } from "./types";
@@ -49,6 +48,42 @@ type PartnerClientProps = {
 
 export function PartnerClient({ content, locale }: PartnerClientProps) {
   const [state, dispatch] = useReducer(wizardReducer, undefined, createInitialWizardState);
+  const [checkingApplication, setCheckingApplication] = useState(true);
+
+  useEffect(() => {
+    async function restoreApplication() {
+      try {
+        const response = await fetch("/api/partner/applications", { cache: "no-store" });
+        const result = (await response.json()) as {
+          application?: {
+            applicationId: string;
+            submittedAt: string;
+            applicationData: {
+              account: AccountData;
+              company: CompanyData;
+              partnerTypes: string[];
+              additional: AdditionalData;
+            };
+          } | null;
+        };
+        const application = result.application;
+        if (response.ok && application?.applicationData) {
+          dispatch({
+            type: "RESTORE_SUBMISSION",
+            applicationId: application.applicationId,
+            submittedAt: application.submittedAt,
+            ...application.applicationData,
+          });
+        }
+      } catch (error) {
+        console.error("partner application status request failed", error);
+      } finally {
+        setCheckingApplication(false);
+      }
+    }
+
+    void restoreApplication();
+  }, []);
 
   async function handleSubmit() {
     if (!state.account.agreeTerms || state.submitting) return;
@@ -96,7 +131,11 @@ export function PartnerClient({ content, locale }: PartnerClientProps) {
 
         <div className="flex-1 bg-white">
           <div className="mx-auto max-w-5xl px-4 pb-10 pt-6 sm:px-6 lg:px-10 lg:pb-14 lg:pt-8">
-          {state.submitted ? (
+          {checkingApplication ? (
+            <p role="status" className="py-20 text-center text-sm text-slate-500">
+              {locale === "th" ? "กำลังตรวจสอบใบสมัคร..." : "Checking your application..."}
+            </p>
+          ) : state.submitted ? (
             <>
               <div>
                 <RegisterSuccess
