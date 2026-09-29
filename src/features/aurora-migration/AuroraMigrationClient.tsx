@@ -128,7 +128,7 @@ export function AuroraMigrationClient() {
           {checkingRequest ? (
             <p className="py-12 text-center text-sm text-[#6b81a2]">กำลังตรวจสอบคำขอ...</p>
           ) : state.submitted ? (
-            <MigrationSuccess referenceNo={state.referenceNo} onReset={() => dispatch({ type: "RESET" })} />
+            <MigrationSuccess referenceNo={state.referenceNo} />
           ) : (
             <>
               {state.step === 1 && <Step1Identity value={state.form} onChange={(field, value) => dispatch({ type: "SET_FIELD", field, value })} />}

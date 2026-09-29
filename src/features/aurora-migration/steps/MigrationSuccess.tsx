@@ -1,6 +1,7 @@
 import { CircleCheckBig } from "lucide-react";
+import Link from "next/link";
 
-export function MigrationSuccess({ referenceNo, onReset }: { referenceNo: string; onReset: () => void }) {
+export function MigrationSuccess({ referenceNo }: { referenceNo: string }) {
   return (
     <section className="flex min-h-[65vh] flex-col items-center justify-center text-center">
       <CircleCheckBig size={76} className="text-[#16a765]" />
@@ -15,7 +16,7 @@ export function MigrationSuccess({ referenceNo, onReset }: { referenceNo: string
           <li>3. เปิดใช้งานบัญชีและตั้งค่า MFA</li>
         </ol>
       </div>
-      <button type="button" onClick={onReset} className="mt-6 w-full rounded-lg border border-[#1769e8] py-3 font-bold text-[#1769e8]">กลับสู่หน้าแรก</button>
+      <Link href="/th" className="mt-6 w-full rounded-lg border border-[#1769e8] py-3 font-bold text-[#1769e8]">กลับสู่หน้าแรก</Link>
     </section>
   );
 }

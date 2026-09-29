@@ -1,9 +1,6 @@
 "use client";
 
-// SUCCESS / THANK YOU screen shown after Step 5's "Submit" — a mock
-// confirmation built entirely from client state (no backend call). Every
-// summarized value is read straight back out of the wizard state that was
-// just submitted.
+// SUCCESS / THANK YOU screen shown after Step 5 or restored from a saved application.
 
 import { useState } from "react";
 import type { ReactNode } from "react";
