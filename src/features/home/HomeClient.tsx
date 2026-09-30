@@ -41,7 +41,11 @@ export function HomeClient({
 }: HomeClientProps) {
   return (
     <>
-      <HeroSection content={hero} />
+      <HeroSection
+        content={hero}
+        transitionEyebrow={startHere.eyebrow}
+        transitionTitle={startHere.title}
+      />
       <StartHereSection content={startHere} />
       <WhatWeBuildSection content={whatWeBuild} />
       <OurWorkSection content={ourWork} />

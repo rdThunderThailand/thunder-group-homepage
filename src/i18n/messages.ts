@@ -20,6 +20,7 @@ const namespaces = [
   ["DisplayPage", "display"],
   ["LedDisplayPage", "leddisplay"],
   ["InteractiveKioskPage", "interactivekiosk"],
+  ["PartnerProgramPage", "partner"],
 ] as const;
 
 type MessageTree = Record<string, unknown>;

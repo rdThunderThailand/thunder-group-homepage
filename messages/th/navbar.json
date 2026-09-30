@@ -2,17 +2,19 @@
   "primaryLabel": "เมนูหลัก",
   "brandHome": "Thunder — หน้าแรก",
   "nav": {
-    "whatWeDo": "สิ่งที่เราทำ",
-    "solutions": "โซลูชัน",
-    "businesses": "กลุ่มธุรกิจ",
-    "projects": "โครงการ",
-    "partners": "พันธมิตร",
-    "insights": "อินไซต์",
-    "about": "เกี่ยวกับเรา"
+    "whatWeDo": "What We Do",
+    "solutions": "Solutions",
+    "businesses": "Businesses",
+    "projects": "Projects",
+    "partners": "Partners",
+    "insights": "Insights",
+    "about": "About"
   },
   "search": "ค้นหา",
   "openMenu": "เปิดเมนู",
   "closeMenu": "ปิดเมนู",
+  "hideNavbar": "ซ่อนแถบนำทาง",
+  "showNavbar": "แสดงแถบนำทาง",
   "changeLanguage": "เปลี่ยนภาษา",
   "cta": "พูดคุยกับ Thunder",
   "menuPreview": "เมนู{section} — เร็ว ๆ นี้"

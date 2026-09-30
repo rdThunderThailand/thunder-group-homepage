@@ -24,7 +24,7 @@ export function ConnectedOperationSection({
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
           <div>
             <SectionEyebrow label={content.label} />
-            <h2 className="mt-5 text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl">
+            <h2 className="mt-5 text-3xl font-bold tracking-tight text-neutral-900 sm:text-[32px]">
               {content.title}
             </h2>
             <p className="mt-5 max-w-md text-base leading-relaxed text-slate-500">
@@ -40,7 +40,7 @@ export function ConnectedOperationSection({
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
               <Link
-                href="/businesses/thunderone"
+                href="#/businesses/thunderone"
                 className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-neutral-900 transition-colors hover:border-brand hover:text-brand"
               >
                 {content.secondaryCta}

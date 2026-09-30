@@ -21,7 +21,7 @@ type HeroSectionProps = {
   breadcrumb: KioskBreadcrumb;
 };
 
-export function HeroSection({ content, breadcrumb }: HeroSectionProps) {
+export function HeroSection({ content }: HeroSectionProps) {
   return (
     <section className="relative -mt-16 overflow-hidden bg-ink text-white lg:-mt-20">
       {/* Full-bleed hero photo + legibility scrims */}
@@ -39,21 +39,6 @@ export function HeroSection({ content, breadcrumb }: HeroSectionProps) {
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 pb-16 pt-28 sm:px-6 lg:px-8 lg:pb-20 lg:pt-36">
-        {/* Breadcrumb — "Home > Display Solutions > Interactive & Kiosk" */}
-        <nav
-          aria-label={breadcrumb.current}
-          className="flex flex-wrap items-center gap-2 text-xs font-medium text-white/55"
-        >
-          <Link href="/" className="transition-colors hover:text-white">
-            {breadcrumb.home}
-          </Link>
-          <ChevronRight className="h-3.5 w-3.5" aria-hidden="true" />
-          <Link href="/display" className="transition-colors hover:text-white">
-            {breadcrumb.display}
-          </Link>
-          <ChevronRight className="h-3.5 w-3.5" aria-hidden="true" />
-          <span className="text-white/85">{breadcrumb.current}</span>
-        </nav>
 
         <div className="mt-10 grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
           {/* Left — copy */}

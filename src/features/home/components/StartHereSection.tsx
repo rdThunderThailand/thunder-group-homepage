@@ -1,7 +1,3 @@
-// === 01 · START HERE ===
-// Entry points into the site. Heading block on the left, a 3 × 2 card grid on
-// the right that collapses to two columns on tablet and one on mobile.
-
 import Image, { type StaticImageData } from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
@@ -31,23 +27,23 @@ type StartHereSectionProps = {
 export function StartHereSection({ content }: StartHereSectionProps) {
   return (
     <section id="start-here" className="scroll-mt-20 bg-slate-50">
-      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:grid lg:grid-cols-12 lg:gap-12 lg:px-8 lg:py-28">
-        <div className="lg:col-span-4">
-          <SectionEyebrow number={content.number} label={content.eyebrow} />
-          <h2 className="mt-5 text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl">
+      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:grid lg:grid-cols-[minmax(0,3fr)_minmax(0,8fr)] lg:gap-6 lg:px-8 lg:py-28">
+        <div>
+          <SectionEyebrow label={content.eyebrow} />
+          <h2 className="mt-5 whitespace-pre-line text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl">
             {content.title}
           </h2>
-          <p className="mt-5 max-w-md text-base leading-relaxed text-slate-500">
+          <p className="mt-5 max-w-md whitespace-pre-line text-base leading-relaxed text-slate-500">
             {content.description}
           </p>
         </div>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:col-span-8 lg:mt-0 xl:grid-cols-3">
+        <div className="mt-10 grid min-w-0 auto-rows-fr gap-5 sm:grid-cols-2 lg:mt-0 lg:grid-cols-3 lg:gap-4">
           {content.cards.map((card, index) => (
             <Link
               key={card.title}
               href={CARD_META[index].href}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all hover:-translate-y-0.5 hover:border-brand hover:shadow-lg hover:shadow-slate-200/70"
+              className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all hover:-translate-y-0.5 hover:border-brand hover:shadow-lg hover:shadow-slate-200/70"
             >
               <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
                 <Image
@@ -60,14 +56,14 @@ export function StartHereSection({ content }: StartHereSectionProps) {
               </div>
               <div className="flex flex-1 items-start justify-between gap-3 p-5">
                 <div>
-                  <h3 className="text-base font-semibold text-neutral-900">
+                  <h3 className="h-12 whitespace-pre-line text-base font-semibold text-neutral-900">
                     {card.title}
                   </h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-slate-500">
+                  <p className="mt-1.5 whitespace-pre-line text-sm leading-relaxed text-slate-500">
                     {card.description}
                   </p>
                 </div>
-                <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-400 transition-colors group-hover:border-brand group-hover:bg-brand group-hover:text-white">
+                <span className="flex h-8 w-8 shrink-0 self-center items-center justify-center rounded-full border border-slate-200 transition-colors group-hover:border-brand group-hover:bg-brand group-hover:text-white">
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </span>
               </div>

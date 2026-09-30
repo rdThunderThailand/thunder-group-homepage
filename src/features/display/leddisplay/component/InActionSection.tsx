@@ -25,14 +25,14 @@ export function InActionSection({ content }: InActionSectionProps) {
         <SectionHeader
           eyebrow={content.label}
           title={content.title}
-          action={{ label: content.viewAll, href: "/projects" }}
+          action={{ label: content.viewAll, href: "#/projects" }}
         />
 
         <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {content.projects.map((project, index) => (
             <Link
               key={project.name}
-              href="/projects"
+              href="#/projects"
               className="group flex flex-col"
             >
               <Placeholder src={ACTION_IMAGES[index]} alt={project.name} sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" className="aspect-[4/3] w-full transition-colors group-hover:border-brand" />

@@ -1,11 +1,20 @@
 // 8 · DESIGNING THE RIGHT LED — "Technology Follows the Viewing Experience."
-// Dark section over a close-up-LED placeholder. Copy on the left; a static
-// accordion (six rows, each with a trailing "+" — UI only, no expand wired) on
-// the right.
+// Light section with copy on the left and six LED-selection factors on the
+// right, following the compact icon-card treatment used across this page.
 
-import { Plus } from "lucide-react";
+import { Eye, Maximize2, Settings, Shapes, ShieldCheck, Sun } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { SectionEyebrow } from "@/components/marketing/SectionEyebrow";
 import type { LedDesigningRightLedContent } from "../../types/leddisplayTypes";
+
+const ITEM_ICONS: LucideIcon[] = [
+  Eye,
+  Shapes,
+  Sun,
+  Maximize2,
+  Settings,
+  ShieldCheck,
+];
 
 type DesigningRightLedSectionProps = {
   content: LedDesigningRightLedContent;
@@ -15,40 +24,36 @@ export function DesigningRightLedSection({
   content,
 }: DesigningRightLedSectionProps) {
   return (
-    <section className="relative overflow-hidden bg-ink text-white">
-      {/* Placeholder close-up-LED wash */}
-      <div className="absolute inset-0" aria-hidden="true">
-        <div className="h-full w-full bg-gradient-to-br from-blue-950 via-ink to-slate-950" />
-        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-brand/10 to-blue-500/15" />
-      </div>
-
-      <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+    <section className="bg-white text-neutral-900">
+      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+        <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-16">
           <div>
-            <SectionEyebrow label={content.label} tone="dark" />
+            <SectionEyebrow label={content.label} />
             <h2 className="mt-5 text-3xl font-bold tracking-tight sm:text-4xl">
               {content.title}
             </h2>
-            <p className="mt-5 max-w-md text-base leading-relaxed text-white/70">
+            <p className="mt-5 max-w-md text-base leading-relaxed text-slate-500">
               {content.description}
             </p>
           </div>
 
-          <div className="overflow-hidden rounded-2xl border border-white/15 bg-white/[0.04]">
-            {content.items.map((item) => (
-              <div
-                key={item.title}
-                className="flex items-center justify-between gap-4 border-b border-white/10 px-5 py-4 last:border-b-0"
-              >
-                <span className="text-sm font-medium text-white">
-                  {item.title}
-                </span>
-                <Plus
-                  className="h-4 w-4 shrink-0 text-white/50"
-                  aria-hidden="true"
-                />
-              </div>
-            ))}
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {content.items.map((item, index) => {
+              const Icon = ITEM_ICONS[index] ?? ITEM_ICONS[0];
+              return (
+                <div
+                  key={item.title}
+                  className="flex min-h-24 items-center gap-4 rounded-xl border border-blue-100 bg-white px-2 shadow-[0_8px_30px_rgba(37,99,235,0.05)]"
+                >
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-50 text-brand">
+                    <Icon className="h-6 w-6" aria-hidden="true" />
+                  </span>
+                  <span className="text-sm font-semibold leading-snug text-neutral-800">
+                    {item.title}
+                  </span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

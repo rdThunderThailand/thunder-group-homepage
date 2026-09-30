@@ -26,7 +26,7 @@ export function RealWorldSection({ content }: RealWorldSectionProps) {
         <SectionHeader
           eyebrow={content.label}
           title={content.title}
-          action={{ label: content.viewAll, href: "/projects" }}
+          action={{ label: content.viewAll, href: "#/projects" }}
         />
 
         <div className="mt-12 -mx-4 flex snap-x gap-4 overflow-x-auto px-4 pb-4 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-6">
