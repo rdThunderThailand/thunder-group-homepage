@@ -31,14 +31,16 @@ async function getExistingRequest(idToken: string) {
     cache: "no-store",
   });
   const result = (await response.json()) as Array<{ referenceNo: string }> | { error?: string };
-  if (!response.ok || !Array.isArray(result)) throw new Error("REQUEST_LOOKUP_FAILED");
+  if (!response.ok || !Array.isArray(result)) {
+    throw new Error(!Array.isArray(result) && result.error ? result.error : "REQUEST_LOOKUP_FAILED");
+  }
   return result[0]?.referenceNo;
 }
 
 export function AuroraMigrationClient() {
   const [state, dispatch] = useReducer(wizardReducer, undefined, createInitialWizardState);
   const [lineName, setLineName] = useState<string>();
-  const [liffError, setLiffError] = useState(false);
+  const [liffError, setLiffError] = useState<string>();
   const [checkingRequest, setCheckingRequest] = useState(true);
 
   useEffect(() => {
@@ -59,7 +61,7 @@ export function AuroraMigrationClient() {
         if (referenceNo) dispatch({ type: "SUBMIT_SUCCESS", referenceNo });
       } catch (error) {
         console.error("LIFF initialization failed", error);
-        setLiffError(true);
+        setLiffError(error instanceof Error ? error.message : "LIFF_INIT_FAILED");
       } finally {
         setCheckingRequest(false);
       }
@@ -86,7 +88,7 @@ export function AuroraMigrationClient() {
       idToken = null;
     }
     if (!idToken) {
-      setLiffError(true);
+      setLiffError("ID_TOKEN_MISSING");
       return;
     }
 
@@ -122,7 +124,7 @@ export function AuroraMigrationClient() {
           {!state.submitted && <Progress step={state.step} />}
         </header>
 
-        {liffError && <p role="alert" className="mx-5 mt-5 rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700">ไม่สามารถเชื่อมต่อ LINE ได้ กรุณาปิดแล้วเปิดหน้านี้จาก LINE อีกครั้ง</p>}
+        {liffError && <p role="alert" className="mx-5 mt-5 rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700">ไม่สามารถเชื่อมต่อ LINE ได้ กรุณาปิดแล้วเปิดหน้านี้จาก LINE อีกครั้ง ({liffError})</p>}
 
         <form className="space-y-6 px-5 py-6" onSubmit={handleSubmit}>
           {checkingRequest ? (
